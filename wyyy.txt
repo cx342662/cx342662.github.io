@@ -298,7 +298,6 @@ VOA美国之音,http://voa-11.akacast.akamaistream.net/7/317/322023/v1/ibb.akaca
 纯享4K,http://39.135.138.58:18890/PLTV/88888888/224/3221225786/index.m3u8
 纯享4K,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225786/index.m3u8
 冬奥纪实,http://111.20.33.70/PLTV/88888893/224/3221226232/index.m3u8
-尔滨电影,http://39.134.67.226/PLTV/88888888/224/3221225700/index.m3u8
 黑莓电影,http://39.135.138.59:18890/PLTV/88888910/224/3221225769/index.m3u8
 纪实人文,http://39.135.138.59:18890/PLTV/88888910/224/3221225655/index.m3u8
 纪实人文,http://39.134.115.163:8080/PLTV/88888910/224/3221225655/index.m3u8
@@ -316,7 +315,6 @@ CETV4,http://39.134.65.141/PLTV/88888888/224/3221225750/index.m3u8
 CHC动作电影,http://111.20.33.93/TVOD/88888893/224/3221226465/index.m3u8
 CHC家庭影院,http://111.20.33.70/PLTV/88888893/224/3221226462/index.m3u8
 CHC家庭影院,http://111.20.33.93/TVOD/88888893/224/3221226462/index.m3u8
-CNC英文,http://39.135.138.59:18890/PLTV/88888910/224/3221225693/index.m3u8
 CNC中文,http://39.135.138.59:18890/PLTV/88888910/224/3221225694/index.m3u8
 爱上4k,http://111.20.33.93/PLTV/88888893/224/3221226352/index.m3u8
 爱上4K,http://111.20.33.93/TVOD/88888893/224/3221226352/index.m3u8
@@ -326,7 +324,6 @@ CNC中文,http://39.135.138.59:18890/PLTV/88888910/224/3221225694/index.m3u8
 纯享4K,http://39.135.138.58:18890/PLTV/88888888/224/3221225786/index.m3u8
 纯享4K,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225786/index.m3u8
 冬奥纪实,http://111.20.33.70/PLTV/88888893/224/3221226232/index.m3u8
-尔滨电影,http://39.134.67.226/PLTV/88888888/224/3221225700/index.m3u8
 黑莓电影,http://39.135.138.59:18890/PLTV/88888910/224/3221225769/index.m3u8
 纪实人文,http://39.135.138.59:18890/PLTV/88888910/224/3221225655/index.m3u8
 纪实人文,http://39.134.115.163:8080/PLTV/88888910/224/3221225655/index.m3u8
@@ -334,21 +331,14 @@ CNC中文,http://39.135.138.59:18890/PLTV/88888910/224/3221225694/index.m3u8
 金牌综艺,http://39.134.66.110/PLTV/88888888/224/3221225525/index.m3u8
 金鹰纪实,http://111.20.33.70/PLTV/88888893/224/3221226351/index.m3u8
 金鹰纪实,http://111.20.33.93/TVOD/88888893/224/3221226351/index.m3u8
-新华英语,http://39.135.138.58:18890/PLTV/88888888/224/3221225693/index.m3u8
 CETV-1,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225917/index.m3u8?fmt=ts2hls?$移动超清1080P
 CETV-3,http://111.20.33.70/PLTV/88888893/224/3221226226/index.m3u8
 CETV-4,http://111.20.33.70/PLTV/88888893/224/3221226225/index.m3u8
-CETV4,http://39.134.65.141/PLTV/88888888/224/3221225750/index.m3u8
+CETV-4,http://39.134.65.141/PLTV/88888888/224/3221225750/index.m3u8
 CHC动作电影,http://111.20.33.93/TVOD/88888893/224/3221226465/index.m3u8
 CHC家庭影院,http://111.20.33.70/PLTV/88888893/224/3221226462/index.m3u8
 CHC家庭影院,http://111.20.33.93/TVOD/88888893/224/3221226462/index.m3u8
-CNC英文,http://39.135.138.59:18890/PLTV/88888910/224/3221225693/index.m3u8
 CNC中文,http://39.135.138.59:18890/PLTV/88888910/224/3221225694/index.m3u8
-西班牙中国环球电视网CGTN,http://livees.cgtn.com/1000e/prog_index.m3u8
-中央电视塔中塔北,https://gcalic.v.myalicdn.com/gc/ztb_1/index.m3u8
-中央电视塔中塔南,https://gcalic.v.myalicdn.com/gc/ztn_1/index.m3u8
-中央电视塔中塔西,https://gctxyc.liveplay.myqcloud.com/gc/ztx_1/index.m3u8
-中央电视台中塔北,https://gcalic.v.myalicdn.com/gc/ztb_1/index.m3u8?contentid=2820180516001
 CCTV1,http://39.134.66.110/PLTV/88888888/224/3221225816/index.m3u8
 CCTV2,http://39.136.48.18:8089/PLTV/88888888/224/3221225751/index.m3u8
 CCTV3,http://39.134.65.142/PLTV/88888888/224/3221225799/index.m3u8
@@ -377,6 +367,11 @@ CCTV女性时尚,http://111.20.33.70/PLTV/88888893/224/3221226237/index.m3u8
 CCTV西班牙语频道,https://livees.cgtn.com/1000e/prog_index.m3u8
 CGTN Documentary,http://livedoc.cgtn.com/1000d/prog_index.m3u8
 CGTN Русский,http://liveru.cgtn.com/1000r/prog_index.m3u8
+西班牙中国环球电视网CGTN,http://livees.cgtn.com/1000e/prog_index.m3u8
+中央电视塔中塔北,https://gcalic.v.myalicdn.com/gc/ztb_1/index.m3u8
+中央电视塔中塔南,https://gcalic.v.myalicdn.com/gc/ztn_1/index.m3u8
+中央电视塔中塔西,https://gctxyc.liveplay.myqcloud.com/gc/ztx_1/index.m3u8
+中央电视台中塔北,https://gcalic.v.myalicdn.com/gc/ztb_1/index.m3u8?contentid=2820180516001
 
 NewTV,#genre#
 
