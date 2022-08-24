@@ -1,5 +1,4 @@
 央视,#genre#
-
 西班牙中国环球电视网CGTN,http://livees.cgtn.com/1000e/prog_index.m3u8
 中央电视塔中塔北,https://gcalic.v.myalicdn.com/gc/ztb_1/index.m3u8
 中央电视塔中塔南,https://gcalic.v.myalicdn.com/gc/ztn_1/index.m3u8
@@ -33,7 +32,6 @@ CCTV女性时尚,http://111.20.33.70/PLTV/88888893/224/3221226237/index.m3u8
 CCTV西班牙语频道,https://livees.cgtn.com/1000e/prog_index.m3u8
 CGTN Documentary,http://livedoc.cgtn.com/1000d/prog_index.m3u8
 CGTN Русский,http://liveru.cgtn.com/1000r/prog_index.m3u8
-
 SiTV,#genre#
 SiTV法治天地,http://140.207.241.2:8080/live/program/live/fztd/1300000/mnf.m3u8
 SiTV七彩戏剧,http://140.207.241.2:8080/live/program/live/qcxj/1300000/mnf.m3u8
