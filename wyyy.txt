@@ -1,3 +1,43 @@
+新马泰,#genre#
+
+Astro Vaanavil,https://linearjitp-playback.astro.com.my/dash-wv/linear/2309/default_ott.mpd
+ASTRO AOD 311,http://linearjitp-playback.astro.com.my/dash-wv/linear/2706/default_ott.mpd
+ASTRO AOD 352,http://linearjitp-playback.astro.com.my/dash-wv/linear/700/default_ott.mpd
+ASTRO AOD 354,http://linearjitp-playback.astro.com.my/dash-wv/linear/212/default_ott.mpd
+ASTRO HUA HEE DAI,http://123.253.32.125:9995/livestream/api/v1/long?channel_id=c20411
+Astro Vellithirai,https://linearjitp-playback.astro.com.my/dash-wv/linear/202/default_primary.mpd
+ASTRO XIAO TAI YANG,http://linearjitp-playback.astro.com.my/dash-wv/linear/2711/default_ott.mpd
+Berita RTM,https://d25tgymtnqzu8s.cloudfront.net/smil:berita/chunklist_b4596000_slENG.m3u8
+Channel 5,https://tglmp02.akamaized.net/out/v1/5081e069e08140c9b95f89a1659cf4dd/manifest.mpd
+Channel 8,https://tglmp02.akamaized.net/out/v1/4f6561ad194b49ae93f4e1b075afdf41/manifest.mpd
+Channel News Asia (Singapore feed),https://tglmp03.akamaized.net/out/v1/435d5ae6f4734fde963642147a852bfb/manifest.mpd
+Channel U,https://tglmp03.akamaized.net/out/v1/1057d89ee3d94148b430b5866e3a540a/manifest.mpd
+Dewan Negara,https://d25tgymtnqzu8s.cloudfront.net/smil:negara/chunklist_b4596000_slENG.m3u8
+Dewan Rakyat,https://d25tgymtnqzu8s.cloudfront.net/smil:rakyat/chunklist_b4596000_slENG.m3u8
+PRIMETIME,http://linearjitp-playback.astro.com.my/dash-wv/linear/5049/default_ott.mpd
+Sukan RTM,https://d25tgymtnqzu8s.cloudfront.net/smil:sukan/chunklist_b4596000_slENG.m3u8
+Suria,https://tglmp04.akamaized.net/out/v1/b200e885125f4787bd2329952ff28fa1/manifest.mpd
+TV Okey,https://d25tgymtnqzu8s.cloudfront.net/smil:okey/chunklist_b4596000_slENG.m3u8
+TV1,https://d25tgymtnqzu8s.cloudfront.net/smil:tv1/chunklist_b4596000_slENG.m3u8
+TV2,https://d25tgymtnqzu8s.cloudfront.net/smil:tv2/chunklist_b4596000_slENG.m3u8
+TV3,https://unifi-live05.secureswiftcontent.com/UnifiHD/live03.mpd
+TV6,https://d25tgymtnqzu8s.cloudfront.net/smil:tv6/chunklist_b4596000_slENG.m3u8
+TV9,https://raw.githubusercontent.com/samleong123/tonton_dailymotion_php/main/m3u8/TV9.m3u8
+Vasantham,https://tglmp03.akamaized.net/out/v1/14eb6e921cae41298efaa4d9db0f2875/manifest.mpd
+Amarin TV,https://freelive.inwstream.com:1936/freelive-edge/amarinhd/playlist.m3u8
+CH3 HD,https://freelive.inwstream.com:1936/freelive-edge/3hd/playlist.m3u8
+CH7 HD,https://freelive.inwstream.com:1936/freelive-edge/7hd/playlist.m3u8
+CH8,https://freelive.inwstream.com:1936/freelive-edge/ch8/playlist.m3u8
+MCOT HD,https://freelive.inwstream.com:1936/freelive-edge/mcothd/playlist.m3u8
+MONO29,https://freelive.inwstream.com:1936/freelive-edge/mono29/playlist.m3u8
+Nation TV,https://freelive.inwstream.com:1936/freelive-edge/nation/playlist.m3u8
+NBT,https://freelive.inwstream.com:1936/freelive-edge/nbt/playlist.m3u8
+ONE31,https://freelive.inwstream.com:1936/freelive-edge/onehd/playlist.m3u8
+PPTV HD,https://freelive.inwstream.com:1936/freelive-edge/pptvhd/playlist.m3u8
+Thai PBS,https://thaipbs-live.cdn.byteark.com/live/playlist_1080p/index.m3u8
+Thairath TV HD,https://freelive.inwstream.com:1936/freelive-edge/thairahttvhd/playlist.m3u8
+True 4U,https://freelive.inwstream.com:1936/freelive-edge/true4u/playlist.m3u8
+Workpoint TV,https://freelive.inwstream.com:1936/freelive-edge/workpointtv/playlist.m3u8
 港澳台测试,#genre#
 
 凤凰卫视中文台,http://play-live.ifeng.com/live/06OLEGEGM4G.m3u8
@@ -5,7 +45,31 @@
 香港国际财经台,http://uc6.i-cable.com/live_freedirect/opentvhd002_h.live/playlist.m3u8
 香港开电视,http://media.fantv.hk/m3u8/archive/channel2_stream1.m3u8
 有线财经资讯台,https://uc6.i-cable.com/live_freedirect/freehd208_h.live/playlist.m3u8
-
+TDM Ou Mun-Macau,https://live4.tdm.com.mo/ch3/ch3.live/chunklist_w976321456.m3u8
+华视,rtmp://59.124.75.138/sat/tv111
+民视,http://seb.sason.top/ptv/ftv.php?id=ms
+台视,rtmp://59.124.75.138/sat/tv071
+原住民频道,http://streamipcf.akamaized.net/live/_definst_/smil:liveabr.smil/playlist.m3u8
+中视,rtmp://59.124.75.138/sat/tv091
+Canal Macau,https://live4.tdm.com.mo/ch2/ch2.live/playlist.m3u8
+CTI ASIA,http://linearjitp-playback.astro.com.my/dash-wv/linear/5017/default_ott.mpd
+Hong Kong Intl Business Channel,http://uc6.i-cable.com/live_freedirect/opentvhd002_h.live/playlist.m3u8
+Hong Kong Open TV,http://media.fantv.hk/m3u8/archive/channel2_stream1.m3u8
+Macau Asia Satellile TV,http://live.mastvnet.com/lsdream/lY44pmm/2000/live.m3u8
+Now Business News,http://livetv.dnsfor.me/channel.8.m3u8
+Now Direct,http://livetv.dnsfor.me/channel.3.m3u8
+Ou Mun Toi,https://live3.tdm.com.mo/ch1/ch1.live/playlist.m3u8
+RTHK31,http://livetv.dnsfor.me/channel.1.m3u8
+RTHK32,http://livetv.dnsfor.me/channel.2.m3u8
+TDM Informação,https://live4.tdm.com.mo/ch5/info_ch5.live/playlist.m3u8
+TVB CLASSIC,http://linearjitp-playback.astro.com.my/dash-wv/linear/5016/default_ott.mpd
+TVB Finance & Information Channel,http://9.zhxinda.xyz/newss.php?id=2
+TVB J2,https://j3.lhlh.app/mv.m3u8
+TVB JADE SOUTHEAST ASIA,http://linearjitp-playback.astro.com.my/dash-wv/linear/2600/default_ott.mpd
+TVB XING HE,http://linearjitp-playback.astro.com.my/dash-wv/linear/401/default_ott.mpd
+TVBS ASIA,http://linearjitp-playback.astro.com.my/dash-wv/linear/402/default_ott.mpd
+TVBS歡樂台,rtmp://59.124.75.138:1935/sat/tv421
+TVBS新聞台,rtmp://59.124.75.138:1935/sat/tv551
 大愛1 (720p),https://pulltv1.wanfudaluye.com/live/tv1.m3u8
 大愛2 (720p),https://pulltv2.wanfudaluye.com/live/tv2.m3u8
 大立電視 (720p),http://www.dalitv.com.tw:4568/live/dali/index.m3u8
