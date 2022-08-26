@@ -1,5 +1,7 @@
 休闲_8888,#genre#
 
+暂时关闭随缘上架,http://122.224.232.226:8888/udp/233.50.201.108:5140
+
 
 台湾,#genre#
 CNN,P2p://ns2.hellotvvod.com:9906/fc613681ff784ae59a30ba7c9ed3efb0
