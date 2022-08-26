@@ -1,3 +1,19 @@
+休闲_8888,#genre#
+
+彩虹e台,P2p://ns2.hellotvvod.com:9906/bd7382c76b88433d8722c26f67363e6b
+彩虹电影台,P2p://ns2.hellotvvod.com:9906/e0edd767a136470b8200e6e5c03900e8
+LOOK TV,P2p://ns2.hellotvvod.com:9906/e1abfbd511284620a5a8f38bd138f45f
+潘朵啦玩美台,P2p://ns2.hellotvvod.com:9906/233e084e1bc3498d97c0c588bc693491
+惊艳成人电影台,P2p://ns2.hellotvvod.com:9906/19233616c0a54a0a842a055fc8a27606
+松视1台,P2p://ns2.hellotvvod.com:9906/5c86b6d2e41a4b33949bc3253bd3659a
+松视2台,P2p://ns2.hellotvvod.com:9906/5da64f1f405840f39749725323546c8d
+PLAYBOY,P2p://ns2.hellotvvod.com:9906/1c23371ae43d4ccab637a0ae5d08af5b
+香蕉台,P2p://ns2.hellotvvod.com:9906/3a68ef5eb4444efdb58362ff97686789
+松视3台,P2p://ns2.hellotvvod.com:9906/c52b7d4217bb411a855a0a1372a7840a
+JStar极限台,P2p://ns2.hellotvvod.com:9906/7f05bb13ae114cfebc1b79df6681b0ef
+HAPPY,P2p://ns2.hellotvvod.com:9906/5bc6b29a6e6d454b8fa592aea83222d5
+K,P2p://ns2.hellotvvod.com:9906/a7a0b10d12ed4c49bb824983f506b91a
+
 台湾,#genre#
 CNN,P2p://ns2.hellotvvod.com:9906/fc613681ff784ae59a30ba7c9ed3efb0
 民视,P2p://ns2.hellotvvod.com:9906/5121c7a5b7844be693683f5210c45cf4
