@@ -1,4 +1,4 @@
-晴天台湾,#genre#
+台湾,#genre#
 CNN,P2p://ns2.hellotvvod.com:9906/fc613681ff784ae59a30ba7c9ed3efb0
 民视,P2p://ns2.hellotvvod.com:9906/5121c7a5b7844be693683f5210c45cf4
 人间卫视,P2p://ns2.hellotvvod.com:9906/440a155e05d849beba4ced78210b8e70
@@ -172,7 +172,7 @@ EYE TV戏剧台,P2p://ns2.hellotvvod.com:9906/b04459a7095546568c1d81c31b48b60e
 台视新闻台,P2p://ns2.hellotvvod.com:9906/1109090677cf4568b5d281acaffb16bb
 寰宇新闻台湾台,P2p://ns2.hellotvvod.com:9906/9b27b09378424d1a985f6ff508f0f418
 台视财经台,P2p://ns2.hellotvvod.com:9906/6e809a59861d4a648adbe1161aa09320
-晴天港澳,#genre#
+港澳,#genre#
 港台電視31,P2p://ns2.hellotvvod.com:9906/a59213b8845c451c8c3787d3d4a70d99
 港台电视32,P2p://ns2.hellotvvod.com:9906/c55986c653ee4da685bb42ab4dd9b707
 香港开电视,P2p://ns2.hellotvvod.com:9906/eb21cf56a30f4166b3ecf56c3b8d3928
@@ -214,7 +214,7 @@ Hands Up,P2p://ns2.hellotvvod.com:9906/89827f07e68d49428e89f93c9ed5fcd9
 亚洲剧台,P2p://ns2.hellotvvod.com:9906/45b138268e5b41ec80165118d6eba2e4
 功夫台,P2p://ns2.hellotvvod.com:9906/c0e41258758d46b28acb510d7ddd27c5
 爆谷台,P2p://ns2.hellotvvod.com:9906/6395badcaaf3436fa85e8bb8589397bd
-晴天马来西亚,#genre#
+马来西亚,#genre#
 CNN,P2p://ns2.hellotvvod.com:9906/fc613681ff784ae59a30ba7c9ed3efb0
 TV1,P2p://ns2.hellotvvod.com:9906/745446d034a5429f8dce5c43fe3944c8
 TV2,P2p://ns2.hellotvvod.com:9906/fe3119a12f0e4b6abd9fa706b9d30f1a
@@ -282,7 +282,7 @@ DW,P2p://ns2.hellotvvod.com:9906/18868a175de34d8fa525b81e87bdb849
 France24,P2p://ns2.hellotvvod.com:9906/05a079cf58ae4885bb677ead92032505
 SPOTV,P2p://ns2.hellotvvod.com:9906/9029f49196374af7b13a601a532e7495
 beIN Sports,P2p://ns2.hellotvvod.com:9906/278dc4fa10394f8d94c90cf17358baaa
-晴天日本,#genre#
+日本,#genre#
 NHK-G综合,P2p://ns2.hellotvvod.com:9906/40beb4a927fe459fb24fc6785bf2d9f4
 NHK-E教育,P2p://ns2.hellotvvod.com:9906/bad30165107c4bdda268b058e7a6d84f
 日本テレビ,P2p://ns2.hellotvvod.com:9906/28f32f56bc294f71ab75920cf69cf0b9
