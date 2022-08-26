@@ -502,7 +502,6 @@ CHC动作电影,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226465/in
 CHC动作电影,http://111.20.33.93/PLTV/88888893/224/3221226465/index.m3u8
 CHC高清电影,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226463/index.m3u8
 CHC高清电影,http://222.132.191.125:9901/tsfile/live/1010_1.m3u8
-CHC家庭电影,http://222.132.191.125:9901/tsfile/live/1008_1.m3u8
 CHC家庭影院,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226462/index.m3u8
 CHC动作电影,http://111.20.33.93/TVOD/88888893/224/3221226465/index.m3u8
 CHC家庭影院,http://111.20.33.70/PLTV/88888893/224/3221226462/index.m3u8
@@ -761,32 +760,6 @@ NewTV炫舞未来,http://39.135.138.58:18890/PLTV/88888888/224/3221225707/index.
 NewTV怡伴健康,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225666/index.m3u8
 NewTV中国功夫,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225660/index.m3u8
 
-4K电影 16M,http://cache.ott.fifalive.itv.cmvideo.cn:80/6000000003000004748/index.m3u8?channel-id=wasusyt&Contentid=6000000003000004748&livemode=1&stbId=no
-东方影视,http://183.207.255.188/live/program/live/dsjpdhd/4000000/mnf.m3u8
-湖南电影,http://124.232.231.246:6610/000000001001/201600020005/index.m3u8?A=&IASHttpSessionId=OTT
-金鹰纪实,http://124.232.231.246:6610/000000001001/201600020008/index.m3u8?A=&IASHttpSessionId=OTT
-清华大学电视台,http://live.cic.tsinghua.edu.cn/hls/tsinghuatv.m3u8
-时尚频道,http://juyunlive.juyun.tv/live/24950198.m3u8
-中国党员教育,http://12371ksc.v.kcdnvip.com/12371/dangyuanwang_1/index.m3u8
-中国环球电视,http://live.cgtn.com/500/prog_index.m3u8
-中国气象,http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8
-Hot风尚音乐,http://cache.ott.fifalive.itv.cmvideo.cn:80/5529729098703832176/index.m3u8?channel-id=wasusyt&Contentid=5529729098703832176&livemode=1&stbId=no
-Hot精品剧场,http://cache.ott.fifalive.itv.cmvideo.cn:80/8230197131234717902/index.m3u8?channel-id=wasusyt&Contentid=8230197131234717902&livemode=1&stbId=no
-Hot欧美影院,http://cache.ott.fifalive.itv.cmvideo.cn:80/7185203501769528108/index.m3u8?channel-id=wasusyt&Contentid=7185203501769528108&livemode=1&stbId=no
-Hot亚洲影院,http://cache.ott.fifalive.itv.cmvideo.cn:80/5841816227539527643/index.m3u8?channel-id=wasusyt&Contentid=5841816227539527643&livemode=1&stbId=no
-SiTV东方财经,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/dfcj/1300000/mnf.m3u8
-SiTV动漫秀场,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/dmxchd/2300000/mnf.m3u8
-SiTV动漫秀场,http://shbu.live.bestvcdn.com.cn:8080/live/program/live/dmxchd/4000000/mnf.m3u8
-SiTV都市剧场,http://183.207.255.188/live/program/live/dsjchd/4000000/mnf.m3u8
-SiTV法治天地,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/fztd/1300000/mnf.m3u8
-SiTV金色频道,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/jingsepd/1300000/mnf.m3u8
-SiTV劲爆体育,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/jbtyhd/2300000/mnf.m3u8
-SiTV魅力足球,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/mlyyhd/2300000/mnf.m3u8
-SiTV七彩戏剧,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/qcxj/1300000/mnf.m3u8
-SiTV新视觉,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/xsjhd/2300000/mnf.m3u8
-SiTV幸福彩,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/xfchd/2300000/mnf.m3u8
-SiTV游戏风云,http://183.207.255.188/live/program/live/yxfyhd/4000000/mnf.m3u8
-
 爱情喜剧,http://39.134.65.166/PLTV/88888888/224/3221225533/1.m3u8
 爱情喜剧,http://111.40.196.25/PLTV/88888888/224/3221225616/index.m3u8
 北京纪实,http://39.134.115.163:8080/PLTV/88888910/224/3221225676/index.m3u8
@@ -940,6 +913,31 @@ SiTV游戏风云,http://183.207.255.188/live/program/live/yxfyhd/4000000/mnf.m3u
 MAX极速汽车,http://39.134.19.251:6610/yinhe/2/ch00000090990000002263/index.m3u8?virtualDomain=yinhe.live_hls.zte.com
 MAX极速汽车,http://140.207.241.3:8080/live/program/live/jsqchd/4000000/mnf.m3u8
 MAX极速汽车,http://shbu.live.bestvcdn.com.cn:8080/live/program/live/jsqchd/4000000/mnf.m3u8
+4K电影 16M,http://cache.ott.fifalive.itv.cmvideo.cn:80/6000000003000004748/index.m3u8?channel-id=wasusyt&Contentid=6000000003000004748&livemode=1&stbId=no
+东方影视,http://183.207.255.188/live/program/live/dsjpdhd/4000000/mnf.m3u8
+湖南电影,http://124.232.231.246:6610/000000001001/201600020005/index.m3u8?A=&IASHttpSessionId=OTT
+金鹰纪实,http://124.232.231.246:6610/000000001001/201600020008/index.m3u8?A=&IASHttpSessionId=OTT
+清华大学电视台,http://live.cic.tsinghua.edu.cn/hls/tsinghuatv.m3u8
+时尚频道,http://juyunlive.juyun.tv/live/24950198.m3u8
+中国党员教育,http://12371ksc.v.kcdnvip.com/12371/dangyuanwang_1/index.m3u8
+中国环球电视,http://live.cgtn.com/500/prog_index.m3u8
+中国气象,http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8
+Hot风尚音乐,http://cache.ott.fifalive.itv.cmvideo.cn:80/5529729098703832176/index.m3u8?channel-id=wasusyt&Contentid=5529729098703832176&livemode=1&stbId=no
+Hot精品剧场,http://cache.ott.fifalive.itv.cmvideo.cn:80/8230197131234717902/index.m3u8?channel-id=wasusyt&Contentid=8230197131234717902&livemode=1&stbId=no
+Hot欧美影院,http://cache.ott.fifalive.itv.cmvideo.cn:80/7185203501769528108/index.m3u8?channel-id=wasusyt&Contentid=7185203501769528108&livemode=1&stbId=no
+Hot亚洲影院,http://cache.ott.fifalive.itv.cmvideo.cn:80/5841816227539527643/index.m3u8?channel-id=wasusyt&Contentid=5841816227539527643&livemode=1&stbId=no
+SiTV东方财经,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/dfcj/1300000/mnf.m3u8
+SiTV动漫秀场,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/dmxchd/2300000/mnf.m3u8
+SiTV动漫秀场,http://shbu.live.bestvcdn.com.cn:8080/live/program/live/dmxchd/4000000/mnf.m3u8
+SiTV都市剧场,http://183.207.255.188/live/program/live/dsjchd/4000000/mnf.m3u8
+SiTV法治天地,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/fztd/1300000/mnf.m3u8
+SiTV金色频道,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/jingsepd/1300000/mnf.m3u8
+SiTV劲爆体育,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/jbtyhd/2300000/mnf.m3u8
+SiTV魅力足球,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/mlyyhd/2300000/mnf.m3u8
+SiTV七彩戏剧,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/qcxj/1300000/mnf.m3u8
+SiTV新视觉,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/xsjhd/2300000/mnf.m3u8
+SiTV幸福彩,http://219.151.31.38/liveplay-kk.rtxapp.com/live/program/live/xfchd/2300000/mnf.m3u8
+SiTV游戏风云,http://183.207.255.188/live/program/live/yxfyhd/4000000/mnf.m3u8
 
 少儿,#genre#
 
