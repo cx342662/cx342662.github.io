@@ -282,7 +282,39 @@ DW,P2p://ns2.hellotvvod.com:9906/18868a175de34d8fa525b81e87bdb849
 France24,P2p://ns2.hellotvvod.com:9906/05a079cf58ae4885bb677ead92032505
 SPOTV,P2p://ns2.hellotvvod.com:9906/9029f49196374af7b13a601a532e7495
 beIN Sports,P2p://ns2.hellotvvod.com:9906/278dc4fa10394f8d94c90cf17358baaa
-
+晴天日本,#genre#
+NHK-G综合,P2p://ns2.hellotvvod.com:9906/40beb4a927fe459fb24fc6785bf2d9f4
+NHK-E教育,P2p://ns2.hellotvvod.com:9906/bad30165107c4bdda268b058e7a6d84f
+日本テレビ,P2p://ns2.hellotvvod.com:9906/28f32f56bc294f71ab75920cf69cf0b9
+TBSテレビ,P2p://ns2.hellotvvod.com:9906/d6e7ecf5afba425fa573d88b7f1ac86c
+テレビ東京,P2p://ns2.hellotvvod.com:9906/53c3d73d22fc4754833271a682d5a0df
+フジテレビ,P2p://ns2.hellotvvod.com:9906/2088a908868842148d719e83674894a0
+読売テレビ,P2p://ns2.hellotvvod.com:9906/36f862ccbde849ffb69258d631340f99
+関西テレビ,P2p://ns2.hellotvvod.com:9906/08fa06290f4348609f19abb6bdeaa86d
+KBS京都,P2p://ns2.hellotvvod.com:9906/d206cfa104ca4e76b99bfe36e34037dc
+毎日放送,P2p://ns2.hellotvvod.com:9906/8d1b3475bf334a759e4a3ed13e029389
+朝日放送,P2p://ns2.hellotvvod.com:9906/3b2c5471719b400b8c6aadbe55cc1065
+テレビ大阪,P2p://ns2.hellotvvod.com:9906/395f78ef9e5542a9a49e3dbcc3d71154
+テレビ朝日,P2p://ns2.hellotvvod.com:9906/6c5cbb2deb74414fadf367ab187a212b
+BS-1,P2p://ns2.hellotvvod.com:9906/a2e61780f1b24d1eba68529582c12c4d
+BSプレミアム,P2p://ns2.hellotvvod.com:9906/e3f859c043f54074a68632ff209c6437
+BS日テレ,P2p://ns2.hellotvvod.com:9906/9299edd2b3464398a84c6666ad4a5fc3
+BS朝日,P2p://ns2.hellotvvod.com:9906/c46b2775ba3445db8362e65edbad069d
+BS-TBS,P2p://ns2.hellotvvod.com:9906/a78cd0d212284c7f8abb3a6304000ec1
+BS11,P2p://ns2.hellotvvod.com:9906/e2ba1b1019ff46238c9e70c8e9ca841d
+BSフジ,P2p://ns2.hellotvvod.com:9906/91b3306a72e24047b34ef62be9122b31
+WOWOWプライム,P2p://ns2.hellotvvod.com:9906/0c2ae705e8df4197b3b192f58538973e
+WOWOWライブ,P2p://ns2.hellotvvod.com:9906/f2c26fb3537c469588d88e2a0140d79d
+WOWOWシネマ,P2p://ns2.hellotvvod.com:9906/507168b4ad274c959b425b94daf1ef15
+スター・チャンネル1,P2p://ns2.hellotvvod.com:9906/282da4a379ea43e3b8f963e9de045edb
+スター・チャンネル2,P2p://ns2.hellotvvod.com:9906/2b9673a3eccb4de888c44c1f245bf925
+スター・チャンネル3,P2p://ns2.hellotvvod.com:9906/e0be1d70490d49feb9f28f35f8ea9e8f
+BSアニマックス,P2p://ns2.hellotvvod.com:9906/cd408b63bfaf4b6d9c079966e4902d1f
+J Sports 1,P2p://ns2.hellotvvod.com:9906/79f34ee83068462bb3bd30134ae44cf4
+J Sports 2,P2p://ns2.hellotvvod.com:9906/2f938f62013f48a988889067eb2d8fab
+J Sports 3,P2p://ns2.hellotvvod.com:9906/25c0692b67594355b3ff0f60892d1760
+J Sports 4,P2p://ns2.hellotvvod.com:9906/1545bf2f77484887aa05cadbc8aa205a
+BS12,P2p://ns2.hellotvvod.com:9906/eac8ecffe04e4015b1b0fd5379c6455e
 港台,#genre#
 
 八大戏剧,http://50.7.220.74:8278/badadrama/playlist.m3u8?tid=ME3E7432781774327817&ct=19193&tsum=504532547ffc646858157dd724bca18d
