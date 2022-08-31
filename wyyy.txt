@@ -523,6 +523,54 @@ J Sports 2,P2p://ns2.hellotvvod.com:9906/2f938f62013f48a988889067eb2d8fab
 J Sports 3,P2p://ns2.hellotvvod.com:9906/25c0692b67594355b3ff0f60892d1760
 J Sports 4,P2p://ns2.hellotvvod.com:9906/1545bf2f77484887aa05cadbc8aa205a
 BS12,P2p://ns2.hellotvvod.com:9906/eac8ecffe04e4015b1b0fd5379c6455e
+新加坡,#genre#
+天映频道,P2p://ns2.hellotvvod.com:9906/ad9114e184ff4a469895ff75c6c57cb9
+中天亚洲台,P2p://ns2.hellotvvod.com:9906/81d676cca99b4b10b90c99828a8111ee
+TVB星河(粤),P2p://ns2.hellotvvod.com:9906/9d44d9c4102c4f5bb1b6733718e5fe08
+天映经典,P2p://ns2.hellotvvod.com:9906/c1a0c02038054f0ca278d14d348fbaaf
+KBS World,P2p://ns2.hellotvvod.com:9906/0db8739a75634c4e826143e7bb9b7a7d
+ONE,P2p://ns2.hellotvvod.com:9906/1aadb9f831f4475fa617466cfc65ffb3
+Oh!K,P2p://ns2.hellotvvod.com:9906/7320d43f4b154e74a07c2e7af356c70f
+Colors Hindi,P2p://ns2.hellotvvod.com:9906/442c2cac9d12433caec1895b3032be89
+CGTN,P2p://ns2.hellotvvod.com:9906/e8ed48a3d6784b3a877278b2e901f876
+BBC World News,P2p://ns2.hellotvvod.com:9906/f15dda4822324bb4b9395840390e8e46
+CNBC,P2p://ns2.hellotvvod.com:9906/82885eb8d6c4422dbcde6d916126b454
+Bloomberg TV,P2p://ns2.hellotvvod.com:9906/7159f32158a948bd88826275eef9314b
+Cartoon Network,P2p://ns2.hellotvvod.com:9906/a2b31d20412f4277a9b84460545cdfe4
+Nickelodeon,P2p://ns2.hellotvvod.com:9906/86279b335519488890d07cc41cf633ca
+Nick Jr.,P2p://ns2.hellotvvod.com:9906/9da48f721119493b986714f05240a082
+Boomerang,P2p://ns2.hellotvvod.com:9906/c5a10b118a004a11bb573081bdd9ccd0
+AXN亚洲,P2p://ns2.hellotvvod.com:9906/cfe34e74f67844eb9f68f247cb43cd78
+HITS,P2p://ns2.hellotvvod.com:9906/0872358ecd494c9387d6ac21297672f1
+beIN Sports 3,P2p://ns2.hellotvvod.com:9906/a8c5a726618c4c93a6bc59cdd4f5d824
+Mediacorp 5,P2p://ns2.hellotvvod.com:9906/f993484042634846b752da7b5624c53f
+Mediacorp 8,P2p://ns2.hellotvvod.com:9906/b3e1843174ac4b0ab4c531df9748dd01
+Suria,P2p://ns2.hellotvvod.com:9906/15160d43701642bebb86dd6857d94e78
+Vasantham,P2p://ns2.hellotvvod.com:9906/1cf5d0c24eed4eaeb269aeef60c49c15
+CNA,P2p://ns2.hellotvvod.com:9906/b994835c46c2416484dbd239a328db8b
+Mediacorp U,P2p://ns2.hellotvvod.com:9906/aa189482e78641458d17bd5e75876c8e
+卫视电影台,P2p://ns2.hellotvvod.com:9906/8d22d953e4184dbfb3753b093f401769
+Nat Geo Wild,P2p://ns2.hellotvvod.com:9906/8dd3662a489a4a54924614e0df67cb8e
+Arirang,P2p://ns2.hellotvvod.com:9906/b75fb82313a34bc58ab9368461cb5da3
+Euronews,P2p://ns2.hellotvvod.com:9906/25549918a0034a1688f1bcec613e9740
+Fight Sports,P2p://ns2.hellotvvod.com:9906/35c532a0ef5f4a95adbf6e3825ba2ed2
+GEM,P2p://ns2.hellotvvod.com:9906/0682ef72f68a40139971fd20784a310d
+Horse Racing 89,P2p://ns2.hellotvvod.com:9906/8b2902f79ab3440392571c317d87f2ce
+Fox News,P2p://ns2.hellotvvod.com:9906/2b7e962642a94a0483ec5a0c97fb37e7
+beIN Sports,P2p://ns2.hellotvvod.com:9906/278dc4fa10394f8d94c90cf17358baaa
+HGTV居家乐活频道,P2p://ns2.hellotvvod.com:9906/97998ba196964eab9686d9d5b82ed634
+TV5Monde,P2p://ns2.hellotvvod.com:9906/e2be87c58bc64a4da9e00ae61ca146b8
+东森亚洲卫视,P2p://ns2.hellotvvod.com:9906/9de625d88c674d4fa1018a7099024d44
+Thrill,P2p://ns2.hellotvvod.com:9906/cb40f6b156a947638ab47bf7ee97dd97
+Hub都会台,P2p://ns2.hellotvvod.com:9906/b9289ddce1e44efdb0a72647632cab92
+TVBS亚洲,P2p://ns2.hellotvvod.com:9906/b936d3af525e4df6b7a74aa9d343f813
+Hub娱家,P2p://ns2.hellotvvod.com:9906/844cdb5b768447239a27e53cadd31c8b
+NBA,P2p://ns2.hellotvvod.com:9906/5a55e93c42584cc3ab8df81e835d3e20
+beIN Sports 2,P2p://ns2.hellotvvod.com:9906/76e9cd390a4a49d891c6cbdc6c27c0d8
+Hub Sports 1,P2p://ns2.hellotvvod.com:9906/0177bf60e5724284873ec9bda4d3b1bc
+Hub Sports 2,P2p://ns2.hellotvvod.com:9906/e8436701de714381b67d98ed5a539793
+Hub Sports 3,P2p://ns2.hellotvvod.com:9906/de0a79da5c67453582d393e01d48131a
+Horse Racing 88,P2p://ns2.hellotvvod.com:9906/50710b8185d249eab534fce0f6e48a99
 
 轮播,#genre#
 吴孟达,http://txtest-xp2p.p2p.huya.com/src/1388457235-1388457235-5963378416219586560-2777037926-10057-A-0-1.xs
