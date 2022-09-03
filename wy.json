@@ -14,7 +14,7 @@
 	//"lives": [{"group": "redirect","channels": [{"name": "live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9naXRlYS5jb20vcGxheWdheW1lL2JveFJlcG9zaXRvcnkvcmF3L2JyYW5jaC9tYWluL1RWQm94L3p5L3R2L3piLnR4dA=="]}]}],（备份直播源）
 
 	
-	"lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cDovL21hb3lpbmdzaGkuY2MvdHZib3gvemhpYm8vMS50eHQ="]}]}],
+	"lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9jeDM0MjY2Mi5naXRodWIuaW8vcXR0di50eHQ="]}]}],
 	"sites": [	    
 	    {"key":"csp_BBB1","name":"哔哩套餐（B站）","type":3,"api":"csp_Bili","searchable":1,"quickSearch":0,"filterable":1,"ext":"http://刚刚.live/jar2/tvjs/bili.json"},
 		{"key":"csp_SP360","name":"360影视〔官解〕","type":3,"api":"csp_SP360","searchable":1,"quickSearch":1,"filterable":1},
