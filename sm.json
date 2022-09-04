@@ -103,7 +103,7 @@
 {"name":"Json并发","type":2,"url":"Parallel"},
 {"name":"Json轮询","type":2,"url":"Sequence"}
 ],
-"lives":[{"group":"redirect","channels":[{"name":"redirect","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9naXRlYS5jb20vaG91eGlhbi9qc29uL3Jhdy9icmFuY2gvbWFzdGVyL2xpdmVzL0xpdmVBZHVsdC50eHQ="]}]}],
+"lives":[{"group":"redirect","channels":[{"name":"redirect","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9jeDM0MjY2Mi5naXRodWIuaW8vd3kxOC50eHQ="]}]}],
 "spider":"https://gitea.com/houxian/json/raw/branch/master/jar/my_spider.jar",
 "flags":["youku","qq","iqiyi","qiyi","letv","sohu","tudou","pptv","mgtv","wasu","bilibili","renrenmi"],
 "ijk":[
