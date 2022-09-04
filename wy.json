@@ -16,24 +16,24 @@
 	
 	"lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9jeDM0MjY2Mi5naXRodWIuaW8vcXR0di50eHQ="]}]}],
 	"sites": [	    
-	    {"key":"csp_BBB1","name":"乌云哔哩套餐","type":3,"api":"csp_Bili","searchable":1,"quickSearch":0,"filterable":1,"ext":"http://刚刚.live/jar2/tvjs/bili.json"},
-		{"key":"csp_SP360","name":"360影视〔官解〕","type":3,"api":"csp_SP360","searchable":1,"quickSearch":1,"filterable":1},
-		{"key":"csp_Kunyu77","name":"酷云七七（SP）","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1,"jar":"http://maoyingshi.cc/tvbox/云星日记/jar/77.jpg;md5;1b0fae7c99b09c6f66d6c39b114580a9"},
+	    {"key":"csp_BBB1","name":"欢迎你使用乌云接口","type":3,"api":"csp_Bili","searchable":1,"quickSearch":0,"filterable":1,"ext":"http://刚刚.live/jar2/tvjs/bili.json"},
+		{"key":"csp_SP360","name":"🦀360影视","type":3,"api":"csp_SP360","searchable":1,"quickSearch":1,"filterable":1},
+		{"key":"csp_Kunyu77","name":"🦀酷云七七","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1,"jar":"http://maoyingshi.cc/tvbox/云星日记/jar/77.jpg;md5;1b0fae7c99b09c6f66d6c39b114580a9"},
 		
-{"key":"csp_biubiu_完美看看影视","name":"完美看看〔XB〕","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"http://maoyingshi.cc/tvbox/云星日记/sh/MaooXB/完美看看0716.json"},
+{"key":"csp_biubiu_完美看看影视","name":"🦀完美看看","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":0,"ext":"http://maoyingshi.cc/tvbox/云星日记/sh/MaooXB/完美看看0716.json"},
 			{"key": "Ikan",
-			"name": "😄爱看影视",
+			"name": "🦀爱看影视",
 			"type": 3,
 			"api": "csp_IKan",
 			"searchable": 1,
 			"quickSearch": 1,
 			"filterable": 1
 		}, 
-		{"key": "追剧喵","name": "追  剧  喵〔SP〕","type": 3,"api": "csp_ZJMiao","searchable": 1,"quickSearch": 1,"filterable": 1},
-		//{"key":"csp_Kuaikan","name":"快看〔SP〕","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
+		{"key": "追剧喵","name": "🦀追  剧  喵","type": 3,"api": "csp_ZJMiao","searchable": 1,"quickSearch": 1,"filterable": 1},
+		//{"key":"csp_Kuaikan","name":"🦀快看","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
 		//{
 		//	"key": "天堂资源",
-		//	"name": "天堂资源(官解)",
+		//	"name": "🦀天堂资源",
 		//	"type": 1,
 		//	"api": "http://vipmv.cc/api.php/provide/vod/",
 		//	"searchable": 1,
@@ -59,7 +59,7 @@
 		},
 		{
 			"key": "Kuaikan",
-			"name": "🌻乌云影音",
+			"name": "🦀乌云影音",
 			"type": 3,
 			"api": "csp_Kuaikan",
 			"searchable": 1,
@@ -76,7 +76,7 @@
 		},
 		{
 			"key": "Gitcafe",
-			"name": "️小 纸 条（云盘）",
+			"name": "️🦀小 纸 条（云盘）",
 			"type": 3,
 			"api": "csp_Gitcafe",
 			"searchable": 1,
@@ -85,12 +85,12 @@
 			"ext": "4acb3ad2f2254ba1b566279f7cd98ba3"
 		},		
 		{"key":"t4public",
-"name":"T4公共",
+"name":"🦀公共",
 "type":4,            "api":"https://t4.secan.icu/vod?sites=all&ali_token=4acb3ad2f2254ba1b566279f7cd98ba3&timeout=10",
   "searchable":1,
   "quickSearch":1,
   "filterable":0}, 
-  {"key": "T4","name": "T4 爬虫","type": 4,"api": "https://service-59u7dsoa-1308372858.gz.apigw.tencentcs.com/release/vod?ali_token=3781469b13074e4cac1e0e7113e4fa20","searchable": 1,"quickSearch": 1,"filterable": 0},
+  {"key": "T4","name": "🦀爬虫","type": 4,"api": "https://service-59u7dsoa-1308372858.gz.apigw.tencentcs.com/release/vod?ali_token=3781469b13074e4cac1e0e7113e4fa20","searchable": 1,"quickSearch": 1,"filterable": 0},
 //{"key": "T4","name": "T4 搜索","type": 4,"api": "https://t4.secan.icu/vod?sites=all&ali_token=4acb3ad2f2254ba1b566279f7cd98ba3&timeout=10","searchable": 1,"quickSearch": 1,"filterable": 1},
 	//	{"key": "csp_xpath_mjc","name":"美剧虫(XPF)","type":3,"api":"csp_XPathFilter","searchable":1,"quickSearch":1,"filterable":1,"ext":"http://XYQ/美剧虫.json"},
 		{
