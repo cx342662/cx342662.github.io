@@ -99,7 +99,6 @@
 {"key":"利来资源","name":"利来资源(切)","type":0,"api":"http://llzxcj.com/inc/sck.php?ac=videolist","searchable":1,"quickSearch":},
 ],
 
-{
 	"sites": [
 		{
 		  "key": "csp_biubiu_在线之家",
@@ -592,7 +591,7 @@
 			"quickSearch": 1,
 			"filterable": 0
 		}
-          ],
+	],
 
 "parses":[
 {"name":"解析聚合","type":3,"url":"Demo"},
