@@ -96,9 +96,12 @@
 {"key":"久草资源","name":"久草资源(切)","type":0,"api":"http://jcspcj8.com/api?ac=videolist","searchable":1,"quickSearch":1},
 {"key":"富二代资源","name":"富二代资源(切)","type":0,"api":"http://f2dcj6.com/sapi?ac=videolist","searchable":1,"quickSearch":1},
 {"key":"字幕网","name":"字幕网(切)","type":0,"api":"http://zmcj88.com/sapi?ac=videolist","searchable":1,"quickSearch":1},
-{"key":"利来资源","name":"利来资源(切)","type":0,"api":"http://llzxcj.com/inc/sck.php?ac=videolist","searchable":1,"quickSearch":1}
+{"key":"利来资源","name":"利来资源(切)","type":0,"api":"http://llzxcj.com/inc/sck.php?ac=videolist","searchable":1,"quickSearch":},
+],
 
 {
+	"sites": [
+		{
 		  "key": "csp_biubiu_在线之家",
 		  "name": "[默认]防尴尬源",
 		  "type": 3,
@@ -589,8 +592,8 @@
 			"quickSearch": 1,
 			"filterable": 0
 		}
+          ],
 
-],
 "parses":[
 {"name":"解析聚合","type":3,"url":"Demo"},
 {"name":"Json并发","type":2,"url":"Parallel"},
