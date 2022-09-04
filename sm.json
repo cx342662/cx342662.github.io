@@ -1,6 +1,6 @@
 {
 "sites": [
-{"key":"csp_Xiangjiao","name":"new香蕉","type":3,"api":"csp_Xiangjiao","searchable":1,"quickSearch":1,"filterable":1},
+{"key":"csp_Xiangjiao","name":"乌云影音🙅🏻‍♂️🔞","type":3,"api":"csp_Xiangjiao","searchable":1,"quickSearch":1,"filterable":1},
 {"key":"csp_Banana","name":"Banana","type":3,"api":"csp_Banana","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://gitea.com/houxian/json/raw/branch/master/ext/Xiangjiao.txt"},
 {"key":"csp_Banana2","name":"Banana2","type":3,"api":"csp_Banana2","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://gitea.com/houxian/json/raw/branch/master/ext/Xiangjiao.txt"},
 {"key":"csp_biubiu_香蕉视频","name":"香蕉视频(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://gitea.com/houxian/json/raw/branch/master/XBAdult/香蕉视频.json"},
