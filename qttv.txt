@@ -142,6 +142,7 @@ now直播,https://php.52sf.ga/@Curly_MouseIPTV-NOW.php?id=331
 
 4gTV,#genre#
 
+
 达文西频道,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv018&hd=720
 经典卡通台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live022&hd=720
 精选动漫台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live024&hd=720
@@ -154,9 +155,6 @@ i-Fun动漫台,https://4g.52sf.ga/channel.m3u8?fid=litv-ftv15&hd=720
 LiveABC互动英语频道,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live030&hd=720
 MOMO亲子台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live107&hd=720
 Nick Jr. 儿童频道,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live032&hd=720
-
-国会频道1,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv084&hd=720
-国会频道2,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv085&hd=720
 
 爱尔达生活旅游台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live120&hd=720
 滚动力rollor,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live012&hd=720
@@ -171,10 +169,8 @@ Love Nature,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live208&hd=720
 LUXE TV Channel,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live121&hd=720
 Smithsonian Channel,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live088&hd=720
 TV5MONDE STYLE HD 生活时尚,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live122&hd=720
-
 八大精彩台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv034&hd=720
 采昌影剧台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv049&hd=720
-公视戏剧,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv042&hd=720
 华语戏剧台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live005&hd=720
 金光布袋戏,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live144&hd=720
 经典电影台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live021&hd=720
@@ -185,7 +181,6 @@ TV5MONDE STYLE HD 生活时尚,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live122&
 龙华电影台,https://4g.52sf.ga/channel.m3u8?fid=litv-longturn03&hd=720
 龙华日韩台,https://4g.52sf.ga/channel.m3u8?fid=litv-longturn11&hd=720
 龙华戏剧台,https://4g.52sf.ga/channel.m3u8?fid=litv-longturn18&hd=720
-民视影剧台,https://4g.52sf.ga/channel.m3u8?fid=litv-ftv09&hd=720
 视纳华仁纪实频道,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv013&hd=720
 影迷数位电影台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv011&hd=720
 影迷数位纪实台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live023&hd=720
@@ -243,6 +238,34 @@ TVBS欢乐台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv068&hd=720
 GINX Esports TV,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv053&hd=720
 Pet Club TV,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live110&hd=720
 TRACE Sport Stars,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv077&hd=720
+
+爱尔达娱乐台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv070&hd=720
+八大综艺台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv039&hd=720
+大爱电视,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live007&hd=720
+大爱二台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live106&hd=720
+东森购物二台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live046&hd=720
+东森购物一台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live047&hd=720
+好消息,https://4g.52sf.ga/channel.m3u8?fid=litv-ftv16&hd=720
+好消息2台,https://4g.52sf.ga/channel.m3u8?fid=litv-ftv17&hd=720
+华视,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv041&hd=720
+靖天综合台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv046&hd=720
+客家电视台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv043&hd=720
+民视,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv002&hd=720
+民视第一台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv003&hd=720
+民视台湾台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv001&hd=720
+人间卫视,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live008&hd=720
+三立综合台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live207&hd=720
+新唐人亚太台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live050&hd=720
+中视,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv040&hd=720
+中视经典台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv080&hd=720
+中视菁采台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv064&hd=720
+中天综合台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live033&hd=720
+ARIRANG阿里郎频道,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv079&hd=720
+ROCK Extreme,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live138&hd=720
+TechStorm,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live109&hd=720
+
+TVBS精采台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-live086&hd=720
+
 
 爱尔达娱乐台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv070&hd=720
 八大综艺台,https://4g.52sf.ga/channel.m3u8?fid=4gtv-4gtv039&hd=720
