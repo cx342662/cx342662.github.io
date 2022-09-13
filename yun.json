@@ -20,7 +20,7 @@
 	"lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9jeDM0MjY2Mi5naXRodWIuaW8vcXR0di50eHQ="]}]}],
 	"sites":[
 
-{ “key”：“ csp_BBB1 ”，“name”：“欢迎你使用乌云影音”，“type”：3，“api”：“ csp_Bili ”，“searchable”：1，“quickSearch”：0， “filterable ” : 1 , "ext" : " http:
+{"key":"csp_BBB1","name":"🌼云","type":3,"api":"csp_Bili","searchable":1,"quicksearch":0,"filterable":1},
 {"key":"快看","name":"🌼快看loud","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
 {"key":"360_spider","name":"🌼360cloud","api":"csp_SP360","type":3,"filterable":1,"quickSearch":1,"searchable":1, "分机":""},
 {"key":"csp_77","name":"🌼酷云cloud","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1},
