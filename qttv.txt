@@ -1,4 +1,4 @@
-🐿️,#genre#
+cloud🐿️,#genre#
 
 安徽卫视高清,https://php.52sf.ga/@Curly_MouseIPTV-BF.php?id=096
 鞍山新闻综合,https://php.52sf.ga/@Curly_MouseIPTV-BF.php?id=274
@@ -140,8 +140,59 @@ CGTN西班牙语,https://php.52sf.ga/@Curly_MouseIPTV-BF.php?id=306
 now新闻,https://php.52sf.ga/@Curly_MouseIPTV-NOW.php?id=332
 now直播,https://php.52sf.ga/@Curly_MouseIPTV-NOW.php?id=331
 
-台湾,#genre#
+港台,#genre#
 
+爱尔达体育1,rtmp://59.124.75.138/sat/md011
+爱尔达体育2,rtmp://59.124.75.150/sat/md051
+爱尔达体育2,rtmp://59.124.75.138/sat/md051
+爱尔达体育3,rtmp://59.124.75.138/sat/md021
+爱尔达体育3,rtmp://59.124.75.150/sat/md021
+澳门有线 CH1,http://61.244.22.4/ch1/ch1.live/playelist.m3u8
+澳门有线 CH2,http://61.244.22.4/ch2/ch2.live/playelist.m3u8
+大立电视台,http://www.dalitv.com.tw:4568/live/dali/index.m3u8
+东森财经新闻,rtmp://59.124.75.138/sat/tv571
+东森财经新闻,rtmp://59.124.75.150/sat/tv571
+凤凰中文,http://playtv-live.ifeng.com:80/live/06OLEGEGM4G.m3u8
+凤凰资讯,http://playtv-live.ifeng.com:80/live/06OLEEWQKN4.m3u8
+华视,rtmp://59.124.75.138/sat/tv111
+华视,rtmp://59.124.75.150/sat/tv111
+民视,rtmp://59.124.75.150/sat/tv051
+民视,rtmp://59.124.75.138/sat/tv051
+民视新闻台,http://38.64.72.148:80/hls/modn/list/4012/chunklist0.m3u8
+热血时报,http://ptmirror3.passiontimes.hk/hls3/582000/stream.m3u8
+台视,rtmp://59.124.75.138/sat/tv071
+台视,rtmp://59.124.75.150/sat/tv071
+台视新闻台,http://38.64.72.148:80/hls/modn/list/4013/chunklist0.m3u8
+纬来日本,rtmp://59.124.75.138/sat/tv771
+纬来日本,rtmp://59.124.75.150/sat/tv771
+纬来体育,rtmp://59.124.75.150/sat/tv721
+纬来育乐,rtmp://59.124.75.150/sat/tv701
+纬来育乐,rtmp://59.124.75.138/sat/tv701
+香港国际财经台,http://uc6.i-cable.com/live_freedirect/opentvhd002_h.live/playlist.m3u8
+耀才财经台,http://202.69.67.66:443/webcast/bshdlive-pc/playlist.m3u8
+有线财经资讯台,https://api.leonardpark.dev/live/icable/108
+有线新闻台,https://api.leonardpark.dev/live/icable/109
+有线直播新闻台,https://api.leonardpark.dev/live/icable/110
+原住民电视,http://streamipcf.akamaized.net/live/_definst_/live_720/key_b1500.m3u8
+智林体育台,http://58.99.33.16:1935/liveedge17/live_122_3.stream/chunklist.m3u8
+中视,rtmp://59.124.75.150/sat/tv091
+中视,rtmp://59.124.75.138/sat/tv091
+ELEVEN体育二台,rtmp://59.124.75.150/sat/md041
+ELEVEN体育二台,rtmp://59.124.75.150/sat/tv741
+ELEVEN体育二台,rtmp://59.124.75.138/sat/md041
+ELEVEN体育二台,rtmp://59.124.75.138/sat/tv741
+ELEVEN体育一台,rtmp://59.124.75.138/sat/tv731
+ELEVEN体育一台,rtmp://59.124.75.150/sat/tv731
+MoMo综合台,rtmp://59.124.75.138/sat/tv761
+MoMo综合台,rtmp://59.124.75.150/sat/tv761
+Now Sports Prime,http://livetv.dnsfor.me:80/channel.12.m3u8
+Now新闻台,http://livetv.dnsfor.me:80/channel.4.m3u8
+Now直播台,https://api.leonardpark.dev/live/now/331
+TVBS欢乐,rtmp://59.124.75.138/sat/tv421
+TVBS欢乐,rtmp://59.124.75.150/sat/tv421
+TVBS新闻,rtmp://59.124.75.150/sat/tv551
+TVBS新闻,rtmp://59.124.75.138/sat/tv551
+TVBS新闻台,http://38.64.72.148:80/hls/modn/list/4006/chunklist0.m3u8
 80後音樂台,http://stream3.hndt.com/now/SFZeH2cb/playlist.m3u8
 181FM,http://relay.181.fm:8128
 1766店頭音樂,http://livestream.1766.today:1781/live2.mp3
