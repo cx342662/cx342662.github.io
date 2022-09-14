@@ -1,4 +1,4 @@
-cloud🐿️,#genre#
+cloud|🐿️,#genre#
 
 安徽卫视高清,https://php.52sf.ga/@Curly_MouseIPTV-BF.php?id=096
 鞍山新闻综合,https://php.52sf.ga/@Curly_MouseIPTV-BF.php?id=274
@@ -140,7 +140,7 @@ CGTN西班牙语,https://php.52sf.ga/@Curly_MouseIPTV-BF.php?id=306
 now新闻,https://php.52sf.ga/@Curly_MouseIPTV-NOW.php?id=332
 now直播,https://php.52sf.ga/@Curly_MouseIPTV-NOW.php?id=331
 
-港台,#genre#
+cloud|港台,#genre#
 
 爱尔达体育1,rtmp://59.124.75.138/sat/md011
 爱尔达体育2,rtmp://59.124.75.150/sat/md051
@@ -297,7 +297,7 @@ TVBS新聞,rtmp://59.124.75.138/sat/tv551
 WeatherNews,https://movie.mcas.jp/mcas/smil:wn1.smil/master.m3u8
 
 
-轮播,#genre#
+cloud|轮播,#genre#
 
 沈腾,http://txtest-xp2p.p2p.huya.com/src/1524418085-1524418085-6547325820505948160-3048959626-10057-A-0-1.xs
 成龙,http://txtest-xp2p.p2p.huya.com/src/1394565191-1394565191-5989611887484993536-2789253838-10057-A-0-1.xs
@@ -361,7 +361,7 @@ TVB29,http://txtest-xp2p.p2p.huya.com/src/1199563479615-1199563479615-5444317857
 TVB32,http://txtest-xp2p.p2p.huya.com/src/1199563491137-1199563491137-5444367344035954688-2399127105730-10057-A-0-1.xs
 TVB40,http://txtest-xp2p.p2p.huya.com/src/1199561240999-1199561240999-5434703074914467840-2399122605454-10057-A-0-1.xs
 
-央视,#genre#
+cloud|央视,#genre#
 
 
 CHC动作电影,http://111.20.33.93/TVOD/88888893/224/3221226465/index.m3u8
@@ -411,7 +411,7 @@ CGTN纪录国际,http://111.32.169.223/bkhlsliveali-cdn.ysp.cctv.cn/ysp/20101554
 CGTN西班牙语,http://111.32.169.223/bkhlsliveali-cdn.ysp.cctv.cn/ysp/2010152503.m3u8
 CGTN英闻,http://111.32.169.223/bkhlsliveali-cdn.ysp.cctv.cn/ysp/2001656803.m3u8
 
-卫视,#genre#
+cloud|卫视,#genre#
 
 安多卫视,http://111.40.196.28/PLTV/88888888/224/3221225666/index.m3u8?zweimd
 安多卫视,http://111.20.33.70/PLTV/88888893/224/3221226228/index.m3u8
@@ -714,7 +714,7 @@ CGTN英闻,http://111.32.169.223/bkhlsliveali-cdn.ysp.cctv.cn/ysp/2001656803.m3u
 浙江卫视,http://39.134.66.66/PLTV/88888888/224/3221225514/index.m3u8
 浙江卫视,http://39.135.138.60:18890/PLTV/88888910/224/3221225744/index.m3u8
 
-数字,#genre#
+cloud|数字,#genre#
 
 
 黑莓电影,http://39.135.138.59:18890/PLTV/88888910/224/3221225769/index.m3u8
@@ -955,7 +955,7 @@ NewTV怡伴健康 4M1080,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3
 NewTV中国功夫,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225660/index.m3u8
 SiTV动漫秀场,http://shbu.live.bestvcdn.com.cn:8080/live/program/live/dmxchd/4000000/mnf.m3u8
 
-少儿,#genre#
+cloud|少儿,#genre#
 
 
 奥特曼,http://118.26.120.35:55336/tslive/c57_lb_210_600_t10/c57_lb_210_600_t10.m3u8?key=0b292c335e5837e94abe4b846218bbc95
@@ -1057,7 +1057,7 @@ CCTV14,http://123.6.9.146/live/jz-cctv-14/live.m3u8?zyangd
 CCTV14,http://39.137.49.76:8080/PLTV/88888888/224/3221225639/index.m3u8?
 CCTV14,http://219.140.56.34:3333/tsfile/live/0014_1.m3u8
 
-女团,#genre#
+cloud|女团,#genre#
 
 法国时尚,http://lb.streaming.sk/fashiontv/stream/chunklist.m3u8
 法国时尚,http://lb.streaming.sk/fashiontv/stream/chunklist_w1702070444.m3u8
@@ -1257,30 +1257,9 @@ CCTV14,http://219.140.56.34:3333/tsfile/live/0014_1.m3u8
 音乐小石榴,http://txtest-xp2p.p2p.huya.com/src/1199512344405-1199512344405-5224693802798678016-2399024812266-10057-A-0-1.xs
 音乐MusicTop,http://live-edge01.telecentro.net.ar/live/smil:musictop.smil/chunklist_w538311571_b364000_sleng.m3u8
 音乐Retro,http://stream.mediawork.cz/retrotv/retrotvHQ1/playlist.m3u8
-Alan Walker-feat,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg9qiM5gUo-tns8Qc.mp4
-AOA - Excuse Me,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgmozg7AUolaeS8gU.mp4
-Areia Kpop Remix,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg____4gUopsLtrQQ.mp4
-Channel V,http://iptv.tvfix.org/hls/channelv.m3u8
-Dal Shabet,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg3fq95QUoisPxpAM.mp4
-EXID - UP&DOWN,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgzMnG4gUoroOQgQU.mp4
-Four Ladies-Move,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg85Do5QUow-P-wwI.mp4
-Girls Gone Wild,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgjd2w4gUou--ljQE.mp4
-imodeTV,http://juyunlive.juyun.tv/live/24950198.m3u8
-M2音乐,http://live.m2.tv/hls3/stream.m3u8
-MTV僵尸舞,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgw5Cv4gUoiZqZ4wE.mp4
-School - 初恋,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgn-a24gUouMCswQY.mp4
-School-Flashback,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg_PSc4gUoxOLZ3AM.mp4
-Sistar - Give,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgkoe24gUo-OW_mwQ.mp4
-skart-短裙,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAggoG24gUouOfNkAM.mp4
-SNH48剧场,http://112.74.200.9:88/tv000000/m3u8.php?/migu/617432328
-Soda东南亚之旅,https://vdse.bdstatic.com//b6295e9776c2cd347716fc2447e27fac.mp4
-Stellar-Vibrato,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg_O_-4gUo257EIg.mp4
-StickySticky,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgnIS24gUoptqYDQ.mp4
-Trouble Maker,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg2fWv4gUo9JT7DQ.mp4
-Trouble Maker- Now,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgvue_4gUomZa1kQU.mp4
-Trouble Maker- Now,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgvue_4gUomZa1kQU.mp4
 
-音乐,#genre#
+
+cloud|音乐,#genre#
 
 阿果吉曲,http://mobi.kuwo.cn/tmevideo/tme1257647.mp4
 阿果吉曲,http://mobi.kuwo.cn/tmevideo/tme1257695.mp4
@@ -1706,7 +1685,7 @@ StickySticky,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgnIS24gUoptqYDQ.mp4
 Trouble Maker,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg2fWv4gUo9JT7DQ.mp4
 Trouble Maker- Now,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgvue_4gUomZa1kQU.mp4
 
-4K台,#genre#
+cloud|4 K,#genre#
 爱上4K,http://111.20.33.93/TVOD/88888893/224/3221226352/index.m3u8
 纯享4K,http://39.134.115.163:8080/PLTV/88888910/224/3221225786/index.m3u8纯享4K,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225786/index.m3u8
 纯享4K,http://39.135.138.58:18890/PLTV/88888888/224/3221225786/index.m3u8
@@ -1743,7 +1722,7 @@ Love Nature 4K,https://d18dyiwu97wm6q.cloudfront.net/v1/master/3722c60a815c199d9
 苏州4K,http://liveshowbak2.kan0512.com/ksz-norecord/csztv4k_4k.m3u8
 影院4k,http://epg.112114.xyz/douyu/9249162
 Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
-安徽,#genre#
+cloud|安徽,#genre#
 
 安徽导视,http://agsj.appcoo.com:8000/agsj/test/index.m3u8?zanhd
 安庆公共,http://120.210.216.73:8080/ysten-business/live/SD12-576P-aqggpd/1.m3u8?zanhd
@@ -1811,7 +1790,7 @@ Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 岳西综合,rtmp://58.243.4.22:1935/live/zonghe?zanhd
 长丰新闻综合,http://218.23.114.19:1935/live/xinwen/playlist.m3u8?zanhd
 
-北京,#genre#
+cloud|北京,#genre#
 北京财经,http://111.6.126.218/hsplay-360.v.btime.com/live_btime/btv_sn_20170706_s5/index.m3u8?zbeid
 北京冬奥纪实,http://39.135.138.58:18890/PLTV/88888888/224/3221225676/index.m3u8?zbeid
 北京冬奥纪实,http://39.134.65.164/PLTV/88888888/224/3221225670/1.m3u8?zbeid
@@ -1828,7 +1807,8 @@ Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 清华大学电视台,http://live.cic.tsinghua.edu.cn/hls/tsinghuatv.m3u8?zbeid
 石景山有线,http://live.sjsrm.com/bjsjs/sd/live.m3u8?zbeid
 通州电视台,http://pull.dayuntongzhou.com/live/tztv.m3u8?zbeid
-重庆,#genre#
+
+cloud|重庆,#genre#
 北碚综合,http://222.178.181.121:12034/beibei01.m3u8?zzhongqd
 璧山综合,http://222.179.42.129:8181/hls1.m3u8?zzhongqd
 重庆电信IPTV导视,https://zbxclive.cbg.cn/app_2/ls_105.stream/chunklist.m3u8?zzhongqd
@@ -1846,7 +1826,7 @@ Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 武隆综合频道,https://qxlmlive9.cbg.cn/applive/wltvzh/playlist.m3u8?zzhongqd
 潼南综合,http://183.230.184.51:65500/tntv1.m3u8?zzhongqd
 
-福建,#genre#
+cloud|福建,#genre#
 
 德化新闻综合,http://218.106.152.196/lsdream/2LacKP6/1024/live.m3u8?zfud
 福建综合,http://p2.weizan.cn/11844069/132114573749498521/live.m3u8?zfud
@@ -1875,7 +1855,7 @@ Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 漳浦综合,http://220.161.87.62:8090/hls/0/index.m3u8?zfud
 漳州新闻综合,http://31182.hlsplay.aodianyun.com/lms_31182/tv_channel_175.m3u8?zfud
 
-甘肃,#genre#
+cloud|甘肃,#genre#
 白银公共,http://live.bygd.cn/bygg/sd/live.m3u8?zgand
 白银综合,http://live.bygd.cn/byzh/sd/live.m3u8?gansu
 定西公共,https://play.kankanlive.com/live/1645680054929933.m3u8?zgand
@@ -1896,6 +1876,7 @@ Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 夏河综合,http://pili-live-hls.hfmt.net/gntv/xhtv.m3u8?zgand
 舟曲新闻,http://pili-live-hls.hfmt.net/gntv/zqtv.m3u8?zgand
 卓尼综合,http://pili-live-hls.hfmt.net/gntv/zntv.m3u8?zgand
+cloud|广东,#genre#
 点掌财经,http://cclive2.aniu.tv/live/anzb.m3u8?zguangd
 电白视窗,http://gddb.chinashadt.com:1935/live/video2.stream_360p/playlist.m3u8?zguangd
 电白综合,http://gddb.chinashadt.com:1935/live/video1.stream_360p/playlist.m3u8?zguangd
@@ -1934,7 +1915,7 @@ Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 云浮综合,http://dslive.grtn.cn/yfzh/sd/live.m3u8?zguangd
 肇庆综合,http://dslive.grtn.cn/zqzh/sd/live.m3u8?_upt=0ca3e6411630330482?zguangd
 珠海综合,http://dslive.grtn.cn/zhzh/sd/live.m3u8?zguangd
-广西,#genre#
+cloud|广西,#genre#
 巴马综合,https://cdn.gdlive.gdmain.com/live/5ky6zx60.m3u8?zguangxd
 北海经济科教,https://cdn.gdlive.gdmain.com/live/lnyxz495.m3u8?zguangxd
 北海图文,http://njgdmm-wshls.homecdn.com/live/4e8a2.m3u8?zguangxd
@@ -1985,7 +1966,7 @@ Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 昭平综合,https://cdn.gdlive.gdmain.com/live/53xzyvv5.m3u8?zguangxd
 昭平综合,https://live-cdn.gxxw.com/gx/zhaoping/index.m3u8?zguangxd
 资源电视台,https://cdn.gdlive.gdmain.com/live/09oz9ba0.m3u8?zguangxd
-贵州,#genre#
+cloud|贵州,#genre#
 安顺新闻,https://player.juyun.tv/camera/64413134.m3u8?zguizd
 六盘水公共,rtmp://tv.lpsntv.com:1935/channellive/ch2?zguizd
 六盘水综合,rtmp://tv.lpsntv.com:1935/channellive/ch1?zguizd
@@ -2002,7 +1983,7 @@ Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 桃综艺,http://live.strmtzx.cn/stzy/sd/live.m3u8?zguizd
 习水经济,rtmp://ali-live.xishuirm.com/live/app3?zguizd
 习水综合,rtmp://ali-live.xishuirm.com/live/app2?zguizd
-河北,#genre#
+cloud|河北,#genre#
 昌黎综合频道,https://jwliveqxzb.hebyun.com.cn/clzhpd/clzhpd.m3u8?zhebd
 昌黎综合频道,https://jwcdnqx.hebyun.com.cn/live/clzhpd/1500k/tzwj_video.m3u8?zhebd
 邯郸公共频道,http://live.hd.hdbs.cn/video/s10001-2021hdgg/index.m3u8?zhebd
@@ -2029,7 +2010,7 @@ Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 石家庄娱乐,http://pluslive1.sjzntv.cn/yule/playlist.m3u8?zhebd
 邢台综合频道,https://jwplay.hebyun.com.cn/live/xttv/1500k/tzwj_video.m3u8?zhebd
 赵县电视一套,http://hbzx.chinashadt.com:2036/zhibo/stream:zx1.stream_360p/playlist.m3u8?zhebd
-河南,#genre#
+cloud|河南,#genre#
 宝丰综合频道,http://tvpull.dxhmt.cn:9081/tv/10421-1.m3u8?zhend
 邓州新闻,http://tvpull.dxhmt.cn:9081/tv/11381-1.m3u8?zhend
 方城一套,http://tvpull.dxhmt.cn:9081/tv/11322-1.m3u8?zhend
@@ -2086,7 +2067,7 @@ Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 周口教育频道,http://tv.zkxww.com:1935/live3/mp4:ch3-500k/playlist.m3u8?DVR?zhend
 周口图文信息,http://tv.zkxww.com:1935/live4/mp4:ch4-500k/playlist.m3u8?DVR?zhend
 周口新闻综合,http://tv.zkxww.com:1935/live1/mp4:ch1-500k/playlist.m3u8?DVR?zhend
-黑龙江,#genre#
+cloud|黑龙江,#genre#
 大庆公共,http://39.134.65.151/PLTV/88888888/224/3221225734/1.m3u8?zheild
 大庆公共,http://39.134.65.149/PLTV/88888888/224/3221225734/1.m3u8?zheild
 大庆新闻综合,http://39.134.65.151/PLTV/88888888/224/3221225736/1.m3u8?zheild
@@ -2137,7 +2118,7 @@ Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 尚志新闻综合,rtmp://m3.tplay.mlink.tv/mlmlink/90290726;{User-Agent@0151?zheild}
 伊春公共,http://live.yichuntv.com/1501fae792774811b2cd1366a078e666/h264_800k_ts/index.m3u8?type=flv2hls_m3u8?zheild
 伊春综合,http://live.yichuntv.com/e5d7b4b95cf849d79fa3964431dca1f3/h264_800k_ts/index.m3u8?type=flv2hls_m3u8?zheild
-湖北,#genre#
+cloud|湖北,#genre#
 保康新闻综合,http://bktvplay.gdnewmedia.cc/live/bk_xwzh.m3u8?zhubd
 崇阳新闻综合,http://www.cyxw.cn:10500/hls/live.m3u8?zhubd
 江夏经济生活,http://59.175.226.142:280/gb28181/jjsh.m3u8?zhubd
@@ -2156,7 +2137,7 @@ Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 云梦党建农业,http://ymtvplay.gdnewmedia.cc/live/ymdj.m3u8
 云梦综合频道,http://ymtvplay.gdnewmedia.cc/live/ymzh.m3u8?zhubd
 郧阳新闻综合,http://58.19.198.159:2021/hls1.m3u8?zhubd
-湖南,#genre#
+cloud|湖南,#genre#
 保靖时政频道,http://liveplay.rednet.cn/live/baojing_hgs24f.m3u8?zhund
 茶陵新闻综合,http://liveplay.rednet.cn/live/chaling_tv.m3u8?zhund
 茶频道,http://111.20.33.93/PLTV/88888893/224/3221226808/index.m3u8?zhund
@@ -2196,82 +2177,8 @@ Clarity4K,https://d3thiix3tzne5u.cloudfront.net/playlist2160p.m3u8
 益阳新闻综合,http://fms.yyrtv.com:82/hls-live/livepkgr/_definst_/liveevent/yyrtvxwhd210130.m3u8?zhund
 永顺综合频道,http://liveplay.rednet.cn/live/yongshun_tv_55433f.m3u8?zhund
 云溪新闻综合,http://liveplay.rednet.cn/live/yunxi_tv.m3u8?zhund
-虎牙,#genre#
--懒猪 少年包青天美黑之旅,http://txtest-xp2p.p2p.huya.com/src/1394565200-1394565200-5989611926139699200-2789253856-10057-A-0-1-imgplus.xs
-【海绵宝宝】黄方块的爆笑生活~,https://epg.112114.xyz/huya/11352919
-【猫和老鼠】汤姆和杰瑞的故事,https://epg.112114.xyz/huya/11352879
-【七龍珠改】超级赛亚人孙捂空,https://epg.112114.xyz/huya/11601966
-【中华小当家】看的我口水直流～,https://epg.112114.xyz/huya/11342413
-【Blue胖】你看得到我的腿吗,https://epg.112114.xyz/huya/11601963
-阿良说美剧 绝命毒师5-16，老白铲除了所有威胁，最终带着遗憾自首,http://txtest-xp2p.p2p.huya.com/src/1199526558405-1199526558405-5285742467944022016-2399053240266-10057-A-0-1.xs
-北岛南城 产科共同见证生与si,http://txtest-xp2p.p2p.huya.com/src/1524418076-1524418076-6547325781851242496-3048959608-10057-A-0-1.xs
-扁豆看电影 太敢拍了！国产神片，看一部少一部《背靠背，脸对脸》,http://txtest-xp2p.p2p.huya.com/src/94525224-2703099090-11609722189397360640-4587890396-10057-A-0-1.xs
-斌哥漫说 【死神】护廷十三队出现危机！所有队长全被掉包！34,http://txtest-xp2p.p2p.huya.com/src/1199516152253-1199516152253-5241048385426817024-2399032427962-10057-A-0-1.xs
-茶啊二中,https://epg.112114.xyz/huya/11213191
-成龍历险记·社会我阿福乌鸦坐飞机,https://epg.112114.xyz/huya/11352946
-成长学院 中国通史-上下五千年,http://txtest-xp2p.p2p.huya.com/src/1099531752680-1099531752680-86435804515139584-2199063628816-10057-A-0-1.xs
-楚门聊电影 一道闪电劈中火箭，导致火箭意外发射《美剧》天蝎,http://txtest-xp2p.p2p.huya.com/src/2322561713-2322561713-9975326600276738048-4645246882-10057-A-0-1.xs
-大梦电影 《信号100》想知道一百种信号是干嘛的吗，准备好啦,http://txtest-xp2p.p2p.huya.com/src/1199573065336-1199573065336-5485488215626350592-2399146254128-10057-A-0-1.xs
-大侠 快来追！yang光的快乐生活,http://txtest-xp2p.p2p.huya.com/src/1250011-1250011-5368756364640256-3049003162-10057-A-0-1.xs
-大象放映室 豆瓣8.4，你年少时暗恋的那个TA，现在过得怎么样？,http://txtest-xp2p.p2p.huya.com/src/1199531762115-1199531762115-5308092232211890176-2399063647686-10057-A-0-1.xs
-大鱼爱路飞 动画7四战快看系列【21-24】,http://txtest-xp2p.p2p.huya.com/src/1199590495159-1199590495159-5560348735386419200-2399181113774-10057-A-0-1.xs
-呆萌小岳岳 一代枭雄为报父仇励精图治,http://txtest-xp2p.p2p.huya.com/src/1394565206-1394565206-5989611951909502976-2789253868-10057-A-0-1.xs
-缔爵丶小阿杜 《龙珠超动画》一口气看完龙珠超4,http://txtest-xp2p.p2p.huya.com/src/2293333915-2293333915-9849794163732643840-4586791286-10057-A-0-1.xs
-电影最TOP 电影最TOP 151: 被歌唱事业耽误的帝——张学友,http://txtest-xp2p.p2p.huya.com/src/94525224-2672048638-11476361513531342848-3153216706-10057-A-0-1.xs
-二次元控 丐帮帮主乔峰驾到·樊少皇老戏骨,http://txtest-xp2p.p2p.huya.com/src/1423782083-1423782083-6115097483115757568-2847687622-10057-A-0-1.xs
-非凡武林 碧血剑8：袁承志闯荡江湖大战青竹帮，混元功显威，经典之战！,http://txtest-xp2p.p2p.huya.com/src/1279520922847-1279520922847-16817528283867381760-2559041969150-10057-A-0-1.xs
-枫哥视 飞出个未来,http://txtest-xp2p.p2p.huya.com/src/1199579767212-1199579767212-5514272553868197888-2399159657880-10057-A-0-1.xs
-搞笑的一家人,https://epg.112114.xyz/huya/11342402
-狗哥吃火锅 【火影重置版04】力量暴增！佐助获得咒印力量！动画——中忍考试篇02,http://txtest-xp2p.p2p.huya.com/src/1199512574006-1199512574006-5225679931584806912-2399025271468-10057-A-0-1.xs
-喝一碗杏仁茶 动画奥特曼中那些你不知道的秘密！,http://txtest-xp2p.p2p.huya.com/src/1099531752759-1099531752759-86436143817555968-2199063628974-10057-A-0-1.xs
-核桃姐姐 李连杰系列 武打高产王,http://txtest-xp2p.p2p.huya.com/src/1394565196-1394565196-5989611908959830016-2789253848-10057-A-0-1.xs
-糊了的胡萝卜动画 【速看-足球小将16期】南葛遭遇强敌-小翼尝试曲线射门,http://txtest-xp2p.p2p.huya.com/src/2391983955-2391983955-10273492859281735680-4784091366-10057-A-0-1.xs
-虎牙影院 【虎牙影院】沈腾经典片放映,http://txtest-xp2p.p2p.huya.com/src/1524418085-1524418085-6547325820505948160-3048959626-10057-A-0-1.xs
-荒野达人 芈月和她的三个爱人,http://txtest-xp2p.p2p.huya.com/src/1423787884-1423787884-6115122398221041664-2847699224-10057-A-0-1.xs
-會唱歌的小野貓 胡八一胖子沙漠古城找鬼洞,http://txtest-xp2p.p2p.huya.com/src/1423782025-1423782025-6115097234007654400-2847687506-10057-A-0-1.xs
-加班狗 yi馆笑传 oh天长地久,http://txtest-xp2p.p2p.huya.com/src/1449698185-1449698185-6226406293645557760-2847687566-10057-A-0-1.xs
-柯冉冉 龙men·老奸巨猾年掌柜,http://txtest-xp2p.p2p.huya.com/src/1449698121-1449698121-6226406018767650816-2847687516-10057-A-0-1.xs
-蜡笔小新·逗比少年欢乐多,https://epg.112114.xyz/huya/11352970
-老司机 成龍历险记·动画社会我阿福乌鸦坐飞机,http://txtest-xp2p.p2p.huya.com/src/1423787836-1423787836-6115122192062611456-2847699128-10057-A-0-1.xs
-乐高大师赛！创意惊人,https://epg.112114.xyz/huya/26355776
-力哥視 恐怖电影找力哥,http://txtest-xp2p.p2p.huya.com/src/1199557791348-1199557791348-5419886936686854144-2399115706152-10057-A-0-1.xs
-利世-余小二 【龙珠超动画】召开力之大会32,http://txtest-xp2p.p2p.huya.com/src/146501201-146501201-629217867119722496-293125858-10057-A-0-1.xs
-良少聊漫威 《蜘蛛侠英雄远征》，神秘客的阴险狡诈，让蜘蛛侠陷入众矢之地,http://txtest-xp2p.p2p.huya.com/src/1199582668017-1199582668017-5526731416475271168-2399165459490-10057-A-0-1.xs
-灵剑山·试炼开启,https://epg.112114.xyz/huya/11352896
-凌莲 你怎么看待六子哥,http://txtest-xp2p.p2p.huya.com/src/1524439854-1524439854-6547419317649014784-3049003164-10057-A-0-1-imgplus.xs
-领带哥 许三多军营成长史,http://txtest-xp2p.p2p.huya.com/src/1394575555-1394575555-5989656400526049280-2789274566-10057-A-0-1.xs
-路飞带领大家向顶上前进,https://epg.112114.xyz/huya/16913382
-裸奔的蜗牛╮ 康熙·民间私访,http://txtest-xp2p.p2p.huya.com/src/1250011-1250011-5368756364640256-2789274536-10057-A-0-1.xs
-萌新司机 大秦，终章！,http://txtest-xp2p.p2p.huya.com/src/1449698864-1449698864-6226409209928351744-2847687540-10057-A-0-1.xs
-南西视频 动画路飞带领大家向顶上前进,http://txtest-xp2p.p2p.huya.com/src/1199512045291-1199512045291-5223409117950902272-2399024214038-10057-A-0-1.xs
-昵称违规-QQFbPxwM1A 狄仁杰：元芳 你怎么看？,http://txtest-xp2p.p2p.huya.com/src/1423787855-1423787855-6115122273666990080-2847699166-10057-A-0-1.xs
-胖虎噜噜噜 最后的假日,http://txtest-xp2p.p2p.huya.com/src/1199527202658-1199527202658-5288509513509371904-2399054528772-10057-A-0-1.xs
-痞子帅叔叔 【超级交通站】抗ri情景喜剧,http://txtest-xp2p.p2p.huya.com/src/1250011-1250011-5368756364640256-2789274572-10057-A-0-1.xs
-全优少年 【经典】桃园结义三兄弟,http://txtest-xp2p.p2p.huya.com/src/1524439845-1524439845-6547419278994309120-3049003146-10057-A-0-1.xs
-扫地僧 中国百年老字号百草厅,http://txtest-xp2p.p2p.huya.com/src/1250011-1250011-5368756364640256-2789253858-10057-A-0-1.xs
-杀马特死神 看小品·春晚经典非看不可,http://txtest-xp2p.p2p.huya.com/src/1423782031-1423782031-6115097259777458176-2847687518-10057-A-0-1.xs
-摄氏零度 易中天品三国,http://txtest-xp2p.p2p.huya.com/src/1524434067-1524434067-6547394462673272832-3048991590-10057-A-0-1.xs
-实力拔萝卜 搞笑恐怖类 弹幕护体,http://txtest-xp2p.p2p.huya.com/src/1524418070-1524418070-6547325756081438720-3048959596-10057-A-0-1.xs
-瞬间爆炸 身世神秘的范闲书写人生传奇,http://txtest-xp2p.p2p.huya.com/src/1423787860-1423787860-6115122295141826560-2847699176-10057-A-0-1.xs
-铁血真汉子 国产悬疑精选·智商在线,http://txtest-xp2p.p2p.huya.com/src/1250011-1250011-5368756364640256-2789253862-10057-A-0-1.xs
-我是詹密 雍正皇帝的风云一生,http://txtest-xp2p.p2p.huya.com/src/1448738195-1448738195-6222283167991070720-2789274594-10057-A-0-1.xs
-小木子先生丶 纪晓岚-岚宝珅宝的爱恨情仇,http://txtest-xp2p.p2p.huya.com/src/1394565204-1394565204-5989611943319568384-2789253864-10057-A-0-1-imgplus.xs
-小时候玩不起的超帅玩具,https://epg.112114.xyz/huya/26355832
-小妖孽 在哪儿跌倒的还得在哪儿爬起来,http://txtest-xp2p.p2p.huya.com/src/1449584504-1449584504-6225918037468381184-3049003172-10057-A-0-1.xs
-鱼塘塘主张年年 新水hu·在下正是西公子！,http://txtest-xp2p.p2p.huya.com/src/1394565188-1394565188-5989611874600091648-2789253832-10057-A-0-1.xs
-止戈电影 豆瓣8.2，一部黑暗到骨子里的悬疑片，不是所有真相都能被接受,http://txtest-xp2p.p2p.huya.com/src/1199522933703-1199522933703-5270174491396276224-2399045990862-10057-A-0-1.xs
-种瓜得弟弟 夏雪夏雨夏冰雹,http://txtest-xp2p.p2p.huya.com/src/1250011-1250011-5368756364640256-2847687508-10057-A-0-1.xs
-茱麗葉 葛二蛋成长之路,http://txtest-xp2p.p2p.huya.com/src/1524439832-1524439832-6547419223159734272-3049003120-10057-A-0-1.xs
-Adam短发 海贼王我抢了尾田的笔：动画从奥哈拉屠魔令到空白的一百年,http://txtest-xp2p.p2p.huya.com/src/1199532313878-1199532313878-5310462036252033024-2399064751212-10057-A-0-1.xs
-DD-解说 新七龙珠动画，武林大会,http://txtest-xp2p.p2p.huya.com/src/1199588542242-1199588542242-5551961020739616768-2399177207940-10057-A-0-1.xs
-DD-柠檬 僵尸  鬼片经典,http://txtest-xp2p.p2p.huya.com/src/1199582504831-1199582504831-5526030537942106112-2399165133118-10057-A-0-1.xs
-DD-小秋 唐人街探案：你王姐归来吗？搞笑,http://txtest-xp2p.p2p.huya.com/src/1199512561102-1199512561102-5225624509326819328-2399025245660-10057-A-0-1.xs
-HelloKitty 【猫和老鼠动画】汤姆和杰瑞的故事,http://txtest-xp2p.p2p.huya.com/src/1423782038-1423782038-6115097289842229248-2847687532-10057-A-0-1.xs
-No1常在心 搞笑的一家人,http://txtest-xp2p.p2p.huya.com/src/1394565211-1394565211-5989611973384339456-2789253878-10057-A-0-1.xs
-SG-甜橙Q 秋名山89上山 奔驰上树,http://txtest-xp2p.p2p.huya.com/src/1199586792263-1199586792263-5544444918165929984-2399173707982-10057-A-0-1.xs
-Wang-我的女人 康熙大帝的传奇一生,http://txtest-xp2p.p2p.huya.com/src/1448737923-1448737923-6222281999759966208-2847699110-10057-A-0-1.xs
-yao不能停 在外三藏獒，在家三二哈,http://txtest-xp2p.p2p.huya.com/src/1524418106-1524418106-6547325910700261376-3048959668-10057-A-0-1.xs
-吉林,#genre#
+
+cloud|吉林,#genre#
 白山公共,http://stream8.jlntv.cn/baishan2/playlist.m3u8?zjild
 德惠综合,http://stream11.jlntv.cn/dehuitv/sd/live.m3u8?zjild
 东北戏曲频道,http://stream1.jlntv.cn/dbxq/playlist.m3u8?_upt=b234e6c41620650518?zjild
@@ -2309,7 +2216,7 @@ yao不能停 在外三藏獒，在家三二哈,http://txtest-xp2p.p2p.huya.com/s
 长白朝语,http://player2.juyun.tv/tv/11344136.m3u8?zjild
 长白山电视台,http://stream8.jlntv.cn/cbstv/sd/live.m3u8?zjild
 长白新闻综合,http://player2.juyun.tv/tv/11347146.m3u8?zjild
-江苏,#genre#
+cloud|江苏,#genre#
 财富天下,http://dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226350/1.m3u8?zjiangsd
 常熟民生频道,http://play-live.21cs.cn/tv_channel/cstv2.m3u8?auth_key=1608898309-c151073d455d41568920a185f794ce70-0-24c93261a31cc28cf1ae2aced18ae008?zjiangsd
 常熟新闻频道,http://play-live.21cs.cn/tv_channel/cstv1.m3u8?auth_key=1592026485-f871ffb1e3b646d59dba799b1e6f3d61-0-53bbc432233cf87b39a6ec67a23981c3?zjiangsd
@@ -2416,7 +2323,7 @@ yao不能停 在外三藏獒，在家三二哈,http://txtest-xp2p.p2p.huya.com/s
 优漫卡通,http://dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225795/1.m3u8?zjiangsd
 张家港民生频道,http://3gvod.zjgonline.com.cn:1935/live/shehuishenghuo2/playlist.m3u8?zjiangsd
 张家港新闻综合,http://3gvod.zjgonline.com.cn:1935/live/xinwenzonghe2/playlist.m3u8?zjiangsd
-江西,#genre#
+cloud|江西,#genre#
 崇仁综合频道,http://live.mudu.tv/watch/23ejte.m3u8?zjiangxd
 崇义综合频道,http://live.mudu.tv/watch/52dbfz.m3u8?zjiangxd
 东乡区综合频道,http://live.mudu.tv/watch/hnkexb.m3u8?zjiangxd
@@ -2455,7 +2362,7 @@ yao不能停 在外三藏獒，在家三二哈,http://txtest-xp2p.p2p.huya.com/s
 新余新闻综合,http://live02.jxtvcn.com.cn/live-jxtvcn/ganyun_xinyu_hd1.m3u8?zjiangxd
 信丰综合频道,https://hwplay-hls.myun.tv/live/loy679o0.m3u8?zjiangxd
 永新电视一套,http://jxyx.chinashadt.com:2036/live/1002.stream/playlist.m3u8?zjiangxd
-辽宁,#genre#
+cloud|辽宁,#genre#
 朝阳教育,https://play.cytv01.cygbdst.com/live/jypdtv.m3u8?zliaond
 朝阳新闻综合,https://play.cytv01.cygbdst.com/live/cyxwtv.m3u8?zliaond
 大连少儿,rtmp://secret.dltv.cn/dreamStreamCore/q6tZ6Ba/lv500?p?zliaond
@@ -2467,7 +2374,7 @@ yao不能停 在外三藏獒，在家三二哈,http://txtest-xp2p.p2p.huya.com/s
 辽宁北方,http://42.176.185.28:9901/tsfile/live/1011_1.m3u8?zliaond
 辽宁教育青少,http://42.176.185.28:9901/tsfile/live/1008_1.m3u8?zliaond
 辽宁生活,http://42.176.185.28:9901/tsfile/live/1006_1.m3u8?zliaond
-埋堆堆,#genre#
+cloud|埋堆堆,#genre#
 【斗气一族】青涩周星星『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199564062365-1199564062365-5446820749614514176-2399128248186-10057-A-0-1.xs
 阿爷厨房第2季『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199563493375-1199563493375-5444376956172763136-2399127110206-10057-A-0-1.xs
 爱·回家-经典TVB爱情故事『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199563478941-1199563478941-5444314962614812672-2399127081338-10057-A-0-1.xs
@@ -2497,7 +2404,7 @@ yao不能停 在外三藏獒，在家三二哈,http://txtest-xp2p.p2p.huya.com/s
 张卫健版西游记-当蜘蛛精看上了齐天大圣我是靓宝『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561182641-1199561182641-5434452429213007872-2399122488738-10057-A-0-1.xs
 状王宋世杰-第二部-张达明大战黄子华『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561462555-1199561462555-5435654650688700416-2399123048566-10057-A-0-1.xs
 EU超时任务『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561223711-1199561223711-5434628823519854592-2399122570878-10057-A-0-1.xs
-内蒙古,#genre#
+cloud|内蒙古,#genre#
 鄂尔多斯城市生活,http://live.erdszs.org.cn/lsdream/726npBZ/1000/live.m3u8?zneimd
 鄂尔多斯经济服务,http://live.erdszs.org.cn/lsdream/ogvfqcp/1000/live.m3u8?zneimd
 鄂尔多斯蒙语综合,http://live.erdszs.org.cn/lsdream/3lZr8dK/1000/live.m3u8?zneimd
@@ -2515,7 +2422,7 @@ EU超时任务『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561223711-119
 乌兰察布生活,http://pluslive.wrbtv.cn/wrbtv3/sd/live.m3u8?zneimd
 乌兰察布新闻综合,http://pluslive.wrbtv.cn/xwzh/sd/live.m3u8?zneimd
 伊金霍洛新闻,rtmp://cms-play.yjhlnews.cn/live/vedio?zneimd
-宁夏,#genre#
+cloud|宁夏,#genre#
 宁夏公共,http://livepgc.cmc.ningxiahuangheyun.com/pgc/041867befe3dde090202f620ade5b87c.m3u8?txSecret=39373ebcf0d57da2477968efb258e2b7&txTime=6235C9B6;{User-Agent@0151?zningxd}
 宁夏经济,http://livepgc.cmc.ningxiahuangheyun.com/pgc/10717759047cafd37fd87caa5883e9c2.m3u8?txSecret=6a3918f766d0ff625282376ffee72687&txTime=6235C9C1;{User-Agent@0151?zningxd}
 吴忠公共,http://live.kanwz.net/ggpd/sd/live.m3u8?zningxd
@@ -2524,7 +2431,7 @@ EU超时任务『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561223711-119
 银川生活,http://www.ycen.com.cn/ycxw/sd/live.m3u8?zningxd
 银川文体,http://www.ycen.com.cn/ycwt/sd/live.m3u8?zningxd
 中宁综合,https://hls.ningxiahuangheyun.com/live/znzh.m3u8?zningxd
-青海,#genre#
+cloud|青海,#genre#
 安多卫视,http://39.135.138.58:18890/PLTV/88888888/224/3221226195/index.m3u8?zqinghd
 德令哈综合,http://livecdn.dmqhyadmin.com/hls/xjdelingha.m3u8?zqinghd
 海南州藏语,http://live.hnzzzzzdst.com/channel1/sd/live.m3u8?zqinghd
@@ -2536,7 +2443,7 @@ EU超时任务『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561223711-119
 西宁生活服务,https://liveout.xntv.tv/a65jur/90p2i1.m3u8?zqinghd
 西宁新闻综合,https://liveout.xntv.tv/a65jur/96iln2.m3u8?zqinghd
 玉树新闻,http://stream.ysbtv.net/1/sd/live.m3u8?zqinghd
-山东,#genre#
+cloud|山东,#genre#
 滨州公共,http://stream.bzcm.net/1/sd/live.m3u8?shandd
 滨州新闻综合,http://stream.bzcm.net/2/sd/live.m3u8?shandd
 岱岳综合,http://slvedio.slradio.cn/a935908a217711ea8bb000163e0e6522/4D6357B92240C088F3612E43E44B5F1D.m3u8?shandd
@@ -2583,7 +2490,7 @@ EU超时任务『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561223711-119
 枣庄新闻综合,http://stream.zztvzd.com/1/sd/live.m3u8?shandd
 中华美食,http://39.135.138.58:18890/PLTV/88888888/224/3221225924/index.m3u8?shandd
 中华美食,http://39.135.138.58:18890/ysten-businessmobile/live/SD-4000k-576P-zhmeishi/1.m3u8?shandd
-山西,#genre#
+cloud|山西,#genre#
 大宁综合,http://live.daningtv.com/channel1/sd/live.m3u8?zshanxd
 定襄综合,http://lbyzztfe.live.sxmty.com/live/hls/645ff4c60e0a49f0a203abbd73dd8be9/0720e665f10f48e98c9639f4f492fb4a-1.m3u8?zshanxd
 汾西综合,https://qmmqvzoz.live.sxmty.com/live/hls/f24f8a390c084386a564074c9260100c/be3fdf07606145739ab2c4b80fe0136a.m3u8?zshanxd
@@ -2632,7 +2539,7 @@ EU超时任务『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561223711-119
 长治新闻综合,http://111.53.105.2:8084/4b0bcd8509d748358b4450921fc3443b/h264_300k_ts/index.m3u8?type=hls_live_redirect;{User-Agent@0151?zshanxd}
 长子综合,http://zzlive.zzc-media.com:8092/live/xwzh.m3u8?zshanxd
 长子综合,rtmp://zzlive.zzc-media.com/live/xwzh?zshanxd
-陕西,#genre#
+cloud|陕西,#genre#
 宝鸡经济生活,http://live.tvbaoji.com:9600/live/live2/800K/tzwj_video.m3u8?auth=855832649489747@6346@61F67E9317723A9A2760B896A213349B;{User-Agent@0151?zshanxid}
 宝鸡新闻综合,http://live.tvbaoji.com:9600/live/live2/800K/tzwj_video.m3u8?auth=855832649489747@6346@61F67E9317723A9A2760B896A213349B;{User-Agent@0151?zshanxid}
 汉中综合,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226331/index.m3u8?zshanxid
@@ -2644,7 +2551,7 @@ EU超时任务『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561223711-119
 西安新闻综,http://stream2.xiancity.cn/xatv1/sd/live.m3u8?zshanxid
 西安影院,http://stream2.xiancity.cn/xatv4/sd/live.m3u8?zshanxid
 榆林一套,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226377/index.m3u8?zshanxid
-上海,#genre#
+cloud|上海,#genre#
 崇明电视台,https://pili-live-hls.wdit.com.cn/wditlive/c038f4fafbdf4f97ba74c74ad67259b931ee.m3u8?zshangd
 第一财经,http://140.207.241.3:8080/live/program/live/dycjhd/4000000/d1.m3u8?zshangd
 法治天地,http://183.207.255.188/live/program/live/fztd/1300000/mnf.m3u8?zshangd
@@ -2655,7 +2562,7 @@ EU超时任务『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561223711-119
 劲爆体育,http://140.207.241.3:8080/live/program/live/jbtyhd/4000000/d1.m3u8?zshangd
 上海新闻,http://140.207.241.3:8080/live/program/live/xwzhhd/4000000/d1.m3u8?zshangd
 天水公共,http://stream.tstv.cn/tstc938Yn3ggpd/playlist.m3u8?shanghai
-四川,#genre#
+cloud|四川,#genre#
 阿坝文艺,http://ablive.abatv.com.cn:90/live/wypd.m3u8?zsicd
 阿坝综合,http://ablive.abatv.com.cn:90/live/zhpd.m3u8?zsicd
 安州综合,rtmp://live.sctvcloud.com/live/anzhoutv1?zsicd
@@ -2836,12 +2743,12 @@ EU超时任务『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561223711-119
 武清综合,https://tvpull.smartwq.cn/wqlive/convergencemedia/playlist.m3u8?ztianjd
 西青新闻综合,http://221.238.209.44:81/hls/live1.m3u8?ztianjd
 
-西藏,#genre#
+cloud|西藏,#genre#
 拉萨文旅频道,https://live.lasatv.cn/lasatv-whly/whly720x576.m3u8?auth_key=1647761585-0-0-1a613f8be81d1342c6a9415d6b20f8b3;{User-Agent@0151?zxicd}
 西赞藏,http://39.135.32.10:6610/000000001000/xizangstv/1.m3u8?IASHttpSessionId=OTT?zxicd
 西赞藏影文化,rtmp://113.62.170.99:1935/live/tvchannel2?zxicd
 西赞藏语,http://111.40.196.9/PLTV/88888888/224/3221225676/index.m3u8?zxicd
-新疆,#genre#
+cloud|新疆,#genre#
 兵团八师石河子教育,http://124.88.144.73:1935/live/jiaoyu/playlist.m3u8?zxinjd
 兵团八师石河子经济生活,http://124.88.144.73:1935/live/dywt/playlist.m3u8?zxinjd
 兵团八师石河子新闻综合,http://124.88.144.73:1935/live/xwzh/playlist.m3u8?zxinjd
@@ -2872,7 +2779,7 @@ EU超时任务『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561223711-119
 裕民哈语,http://117.190.130.4:8081/out_2/index.m3u8?zxinjd
 裕民汉语,http://117.190.130.4:8081/out_1/index.m3u8?zxinjd
 
-云南,#genre#
+cloud|云南,#genre#
 
 安宁综合,http://tv-live.ynkmit.com/tv/anning.m3u8?txSecret=7528f35fb4b62bd24d55b891899db68f&txTime=632C8680;{User-Agent@0151?zyund}
 宾川一套,http://live.bcrmtzx.com/tv01/sd/live.m3u8?zyund
@@ -2939,7 +2846,7 @@ EU超时任务『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561223711-119
 盈江综合,http://live.ynurl.com/video/s10016-YJTV-2/index.m3u8?zyund
 元阳综合,http://tv.drs.hhtv.cc:8100/channellive/yydst.flv?zyund
 镇康综合,rtmp://hwzbout.yunshicloud.com/cv8ggj/68e3x9?zyund
-浙江,#genre#
+cloud|浙江,#genre#
 北仑电视台,http://play-sh.quklive.com/live/1626327731714170.m3u8?zzhed
 苍南新闻综合,http://l.cztvcloud.com/channels/lantian/SXcangnan1/720p.m3u8?zzhed
 淳安电视台,https://wtmtylive.yunshicloud.com/tbziu1/ad592j.m3u8?zzhed
@@ -3041,7 +2948,7 @@ EU超时任务『埋堆』,http://txtest-xp2p.p2p.huya.com/src/1199561223711-119
 舟山群岛旅游,http://live1.plus.wifizs.cn/qdly/sd/live.m3u8?zzhed
 舟山新闻综合,http://live1.plus.wifizs.cn/xwzh/sd/live.m3u8?zzhed
 诸暨新闻综合,http://l.cztvcloud.com/channels/lantian/SXzhuji3/720p.m3u8?zzhed
-B站,#genre#
+cloud|B站,#genre#
 【海绵宝宝】1-13季24H循环,http://zzy789.xyz/bili.php?id=14495324
 【蜡笔小新】国语高清，24小时直播哦！,http://zzy789.xyz/bili.php?id=10375360
 【蜡笔小新】绝版画质,http://zzy789.xyz/bili.php?id=21570935
@@ -3144,7 +3051,7 @@ B站,#genre#
 一起来看电影吧,http://jxiptv.xn--9kqp7k2rd.com/svip/yy.php?t=1354210357
 英叔全集电影,http://jxiptv.xn--9kqp7k2rd.com/svip/yy.php?t=1353685311
 
-体育,#genre#
+cloud|体育,#genre#
 咪咕NBA,http://39.135.134.67/000000001000/3000000001000028638/index.m3u8
 咪咕NBA,http://39.137.49.76:8080/PLTV/88888888/224/3221226238/index.m3u8?
 咪咕NBA,http://39.134.65.164/PLTV/88888888/224/3221226046/1.m3u8
@@ -3281,7 +3188,7 @@ https://epg.pm/stream/87c9407b2157e5e608009343fc6bd0eecf598dea2f505656a6810d8a40
 3场,http://txtest-xp2p.p2p.huya.com/0-0-0-2199063580968-10057-A-0-1.xs
 4场,http://txtest-xp2p.p2p.huya.com/0-0-0-2199063580970-10057-A-0-1.xs
 斯諾克2,http://txtest-xp2p.p2p.huya.com/1099531739995-1099531739995-86381322854989824-2199063603446-10057-A-0-1.xs
-综合,#genre#
+cloud|综合,#genre#
 江西卫视,http://111.59.189.40:8445/tsfile/live/0010_1.m3u8
 江西卫视,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225705/index.m3u8
 江西卫视,http://local.live.jxtvcn.com.cn/live-jxtv/tv_jxtv1.m3u8
@@ -3387,7 +3294,7 @@ https://epg.pm/stream/87c9407b2157e5e608009343fc6bd0eecf598dea2f505656a6810d8a40
 湖北经视,http://219.140.56.34:3333/tsfile/live/1019_1.m3u8
 湖北综合,http://219.140.56.34:3333/tsfile/live/1020_1.m3u8
 湖北公共,http://219.140.56.34:3333/tsfile/live/1034_1.m3u8
-动物世界,#genre#
+cloud|动物世界,#genre#
 动物世界,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/71d7dce230b74c1b9e35b41e837ffc5f/1200.m3u8
 一片住着熊的森林1,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/2ac6789acc644b55a4df03445561c56b/1200.m3u8
 一片住着熊的森林2,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/969d426187eb46e19fc6839a435fbf0f/1200.m3u8
@@ -3738,7 +3645,7 @@ https://epg.pm/stream/87c9407b2157e5e608009343fc6bd0eecf598dea2f505656a6810d8a40
 鳄鱼王漂流记,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/8da4a365db75455cb0c15bd7681b57fc/1200.m3u8
 黑猩猩的丛林法则,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/05ff5278105445e1a9d5651372faf47e/1200.m3u8
 龙宫里的奇异动物,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/3528163c6b7d4a48b09b24027351ccf7/1200.m3u8
-广播频道,#genre#
+cloud|广播频道,#genre#
 电台广播,http://ngcdn016.cnr.cn/live/gsgljtgb/index.m3u8
 中国之声,http://ngcdn001.cnr.cn/live/zgzs/index.m3u8
 香港之声,http://ngcdn008.cnr.cn/live/xgzs/index.m3u8
