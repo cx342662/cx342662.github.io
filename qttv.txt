@@ -1685,7 +1685,7 @@ StickySticky,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgnIS24gUoptqYDQ.mp4
 Trouble Maker,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg2fWv4gUo9JT7DQ.mp4
 Trouble Maker- Now,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAgvue_4gUomZa1kQU.mp4
 
-cloud|4 K,#genre#
+cloud|4   K,#genre#
 爱上4K,http://111.20.33.93/TVOD/88888893/224/3221226352/index.m3u8
 纯享4K,http://39.134.115.163:8080/PLTV/88888910/224/3221225786/index.m3u8纯享4K,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225786/index.m3u8
 纯享4K,http://39.135.138.58:18890/PLTV/88888888/224/3221225786/index.m3u8
@@ -2964,7 +2964,7 @@ cloud|B站,#genre#
 樱桃小丸子台配国语24小时轮播,http://zzy789.xyz/bili.php?id=23242774
 咱们裸熊！24小时循环直播！,http://zzy789.xyz/bili.php?id=11168667
 中华小当家/中华一番东方零食总部,http://zzy789.xyz/bili.php?id=655291
-斗鱼,#genre#
+cloud|斗鱼,#genre#
 【贝爷影厅】经典科幻动作灾难巨兽,http://epg.112114.xyz/douyu/252802
 【贝爷MAX厅】科幻动作经典喜剧,http://epg.112114.xyz/douyu/4332
 【超级赛亚人】悟吉塔,http://epg.112114.xyz/douyu/7190773
@@ -3018,7 +3018,7 @@ cloud|B站,#genre#
 中二日记搞笑日常更新,http://epg.112114.xyz/douyu/9505575
 最好看的搞笑篮球动漫,http://epg.112114.xyz/douyu/9401305
 最新奇幻电影解说-宇宙无敌韩三金,http://epg.112114.xyz/douyu/3194372
-歪歪,#genre#
+cloud|歪歪,#genre#
 《地下交通站》,http://jxiptv.xn--9kqp7k2rd.com/svip/yy.php?t=29907996
 【电视剧,http://jxiptv.xn--9kqp7k2rd.com/svip/yy.php?t=1453059740
 【电影】超然巨作,http://jxiptv.xn--9kqp7k2rd.com/svip/yy.php?t=26623173
