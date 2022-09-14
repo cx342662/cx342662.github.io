@@ -193,7 +193,158 @@ TVBS欢乐,rtmp://59.124.75.150/sat/tv421
 TVBS新闻,rtmp://59.124.75.150/sat/tv551
 TVBS新闻,rtmp://59.124.75.138/sat/tv551
 TVBS新闻台,http://38.64.72.148:80/hls/modn/list/4006/chunklist0.m3u8
-
+博斯運動II-02,rtmp://59.124.75.150/sat/md051
+潮流音樂台,http://play-radio-stream3.hndt.com/now/Or5au0KN/playlist.m3u8
+大愛二臺,https://pulltv2.wanfudaluye.com/live/tv2.m3u8
+大愛一臺,https://pulltv1.wanfudaluye.com/live/tv1.m3u8
+点掌财经,http://cclive2.aniu.tv/live/anzb.m3u8?zgangd
+点掌财经,http://cclive2.aniu.tv/live/anzb.m3u8
+電音電臺,http://play.redefine.ltd/Stream3/FM1058-3.m3u8
+东森美洲,http://38.64.72.148:80/hls/modn/list/2026/chunklist0.m3u8
+东森美洲卫视,http://38.64.72.148:80/hls/modn/list/2015/chunklist0.m3u8
+東森財經新聞,rtmp://59.124.75.138/sat/tv571
+東森超視,rtmp://59.124.75.138:1935/sat/tv331
+動感音樂台,http://stream3.hndt.com/now/ufjjbZxV/playlist.m3u8
+番薯,http://61.216.67.119:1935/TWHG/E1/chunklist_w705811302.m3u8
+番薯,http://61.216.67.119:1935/TWHG/E1/chunklist_w7058102.m3u8
+古典音樂台,http://play.redefine.ltd/Stream2/FM1058-2.m3u8
+國立教育電臺,http://wowza.ner.gov.tw/live/_definst_/1/playlist.m3u8
+國立教育廣播電臺臺北總台AM台,https://cast.ner.gov.tw/2
+國立教育廣播電臺臺北總台FM台,https://cast.ner.gov.tw/1
+海豚綜合台,http://58.99.33.16:1935/liveedge17/live_077_3.stream/chunklist.m3u8
+好消息电视台1,http://live-350k.streamingfast.net/hls-live/goodtv/_definst_/liveevent/live-ch1-1.m3u8
+好消息电视台2,http://live-350k.streamingfast.net/hls-live/goodtv/_definst_/liveevent/live-ch2-1.m3u8
+紅牛RedBull-01,http://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_1660.m3u8
+紅牛RedBull-02,http://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_1660.m3u8?zshijd
+華視,rtmp://59.124.75.138/sat/tv111
+華視-02,rtmp://59.124.75.150/sat/tv111
+佳音經典音樂網,http://cdn51.ccdntech.com/live-http/_definst_/vod51_Live/ch03/playlist.m3u8
+佳音羅東宜蘭FM90.3,http://cdn51.ccdntech.com/live-http/_definst_/vod51_Live/ch02/chunklist.m3u8
+佳音羅東宜蘭FM90.3,http://cdn51.ccdntech.com/live-http/_definst_/vod51_Live/ch02/playlist.m3u8
+佳音現代音樂網,http://cdn51.ccdntech.com/live-http/_definst_/vod51_Live/ch04/playlist.m3u8
+經典FM,http://stream3.hndt.com/now/C5NvUpwy/playlist.m3u8
+警廣之聲,http://play-radio-stream3.hndt.com/now/prIgXGFo/playlist.m3u8
+靖天卡通,http://50.7.220.74:8278/jingtiancartoon_twn/playlist.m3u8?tid=m1465dab025b5&ct=18335&tsum=ba935e583d90bfbe1d1d9662e9ac600c
+龍華偶像-03,https://epg.pm/stream/c4b865c3c21cc0c5e4f81ccd5803ba27da2725789c2668d0012731a51845559b.m3u8
+龍華偶像-04,https://epg.pm/stream/aa1346690dc5dfe3d48610abe2f69f9b055b26a6fa00f28be58f9a5793585271.m3u8
+龍華戲劇-03,https://epg.pm/stream/ab79e3ed982c587c80bd6cf653bfadfcb77f477f486dd4b5909262473ca86660.m3u8
+美國中文電臺,http://radiokest.serverroom.us:6670/;stream.mp3
+美麗人生,http://58.99.33.16:1935/liveedge17/live_070_3.stream/chunklist.m3u8
+民视新闻,http://38.64.72.148:80/hls/modn/list/4012/chunklist0.m3u8
+民視,rtmp://59.124.75.138/sat/tv051
+民謠 藍調,http://play-radio-stream3.hndt.com/now/XWfN89gh/playlist.m3u8
+民謠音樂台,http://stream3.hndt.com/now/DTK5qc83/playlist.m3u8
+南投新聞網,http://58.99.33.16:1935/liveedge17/live_853_3.stream/chunklist.m3u8
+年代新聞台,http://50.7.220.74:8278/niandainews_twn/playlist.m3u8?tid=m062d2322888417909285&ct=17874&tsum=da6e0908f8df0e85b37f9d93167b9fcd
+彭博財經,https://bloomberg-bloombergtv-1-it.samsung.wurl.com/manifest/playlist.m3u8?$全网4K
+全國治安交通網,http://stream.pbs.gov.tw:1935/live/mp3:PBS/playlist.m3u8
+人間衛視-02,http://61.216.67.119:1935/bltvhd/bltv1/chunklist_w1266569526.m3u8
+儒释道经,https://live.ciguang.tv/live/hdtv.m3u8?auth_key=5216465889-0-0-701a98b03302233fc07fa2ee9e85d39b
+三立戲劇台,http://50.7.220.74:8278/sanlixiju_twn/playlist.m3u8?tid=MA8A4626080046260800&ct=19053&tsum=205a453781925ebfb8996c1db8d4ed59
+台视新闻,http://38.64.72.148:80/hls/modn/list/4013/chunklist1.m3u8
+台视新闻,http://38.64.72.148:80/hls/modn/list/4013/chunklist0.m3u8
+台視,rtmp://59.124.75.138/sat/tv071
+台視-01,rtmp://59.124.75.150/sat/tv071
+台中廣播電臺,http://211.20.119.101:8081
+臺北廣播電臺AM1134,https://stream.ginnet.cloud/live0130lo-yfyo/_definst_/am/playlist.m3u8
+臺北廣播電臺FM93.1,https://stream.ginnet.cloud/live0130lo-yfyo/_definst_/fm/playlist.m3u8
+臺北國際社區廣播電臺,http://live.leanstream.co/ICRTFM-MP3
+臺灣古典音樂台,http://59.120.88.155:8000/live.mp3
+臺灣國立教育廣播電臺,https://cast.ner.gov.tw/1?_t=1628097047202
+臺灣Lounge Radio音樂電臺,http://streaming.radionomy.com/JamendoLounge
+天籟古典,http://stream3.hndt.com/now/MdOpB4zP/playlist.m3u8
+天籟之音 Hi-Fi Radio,http://play-radio-stream3.hndt.com/now/JxkyN5mR/playlist.m3u8
+天籟之音-國風,http://play-radio-stream3.hndt.com/now/UzPxbRaT/playlist.m3u8
+唯心,http://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/chunklist_w1177047531.m3u8
+唯心,http://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/playlist.m3u8
+緯來日本,rtmp://59.124.75.138/sat/tv771
+緯來日本-01,rtmp://59.124.75.138:1935/sat/tv771
+緯來體育,rtmp://59.124.75.138:1935/sat/tv721
+緯來體育,rtmp://59.124.75.138/sat/tv721
+緯來育樂,rtmp://59.124.75.138/sat/tv701
+舞迷心竅,http://play-radio-stream3.hndt.com/now/WBhgSD3A/playlist.m3u8
+香港佛陀,https://js1.amtb.cn/liveedge/_definst_/livetv/playlist.m3u8
+香港佛陀,http://js1.amtb.cn/liveedge/_definst_/livetv/chunklist.m3u8
+孝廉,http://cdn257.ccdntech.com/live-http/_definst_/vod257_Live/live/playlist.m3u8
+心靈音樂館,http://play-radio-stream3.hndt.com/now/AFqvb0VX/playlist.m3u8
+亚洲新闻,http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_4.m3u8
+亞洲旅遊[1280•720],http://50.7.220.74:8278/asiatravel_twn/playlist.m3u8?tid=ma9ec30da9ef3&ct=18335&tsum=ff0bd9207f2c72a8c9bf38464433dc7d
+搖滾天空台,http://stream3.hndt.com/now/SXJtR4M4/playlist.m3u8
+耀才财经,http://202.69.67.66:443/webcast/bshdlive-mobile/playlist.m3u8
+耀才财经,https://v3.mediacast.hk/webcast/bshdlive-pc/playlist.m3u8
+耀才财经,http://202.69.67.66:443/webcast/bshdlive-pc/playlist.m3u8?wowzasessionid=64000
+耀才财经,http://202.69.67.66:443/webcast/bshdlive-pc/playlist.m3u8
+壹新聞,http://stream.nexttv.com.tw/n001/hd/live.m3u8
+遊戲音樂 vgmradio,http://radio.vgmradio.com:8040/stream
+原住民電視台,https://streamipcf.akamaized.net/live/_definst_/smil:live.smil/chunklist_b3000.m3u8?cuac=guest&cref=https%3A%2F%2Fwww.ipcf.org.tw%2F
+員警廣播高雄分台,http://stream.pbs.gov.tw:1935/live/KSS/playlist.m3u8
+員警廣播花蓮分台,http://stream.pbs.gov.tw:1935/live/HLS/playlist.m3u8
+員警廣播台東分台,http://stream.pbs.gov.tw:1935/live/TTS/playlist.m3u8
+員警廣播台南分台,http://stream.pbs.gov.tw:1935/live/TNS/playlist.m3u8
+員警廣播台中分台,http://stream.pbs.gov.tw:1935/live/TCS/playlist.m3u8
+員警廣播臺北分台,http://stream.pbs.gov.tw:1935/live/TPS/playlist.m3u8
+員警廣播新竹分台,http://stream.pbs.gov.tw:1935/live/SCS/playlist.m3u8
+員警廣播宜蘭分台,http://stream.pbs.gov.tw:1935/live/ELS/playlist.m3u8
+雲林新聞網,http://58.99.33.16:1935/liveedge17/live_854_3.stream/chunklist.m3u8
+长城精品,http://38.64.72.148:80/hls/modn/list/4008/chunklist0.m3u8
+智林體育台-01,http://58.99.33.16:1935/liveedge17/live_122_3.stream/chunklist.m3u8
+中廣流行網,http://stream.rcs.revma.com/aw9uqyxy2tzuv
+中廣音樂網,http://stream.rcs.revma.com/ks4vsmg3qtzuv
+中視,rtmp://59.124.75.138/sat/tv091
+中視-02,rtmp://59.124.75.150/sat/tv091
+中視經典[1280•720],http://50.7.220.74:8278/zhongshi_twn/playlist.m3u8?tid=mffe9aaf8765f&ct=18335&tsum=bcdd7a2ce4a5498b1449cb26a01150c0
+中台灣生活網,http://58.99.33.16:1935/liveedge17/live_020_3.stream/chunklist.m3u8
+AsiaFM 亞洲經典台,http://goldfm.cn:8000/goldfm
+CityFM|城市廣播,http://fm929.cityfm.tw:8080/929.mp3
+CityFM|大苗栗廣播,http://fm983.cityfm.tw:8080/983.mp3
+Discovery Asia-02,http://50.7.220.74:8278/discoverytwn_twn/playlist.m3u8?tid=MAAA4463833744638337&ct=18393&tsum=c4bd4c633430327425e073012785525e
+ELEVEN 1-01,rtmp://59.124.75.138:1935/sat/tv731
+ELEVEN 1-03,http://50.7.220.74:8278/golfchannel_twn/playlist.m3u8?tid=MFBF2798068027980680&ct=18393&tsum=d8204023f67120512c75a8882f121120
+ELEVEN 2,rtmp://59.124.75.138:1935/sat/tv741
+ELEVEN 3,http://62.28.71.186:45678/http/192.168.150.137:7137/eleven3
+ELEVEN1,rtmp://59.124.75.138/sat/tv731
+ELEVEN2,rtmp://59.124.75.138/sat/md021
+ELEVEN2,rtmp://59.124.75.138/sat/tv741
+ELTA體育1,rtmp://59.124.75.138/sat/md051
+ELTA體育2,rtmp://59.124.75.138/sat/md011
+ELTA體育3,rtmp://59.124.75.138/sat/md041
+Eurosport 1-03,http://cdnua06.hls.tv/476/hls/061df9d47a31d5ffeeee40bbf3333deb/217/stream.m3u8
+Eurosport 1-07,http://213.172.73.171:8081/nimble_live/1176__Eurosport1_HD/playlist.m3u8
+Eurosport 2-02,https://cdnua06.hls.tv/476/hls/061df9d47a31d5ffeeee40bbf3333deb/219/stream.m3u8
+Eurosport 2-05,http://cdnua06.hls.tv/476/hls/061df9d47a31d5ffeeee40bbf3333deb/218/stream.m3u8
+Eurosport 2-06,http://livetv.mylifeisgood.ml:8880/mfolive.m3u8?media=eurosport2
+GoodTV 爱旅行台,https://live-350k.streamingfast.net/hls-live/goodtv/_definst_/liveevent/live-ch11-2.m3u8
+GoodTV 经典音乐,https://live-350k.streamingfast.net/hls-live/goodtv/_definst_/liveevent/live-ch6-2.m3u8
+GoodTV 真情部落,https://live-350k.streamingfast.net/hls-live/goodtv/_definst_/liveevent/live-ch3-2.m3u8
+GunmaTV,https://movie.mcas.jp/switcher/smil:mcas8.smil/master.m3u8
+HBO溫馨家庭-02,http://50.7.220.74:8278/fyi_twn/playlist.m3u8?tid=MFCF7312728573127285&ct=18393&tsum=bc4d3db9ca83c3765cc75512a1bbbbe3
+HBO原創鉅獻[1280•720],http://50.7.220.74:8278/hbosignature_twn/playlist.m3u8?tid=m48ee99a5dacb15948906&ct=17874&tsum=3d127801d49fa098b4118400117b4fbb
+Hope,https://live-tvhope.cdnvideo.ru/tvhope-pull/tvhope_1/chunklist.m3u8
+KCTV,http://119.77.96.184:1935/chn05/chn05/chunklist_w1306745753.m3u8
+KCTV,http://119.77.96.184:1935/chn05/chn05/chunklist_w644291506.m3u8
+Modern Radio,http://play.redefine.ltd/Stream1/FM1058-1.m3u8
+MOMO綜合,rtmp://59.124.75.138/sat/tv761
+momo綜合台,rtmp://59.124.75.138:1935/sat/tv761
+MTV,http://pluto-live.plutotv.net/egress/chandler/pluto01/live/VIACBS02/master_2400.m3u8
+New Pop Hits,http://rfcmedia.streamguys1.com/newpophitspremium.mp3
+News98新聞台,http://n08.rcs.revma.com/55tyxsy4qtzuv?rj-ttl=5&rj-tok=AAABexIiGVkA-wjPtoygVgeNGQ
+News98新聞台,http://stream.rcs.revma.com/55tyxsy4qtzuv
+NHK Chinese Vision,https://nhkw-zh-hlscomp.akamaized.net/8thz5iufork8wjip/playlist.m3u8
+NHK WORLD,https://nhkwlive-ojp.akamaized.net/hls/live/2003459/nhkwlive-ojp-en/index_4M.m3u8
+RFI法國國際廣播電臺,http://live02.rfi.fr/rfienchinois-64.mp3
+RFI法國國際廣播電臺,http://rfichinois96k.ice.infomaniak.ch/rfichinois-96k.mp3
+SPOTV 2-01,https://apichvod19.seezntv.com/OTM/11990_M.m3u8?AdaptiveType=HLS&SessionID=3438d7e9-3e70-43b1-9fe6-b8290cd25403
+SPOTV 2-02,http://mytv.dothome.co.kr/ch/catv/245.php
+SPOTV-02,http://mytv.dothome.co.kr/ch/catv/244.php
+SPOTV-04,https://bcovlive-a.akamaihd.net/99545824f51f4c1592b35314c6ece3b0/ap-northeast-1/6271486521001/playlist.m3u8
+TVBS-01,http://38.64.72.148:80/hls/modn/list/4005/chunklist0.m3u8
+TVBS-02,http://50.7.220.74:8278/tvbs/playlist.m3u8?tid=MCDC5358450053584500&ct=19193&tsum=e69eb1ebdae5b69772df214072ef9f19
+TVBS歡樂,rtmp://59.124.75.138/sat/tv421
+TVBS歡樂台,rtmp://59.124.75.138:1935/sat/tv421
+TVBS新闻,http://38.64.72.148:80/hls/modn/list/4006/chunklist1.m3u8
+TVBS新闻,http://38.64.72.148:80/hls/modn/list/4006/chunklist0.m3u8
+TVBS新聞,rtmp://59.124.75.138/sat/tv551
+WeatherNews,https://movie.mcas.jp/mcas/smil:wn1.smil/master.m3u8
 
 
 轮播,#genre#
