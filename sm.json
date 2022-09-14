@@ -1,9 +1,8 @@
 {
 "sites": [
 {"key":"csp_Xiangjiao","name":"摆渡传媒🙅🏻‍♂️🔞","type":3,"api":"csp_Xiangjiao","searchable":1,"quickSearch":1,"filterable":1},
-{"key":"csp_Banana","name":"Banana","type":3,"api":"csp_Banana","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://gitea.com/houxian/json/raw/branch/master/ext/Xiangjiao.txt"},
-{"key":"csp_Banana2","name":"Banana2","type":3,"api":"csp_Banana2","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://gitea.com/houxian/json/raw/branch/master/ext/Xiangjiao.txt"},
-{"key":"csp_biubiu_香蕉视频","name":"香蕉视频(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://gitea.com/houxian/json/raw/branch/master/XBAdult/香蕉视频.json"},
+{"key":"csp_Banana","name":"Banana","type":3,"api":"csp_Banana","searchable":1,"quickSearch":1,"filterable":1," ext":"https://gitea.com/houxian/json/raw/branch/master/ext/Xiangjiao.txt"},
+{"key":"csp_biubiu_香蕉视频","name":"香蕉视频(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch"filterable": 1,"ext":"https://gitea.com/houxian/json/raw/branch/master/XBAdult/香蕉视频.json"}
 {"key":"csp_biubiu_爱看影院","name":"爱看影院(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://gitea.com/houxian/json/raw/branch/master/XBAdult/爱看影院.json"},
 {"key":"csp_biubiu_黄仓库","name":"黄仓库(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://gitea.com/houxian/json/raw/branch/master/XBAdult/黄仓库.json"},
 {"key":"csp_biubiu_黄颜仓库","name":"黄颜仓库(XB)","type":3,"api":"csp_XBiubiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://gitea.com/houxian/json/raw/branch/master/XBAdult/黄颜仓库.json"},
