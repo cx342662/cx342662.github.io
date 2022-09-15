@@ -3646,6 +3646,81 @@ cloud|动物世界,#genre#
 黑猩猩的丛林法则,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/05ff5278105445e1a9d5651372faf47e/1200.m3u8
 龙宫里的奇异动物,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/3528163c6b7d4a48b09b24027351ccf7/1200.m3u8
 cloud|广播频道,#genre#
+80後音樂台,http://stream3.hndt.com/now/SFZeH2cb/playlist.m3u8
+181FM,http://relay.181.fm:8128
+1766店頭音樂,http://livestream.1766.today:1781/live2.mp3
+1766私房音樂,http://livestream.1766.today:1769/live1.mp3
+寶島聯播網|寶島新聲,http://stream.superfm99-1.com.tw:8555
+寶島聯播網|大千電臺,http://stream.superfm99-1.com.tw:8554
+潮流音樂台,http://play-radio-stream3.hndt.com/now/Or5au0KN/playlist.m3u8
+電音電臺,http://play.redefine.ltd/Stream3/FM1058-3.m3u8
+動感音樂台,http://stream3.hndt.com/now/ufjjbZxV/playlist.m3u8
+飛碟電臺,http://stream.rcs.revma.com/em90w4aeewzuv
+飛特電台,https://phate.io/listen.ogg
+格萊美音樂台,http://stream3.hndt.com/now/yorSd1X2/playlist.m3u8
+古典音樂台,http://play.redefine.ltd/Stream2/FM1058-2.m3u8
+國立教育電臺,http://wowza.ner.gov.tw/live/_definst_/1/playlist.m3u8
+國立教育廣播電臺臺北總台AM台,https://cast.ner.gov.tw/2
+國立教育廣播電臺臺北總台FM台,https://cast.ner.gov.tw/1
+佳音經典音樂網,http://cdn51.ccdntech.com/live-http/_definst_/vod51_Live/ch03/chunklist.m3u8
+佳音經典音樂網,http://cdn51.ccdntech.com/live-http/_definst_/vod51_Live/ch03/playlist.m3u8
+佳音羅東宜蘭FM90.3,http://cdn51.ccdntech.com/live-http/_definst_/vod51_Live/ch02/chunklist.m3u8
+佳音羅東宜蘭FM90.3,http://cdn51.ccdntech.com/live-http/_definst_/vod51_Live/ch02/playlist.m3u8
+佳音現代音樂網,http://cdn51.ccdntech.com/live-http/_definst_/vod51_Live/ch04/playlist.m3u8
+經典FM,http://stream3.hndt.com/now/C5NvUpwy/playlist.m3u8
+警廣之聲,http://play-radio-stream3.hndt.com/now/prIgXGFo/playlist.m3u8
+美國中文電臺,http://radiokest.serverroom.us:6670/;stream.mp3
+民謠 藍調,http://play-radio-stream3.hndt.com/now/XWfN89gh/playlist.m3u8
+民謠音樂台,http://stream3.hndt.com/now/DTK5qc83/playlist.m3u8
+全國治安交通網,http://stream.pbs.gov.tw:1935/live/mp3:PBS/playlist.m3u8
+台南知音,http://fm971.cityfm.tw:8080/971.mp3
+台中廣播電臺,http://211.20.119.101:8081
+臺北廣播電臺AM1134,https://stream.ginnet.cloud/live0130lo-yfyo/_definst_/am/playlist.m3u8
+臺北廣播電臺FM93.1,https://stream.ginnet.cloud/live0130lo-yfyo/_definst_/fm/playlist.m3u8
+臺北國際社區廣播電臺,http://live.leanstream.co/ICRTFM-MP3
+臺灣古典音樂台,http://59.120.88.155:8000/live.mp3
+臺灣國立教育廣播電臺,https://cast.ner.gov.tw/1?_t=1628097047202
+臺灣Lounge Radio音樂電臺,http://streaming.radionomy.com/JamendoLounge
+天籟古典,http://stream3.hndt.com/now/MdOpB4zP/playlist.m3u8
+天籟之音 Hi-Fi Radio,http://play-radio-stream3.hndt.com/now/JxkyN5mR/playlist.m3u8
+天籟之音-國風,http://play-radio-stream3.hndt.com/now/UzPxbRaT/playlist.m3u8
+舞迷心竅,http://play-radio-stream3.hndt.com/now/WBhgSD3A/playlist.m3u8
+心靈音樂館,http://play-radio-stream3.hndt.com/now/AFqvb0VX/playlist.m3u8
+搖滾天空台,http://stream3.hndt.com/now/SXJtR4M4/playlist.m3u8
+螢火蟲網路台,http://211.149.226.193:8066/1022.mp3
+遊戲音樂 RPGame Radio,http://www.rpgamers.net/radio/radio.m3u
+遊戲音樂 vgmradio,http://radio.vgmradio.com:8040/stream
+員警廣播高雄分台,http://stream.pbs.gov.tw:1935/live/KSS/playlist.m3u8
+員警廣播花蓮分台,http://stream.pbs.gov.tw:1935/live/HLS/playlist.m3u8
+員警廣播台東分台,http://stream.pbs.gov.tw:1935/live/TTS/playlist.m3u8
+員警廣播台南分台,http://stream.pbs.gov.tw:1935/live/TNS/playlist.m3u8
+員警廣播台中分台,http://stream.pbs.gov.tw:1935/live/TCS/playlist.m3u8
+員警廣播臺北分台,http://stream.pbs.gov.tw:1935/live/TPS/playlist.m3u8
+員警廣播新竹分台,http://stream.pbs.gov.tw:1935/live/SCS/playlist.m3u8
+員警廣播宜蘭分台,http://stream.pbs.gov.tw:1935/live/ELS/playlist.m3u8
+中廣流行網,http://stream.rcs.revma.com/aw9uqyxy2tzuv
+中廣新聞網,http://stream.rcs.revma.com/78fm9wyy2tzuv
+中廣音樂網,http://stream.rcs.revma.com/ks4vsmg3qtzuv
+AsiaFM 亞洲經典台,http://goldfm.cn:8000/goldfm
+AsiaFM 亞洲天空台,http://funradio.cn:8000/funradio
+AsiaFM 亞洲音樂台,http://asiafm.hk:8000/asiafm
+AsiaFM HD音樂台,http://asiafm.hk:8000/asiahd
+Big B Radio-韓語流行,http://kpop.bigbradio.net/s
+Big B Radio-日語流行,http://jpop.bigbradio.net/s
+Big B Radio-中文流行,http://cpop.bigbradio.net/s
+Big B Radio-洲流行,http://apop.bigbradio.net/s
+CityFM|城市廣播,http://fm929.cityfm.tw:8080/929.mp3
+CityFM|大苗栗廣播,http://fm983.cityfm.tw:8080/983.mp3
+CityFM|台南之音,http://fm971.cityfm.tw:8080/971.mp3
+CityFM|臺北健康,http://fm901.cityfm.tw:8080/901.mp3
+Modern Radio,http://play.redefine.ltd/Stream1/FM1058-1.m3u8
+New Pop Hits,http://rfcmedia.streamguys1.com/newpophitspremium.mp3
+News98新聞台,http://n08.rcs.revma.com/55tyxsy4qtzuv?rj-ttl=5&rj-tok=AAABexIiGVkA-wjPtoygVgeNGQ
+News98新聞台,http://stream.rcs.revma.com/55tyxsy4qtzuv
+RFI法國國際廣播電臺,http://live02.rfi.fr/rfienchinois-64.mp3
+RFI法國國際廣播電臺,http://rfichinois96k.ice.infomaniak.ch/rfichinois-96k.mp3
+VOA美國之音,http://stream.radiojar.com/7thwu53r92quv
+VOA美國之音,http://voa-11.akacast.akamaistream.net/7/317/322023/v1/ibb.akacast.akamaistream.net/voa-11.mp3
 电台广播,http://ngcdn016.cnr.cn/live/gsgljtgb/index.m3u8
 中国之声,http://ngcdn001.cnr.cn/live/zgzs/index.m3u8
 香港之声,http://ngcdn008.cnr.cn/live/xgzs/index.m3u8
