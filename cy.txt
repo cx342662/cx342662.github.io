@@ -1,4 +1,4 @@
-cloud|🐬
+cloud|🐬,#genre#
 四海钓鱼,http://httplive.slave.bfgd.com.cn:14311/playurl?playtype=live&protocol=http&accesstoken=R6319CF46U3191204BK7841565FI753EC76FP2BF4M3373354V0Z339DDW1712DE7E2FA93FF0&playtoken=31608RMZHGPUCXX10&auth=no&programid=4200000229
 快乐垂钓,http://qspyx.7766.org:9999/tsfile/live/1116_1.m3u8
 
