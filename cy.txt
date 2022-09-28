@@ -757,7 +757,7 @@ CCTV14,http://39.137.49.76:8080/PLTV/88888888/224/3221225639/index.m3u8?
 CCTV14,http://123.6.9.146/live/jz-cctv-14/live.m3u8?zyangd
 CCTV14,http://hwrr.jx.chinamobile.com:8080/PLTV/88888888/224/3221225640/index.m3u8
 
-c女团,#genre#
+女团,#genre#
 
 法国时尚,http://lb.streaming.sk/fashiontv/stream/chunklist.m3u8
 法国时尚,http://lb.streaming.sk/fashiontv/stream/chunklist_w1702070444.m3u8
@@ -960,6 +960,10 @@ c女团,#genre#
 
 
 音乐,#genre#
+点歌, http://epg.112114.xyz/douyu/3186217
+点歌,http://maomao.kandiantv.cn/douyu1.php?id=3186217
+周杰伦,http://epg.112114.xyz/douyu/7537296
+周杰伦,http://maomao.kandiantv.cn/douyu1.php?id=7537296
 
 爱的世界只有你_孟小笛,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg7fi-4gUolta2hgU.mp4
 爱火,https://15799848.s21v.faiusr.com/58/ABUIABA6GAAg_8PE4gUo5KSp4gU.mp4
@@ -3619,7 +3623,92 @@ https://epg.pm/stream/87c9407b2157e5e608009343fc6bd0eecf598dea2f505656a6810d8a40
 鳄鱼王漂流记,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/8da4a365db75455cb0c15bd7681b57fc/1200.m3u8
 黑猩猩的丛林法则,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/05ff5278105445e1a9d5651372faf47e/1200.m3u8
 龙宫里的奇异动物,https://hls.cntv.kcdnvip.com/asp/hls/1200/0303000a/3/default/3528163c6b7d4a48b09b24027351ccf7/1200.m3u8
-广播频道,#genre#
+广播电台,#genre#
+
+500首华语经典,http://ls.qingting.fm/live/3412131.m3u8?bitrate=64
+500首华语经典,http://ls.qingting.fm/live/3412131.m3u8?bitrate=64
+500首华语经典,http://ls.qingting.fm/live/3412131.m3u8?bitrate=64
+
+Coffee House ☕️,http://rfcmedia.streamguys1.com/coffeehousepremium.mp3
+Country Hits,http://rfcmedia.streamguys1.com/countryhitspremium.mp3
+Country Roads,http://rfcmedia.streamguys1.com/countryroadspremium.mp3
+Dance One,http://rfcmedia.streamguys1.com/srdanceone.mp3
+Disco Beats,http://rfcmedia.streamguys1.com/srdiscobeats.mp3
+Modern Radio,http://play.redefine.ltd/Stream1/FM1058-1.m3u8
+Panda Show Radio,https://tunein.streamguys1.com/pandashowradio
+Pop Hits,http://rfcmedia.streamguys1.com/newpophitspremium.mp3
+Progressive Voices,https://tunein.streamguys1.com/progressivevoices
+Relax & Unwind,http://rfcmedia.streamguys1.com/relaxationpremium.mp3
+Smooth Jazz,http://rfcmedia.streamguys1.com/smoothjazzpremium.mp3
+Star Talk Radio,http://tunein.streamguys1.com/StarTalkRadio
+TED Talks,http://tunein.streamguys1.com/TEDTalks
+The Hit List,http://rfcmedia.streamguys1.com/srhitlist.mp3
+Today's Country Hits,http://rfcmedia.streamguys1.com/srtodayscountryhits.mp3
+Today’s Hits,http://rfcmedia.streamguys1.com/MusicPulsePremium.mp3
+V2BEAT,https://stream.v2beat.live/icecast.audio?t=file.mp3
+
+安徽音乐广播,http://satellitepull.cnr.cn/live/wxahyygb/playlist.m3u8
+北京经典969,http://live.funhillrm.com/4/sd/live.m3u8
+常州音乐广播,http://live.cooltv.top/tv/cz.php?id=fm935
+重庆音乐广播,http://satellitepull.cnr.cn/live/wxcqyygb/playlist.m3u8
+楚天音乐广播,http://satellitepull.cnr.cn/live/wx32hubctyygb/playlist.m3u8
+福建汽车音乐广播,http://satellitepull.cnr.cn/live/wx32fjdnyygb/playlist.m3u8
+福州音乐广播,http://live.zohi.tv/audio/s10001-FM893/index.m3u8
+广东音乐之声,http://satellitepull.cnr.cn/live/wxgdyyzs/playlist.m3u8
+广西经济广播·女主播电台,http://satellitepull.cnr.cn/live/wx32gxjjgb/playlist.m3u8
+广西音乐广播,http://satellitepull.cnr.cn/live/wx32gxwygb/playlist.m3u8
+贵州都市广播,http://satellitepull.cnr.cn/live/wx32gzqcgb/playlist.m3u8
+海南音乐广播,http://satellitepull.cnr.cn/live/wxhainyygb/playlist.m3u8
+海峡之声·文化生活广播,mmst://27.151.117.209/996
+杭州城市资讯广播,http://live.cooltv.top/tv/hz.php?id=23
+河北汽车音乐台,https://radio.pull.hebtv.com/live/hebqcyy.m3u8
+河北音乐广播,http://satellitepull.cnr.cn/live/wxhebyygb/playlist.m3u8
+黑龙江音乐广播,http://satellitepull.cnr.cn/live/wx32hljyygb/playlist.m3u8
+湖北经典音乐广播,http://satellitepull.cnr.cn/live/wx32hubyygb/playlist.m3u8
+湖南文艺广播·摩登音乐台,http://satellitepull.cnr.cn/live/wx32hunwygb/playlist.m3u8
+湖南音乐之声·芒果音乐台,http://a.live.hnradio.com/yypd/radio120k_yypd.m3u8?auth_key=1588751172-0-0-d97b858279c1c86650172b9913ea4af2
+惠州音乐广播,http://stream.hztvmg.com/test17/playlist.m3u8
+江苏经典流行音乐广播,http://satellitepull.cnr.cn/live/wx32jsjdlxyy/playlist.m3u8
+江苏音乐广播,http://satellitepull.cnr.cn/live/wx32jsyygb/playlist.m3u8
+江西故事广播·潮台969,mmst://111.75.206.136/myfm969
+江西旅游广播iFM97.4,mmst://111.75.206.136/poyanghu
+开封音乐广播,http://live.dxhmt.cn:9081/gb/10200-4.m3u8
+辽宁经典音乐广播,http://satellitepull.cnr.cn/live/wxlnwygb/playlist.m3u8
+旅游之声,http://starfish.bj.aliyun.007.qingting.fm:8000/fm98.7lvyouzhisheng
+内蒙古音乐之声,http://satellitepull.cnr.cn/live/wx32nmgyygb/playlist.m3u8
+宁波音乐广播,http://ihzlh.linker.cc/ihzlh/zjnb_ts02_986.m3u8
+青岛摩登音乐调频,http://video11.qtv.com.cn/zhibo886/manifest.m3u8
+青岛音乐体育广播,http://video11.qtv.com.cn/zhiboytgb-sd/manifest.m3u8
+青海交通音乐广播,http://satellitepull.cnr.cn/live/wx32qhjtyygb/playlist.m3u8
+厦门音乐广播,http://live2.kxm.xmtv.cn/aac_xmyy/playlist.m3u8
+山东经典音乐广播,http://satellitepull.cnr.cn/live/wxsdshxxgb/playlist.m3u8
+山东音乐广播,http://satellitepull.cnr.cn/live/wxsdyygb/playlist.m3u8
+山西音乐广播,http://live.cooltv.top/tv/cutv.php?id=sxyygb
+陕西青少广播·好听1055,http://satellitepull.cnr.cn/live/wxsxxqcgb/playlist.m3u8
+陕西音乐广播·快乐988,http://satellitepull.cnr.cn/live/wxsxxyygb/playlist.m3u8
+绍兴私家车音乐广播,http://live.shaoxing.com.cn/audio/s10001-xq3/index.m3u8
+深圳飞扬971,http://satellitepull.cnr.cn/live/wxszfy971/playlist.m3u8
+深圳生活942,http://satellitepull.cnr.cn/live/wxszsjcgb/playlist.m3u8
+盛京105.6,http://starfish.bj.aliyun.006.qingting.fm:8000/shenyangjingdianyinle
+石家庄音乐广播,http://pluslive2.sjzntv.cn/aac_yygb/playlist.m3u8
+四川岷江音乐,http://scgctvshow.sctv.com/SRTRADIO/live/minjiangmusic/1.m3u8
+苏州都市音乐广播,http://live.cooltv.top/tv/szradio.php?id=szdsyygb
+太原音乐广播,http://live.cooltv.top/tv/cutv.php?id=tyyygb
+武汉青少广播·M-radio,http://stream.appwuhan.com/sepdzb/sd/live.m3u8
+武汉音乐广播,http://stream.appwuhan.com/yypdzb/sd/live.m3u8
+新疆音乐广播MixFM1039,http://livehywaudio2.chinamcache.com/xjtvs/gb06.m3u8?auth_key=1701481179-0-0-f5b0844d2432e7a4c6458ae7152483ba
+烟台音乐广播,http://live.yantaitv.cn/live/899686f2687848cdbe62b1c27f3b3fc1/111dcc2035384c579cb79a260591a4ea.m3u8
+宜昌音乐生活广播,http://play.3xgd.com/fm/qct.m3u8
+云南音乐广播,http://satellitepull.cnr.cn/live/wxynyygb/playlist.m3u8
+浙江音乐调频·动听968,http://satellitepull.cnr.cn/live/wxzj968/playlist.m3u8
+AsiaFM 亚洲音乐台,http://asiafm.vip:8000/fm965
+CNR经典音乐广播,http://liveop.cctv.cn/hls/jdyygb192/playlist.m3u8
+CNR音乐之声,http://liveop.cctv.cn/hls/yyzs192/playlist.m3u8
+CRI HIT FM (北京),http://satellitepull.cnr.cn/live/wxgjlxyy/playlist.m3u8
+CRI HIT FM (广州),http://satellitepull.cnr.cn/live/wxhitfm/playlist.m3u8
+PlayFM甬江之声,http://netlive.zhxwzx.com/live/1001.m3u8
+WHIZ Radio 海口音乐广播,http://starfish.sz.aliyun.005.qingting.fm:8000/haikouSIMULRADIO
+
 80後音樂台,http://stream3.hndt.com/now/SFZeH2cb/playlist.m3u8
 181FM,http://relay.181.fm:8128
 1766店頭音樂,http://livestream.1766.today:1781/live2.mp3
