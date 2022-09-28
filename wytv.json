@@ -21,7 +21,8 @@
 	
 	"lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9jeDM0MjY2Mi5naXRodWIuaW8vY3kudHh0"]}]}],
 	"sites":[
-//{"key":"csp_BBB1","name":"🌼欢迎使用乌云cloud🌼","type":3,"api":"csp_Bili","searchable":1,"quickSearch":0,"filterable":1,"ext":"http://刚刚.live/jar2/tvjs/bili.json"},
+
+{"key":"csp_BBB","name":"🌸欢迎使用乌云cloud","type":3,"api":"csp_Bili","searchable":1,"quickSearch":0,"filterable":1,"ext":"https://gitcode.net/gginn/ganggang/-/raw/master/bili.json"},
 {"key":"快看","name":"🌼快看loud","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
 {"key":"360_spider","name":"🌼360cloud","api":"csp_SP360","type":3,"filterable":1,"quickSearch":1,"searchable":1, "分机":""},
 {"key":"csp_77","name":"🌼酷云cloud","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1},
@@ -61,14 +62,13 @@
 {"key": "csp_Bliyc","name":"🌸演唱会","type": 3,"api": "csp_Bliyc","searchable": 1,"quickSearch": 1,"filterable": 1,"ext":"https://gitea.com/Yoursmile/TVBox/raw/branch/main/sub/Bliyc.json"},
 {"key": "csp_Blidw","name":"🌸动物世界","type": 3,"api": "csp_Blidw","searchable": 1,"quickSearch": 1,"filterable": 1},
 {"key": "csp_Blixq","name":"🌸戏曲世界","type": 3,"api": "csp_Blixq","searchable": 1,"quickSearch": 1,"filterable": 1},
-{"key":"AliPS","name":"🌸盘搜世界","type":3,"api":"csp_AliPS","searchable":1,"quickSearch":1,"filterable":1,"ext": "4acb3ad2f2254ba1b566279f7cd98ba3"},
-{"key": "Gitcafe","name":"🌸紙條世界","type": 3,"api": "csp_Gitcafe","searchable": 1,"quickSearch": 1,"filterable": 1,"ext": "4acb3ad2f2254ba1b566279f7cd98ba3"},
-{"key":"FindZY","name":"🕊资源","type":3,"api":"csp_Zhaozy","searchable":1,"quickSearch":1,"filterable":1,"ext": "4acb3ad2f2254ba1b566279f7cd98ba3"},
-{"key":"csp_Yiso","name":"🕊易搜","type":3,"api":"csp_Yiso","searchable":1,"quickSearch":1,"filterable":0,"ext":"4acb3ad2f2254ba1b566279f7cd98ba3"},
-{"key": "push_agent","name":"🕊推送","type":3,"api":"csp_PushAgent","searchable":0,"quickSearch":0,"filterable":0,"ext": "4acb3ad2f2254ba1b566279f7cd98ba3"},
-{"key":"csp_xpath_yinfans","name":"🕊音范丝","type":3,"api":"csp_XPath","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://gitea.com/Yoursmile/TVBox/raw/branch/main/sub/yinfans.json"},
-{"key": "csp_XYQBiu_聚合短视频","name":"🦄聚合","type":3,"api":"csp_XYQBiu","searchable":0,"quickSearch":0,"filterable":0,"ext":"https://gitea.com/Yoursmile/TVBox/raw/branch/main/sub/dsp.json"},
-{"key": "csp_biubiu_ting","name": "🦄听书","type": 3,"api": "csp_XBiubiu","searchable": 1,"quickSearch": 1,"filterable": 0,"ext": "https://gitea.com/Yoursmile/TVBox/raw/branch/main/sub/tingshu.json"},
+
+{"key":"csp_GitCafe","name":"小纸条┃云盘","type":3,"api":"csp_Gitcafe","playerType":1,"searchable":1,"quickSearch":1,"filterable":1,"ext":"https://gitcode.net/gginn/ganggang/-/raw/master/alitoken.json"},
+{"key":"Yisou","name":"易搜┃云盘搜索","type":3,"api":"csp_Yiso","playerType":1,"searchable":1,"quickSearch":1,"filterable":0,"ext":"https://gitcode.net/gginn/ganggang/-/raw/master/alitoken.json"},
+{"key":"Alips","name":"喵搜┃云盘搜索","type":3,"api":"csp_AliPS","playerType":1,"searchable":1,"quickSearch":1,"filterable":0,"ext":"https://gitcode.net/gginn/ganggang/-/raw/master/alitoken.json"},
+{"key":"Zhaozy","name":"找资源┃云盘搜索","type":3,"api":"csp_Zhaozy","playerType":1,"searchable":1,"quickSearch":1,"filterable":0,"ext":"https://gitcode.net/gginn/ganggang/-/raw/master/alitoken.json"},
+{"key":"Upyunso","name":"云搜┃云盘搜索","type":3,"api":"csp_Upyunso","playerType":1,"searchable":1,"quickSearch":1,"filterable":0,"ext":"https://gitcode.net/gginn/ganggang/-/raw/master/alitoken.json"},
+
 {"key": "csp_XYQBiu_虎牙","name":"🐯虎牙","type":3,"api":"csp_XYQBiu","searchable":0,"quickSearch":0,"filterable":0,"ext":"https://gitea.com/Yoursmile/TVBox/raw/branch/main/sub/hy.json"},
 {"key":"csp_biubiu_斗鱼","name":"🐬斗鱼","type":3,"api":"csp_XBiubiu","searchable":0,"quickSearch":0,"filterable":0,"ext":"https://freed.yuanhsing.cf/TVBox/MaooXB2/斗鱼.json"},
 {"key":"csp_xpath_kuqimv","name":"🍻酷奇MV","type":3,"api":"csp_XPath","searchable":0,"quickSearch":0,"filterable":0,"ext":"https://freed.yuanhsing.cf/TVBox/MaooXP/kuqimv.json"},
