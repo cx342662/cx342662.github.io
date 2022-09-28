@@ -13,14 +13,15 @@
 
        //"spider":"https://raw.iqiq.io/liu673cn/box/main/sub/jar/209.jar;md5;18D26913107F18900630BF4CB1553ADB",
 
-	"wallpaper": "http://刚刚.live/图",
+         "wallpaper":"https://picsum.photos/1280/720/?blur=10",
+	//"wallpaper": "http://刚刚.live/图",
 	//"lives": [{"group":"redirect","channels":[{"name":"redirect","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9jeDM0MjY2Mi5naXRodWIuaW8vcXR0di50eHQ="]}]}],
 	//"lives": [{"group": "redirect","channels": [{"name": "live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9naXRlYS5jb20vcGxheWdheW1lL2JveFJlcG9zaXRvcnkvcmF3L2JyYW5jaC9tYWluL1RWQm94L3p5L3R2L3piLnR4dA=="]}]}],（备份直播源）
 
 	
 	"lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9jeDM0MjY2Mi5naXRodWIuaW8vY3kudHh0"]}]}],
 	"sites":[
-{"key":"csp_BBB1","name":"🌼欢迎使用乌云cloud🌼","type":3,"api":"csp_Bili","searchable":1,"quickSearch":0,"filterable":1,"ext":"http://刚刚.live/jar2/tvjs/bili.json"},
+//{"key":"csp_BBB1","name":"🌼欢迎使用乌云cloud🌼","type":3,"api":"csp_Bili","searchable":1,"quickSearch":0,"filterable":1,"ext":"http://刚刚.live/jar2/tvjs/bili.json"},
 {"key":"快看","name":"🌼快看loud","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
 {"key":"360_spider","name":"🌼360cloud","api":"csp_SP360","type":3,"filterable":1,"quickSearch":1,"searchable":1, "分机":""},
 {"key":"csp_77","name":"🌼酷云cloud","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1},
