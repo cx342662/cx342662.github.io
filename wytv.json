@@ -10,11 +10,11 @@
           "spider": "http://刚刚.live/jar2/gg0925.jar", 
 
        //"spider":"https://raw.iqiq.io/liu673cn/box/main/sub/jar/209.jar;md5;18D26913107F18900630BF4CB1553ADB",
-      // "spider":"https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC0926w.jar",
+      //"spider":"https://agit.ai/Yoursmile7/TVBox/raw/branch/master/XC0926w.jar",
    
 
-         "wallpaper":"https://www.dmoe.cc/random.php",
-	//"wallpaper": "http://刚刚.live/图",
+         //"wallpaper":"https://www.dmoe.cc/random.php",
+	"wallpaper": "http://刚刚.live/图",
 	//"lives": [{"group":"redirect","channels":[{"name":"redirect","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9jeDM0MjY2Mi5naXRodWIuaW8vcXR0di50eHQ="]}]}],
 	//"lives": [{"group": "redirect","channels": [{"name": "live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9naXRlYS5jb20vcGxheWdheW1lL2JveFJlcG9zaXRvcnkvcmF3L2JyYW5jaC9tYWluL1RWQm94L3p5L3R2L3piLnR4dA=="]}]}],（备份直播源）
 
