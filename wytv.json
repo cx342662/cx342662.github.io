@@ -24,7 +24,7 @@
 	"sites":[
 
 	    
-{"key":"csp_BBB1","name":"欢迎你使用cloud","type":3,"api":"csp_Bili","searchable":1,"quickSearch":0,"filterable":1,"ext":"http://刚刚.live/jar2/tvjs/bili.json"},
+{"key":"csp_BBB1","name":"欢迎你使用cloud","type":3,"api":"csp_Bili","searchable":1,"quickSearch":0,"filterable":1,"ext":"https://raw.iqiq.io/liu673cn/box/main/sub/ext/B站.txt"},
 
 {"key":"快看","name":"🌼快看loud","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
 {"key":"360_spider","name":"🌼360cloud","api":"csp_SP360","type":3,"filterable":1,"quickSearch":1,"searchable":1, "分机":""},
