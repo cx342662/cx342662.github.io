@@ -3,7 +3,6 @@
 // "spider":"http://dlj.bz/St6zGs",
 "wallpaper": "https://gitea.com/owen10086/tvbox/raw/branch/main/W-.png",
 
-"lives":[{"group":"redirect","channels":[{"name":"redirect","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9jeDM0MjY2Mi5naXRodWIuaW8vd3kxOC50eHQ="]}]}],
 
   "lives": [
     {
@@ -22,6 +21,8 @@
 
 //live source http//maoyingshi.cc/tvbox/zhibo/18.txt
 //"lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cC8vbWFveWluZ3NoaS5jYy90dmJveC96aGliby8xOC50eHQ="]}]}],
+
+"lives":[{"group":"redirect","channels":[{"name":"redirect","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9jeDM0MjY2Mi5naXRodWIuaW8vd3kxOC50eHQ="]}]}],
 
 //Type 0-xml 1-json 2-爬虫源 3-自定义爬虫 4-服务器爬虫, 
 //3需要jar for api, 
