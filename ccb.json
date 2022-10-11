@@ -33,18 +33,20 @@
 //Type 0-xml 1-json 2-爬虫源 3-自定义爬虫 4-服务器爬虫, 
 //官方解析 end with v, "playUrl": "filename url="
 
- {"key":"00CK","name":"摆渡传媒（翻）","type":1,"api":"https://ckzy.me/api.php/provide/vod/","searchable":1,"quickSearch":1,"playUrl":"https://ckm3u8.cc/?url="},
- {"key":"00艾旦影视","name":"🐝艾旦","type":1,"api":"https://lovedan.net/api.php/provide/vod/","searchable":1,"quickSearch":1},
 
  {
   "key": "00老鸭资源",
-  "name": "🐝老鸭v",
+  "name": "摆渡传媒（翻）",
   "type": 1,
   "api": "https://api.apilyzy.com/api.php/provide/vod/",
   "playUrl":"https://player.77lehuo.com/aliplayer/?url=",
   "searchable": 1,
   "quickSearch": 1
  },
+
+ {"key":"00CK","name":"摆渡传媒（翻）","type":1,"api":"https://ckzy.me/api.php/provide/vod/","searchable":1,"quickSearch":1,"playUrl":"https://ckm3u8.cc/?url="},
+ {"key":"00艾旦影视","name":"🐝艾旦","type":1,"api":"https://lovedan.net/api.php/provide/vod/","searchable":1,"quickSearch":1},
+
  {
   "key": "00秀色资源",
   "name": "🐝秀色v",
