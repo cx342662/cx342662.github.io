@@ -27,6 +27,21 @@
 {"key":"csp_BBB1","name":"🌼B 站","type":3,"api":"csp_Bili","searchable":1,"quickSearch":0,"filterable":1,"ext":"https://raw.iqiq.io/liu673cn/box/main/sub/ext/B站.txt"},
 
 {"key":"快看","name":"🌼快看loud","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
+
+{"key":"csp_apple","name":"🍎主打","type":3,"api":"csp_LiteApple","playerType":1,"searchable":1,"quickSearch":1,"filterable":1},  
+{ 
+ "key":"csp_XYQHiker_氢视频", 
+ "name": "氢视频", 
+ "type":3, 
+ "api":"csp_XYQHiker", 
+ "searchable":1, 
+ "quickSearch":1, 
+ "filterable":1, 
+"ext":"https://php.dawwiqingyi.repl.co/h/qsp.json", 
+ "jar": "https://php.dawwiqingyi.repl.co/jar/0915.jar" 
+ },  
+ {"key":"csp_SP293","name":"293","type":3,"api":"csp_SP293","searchable":1,"quickSearch":1,"filterable":1}, 
+
 {"key":"360_spider","name":"🌼360cloud","api":"csp_SP360","type":3,"filterable":1,"quickSearch":1,"searchable":1, "分机":""},
 {"key":"csp_77","name":"🌼酷云cloud","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1},
 {"key":"小苹果","name":"🌼苹果cloud","type":3,"api":"csp_LiteApple","searchable":1,"quickSearch":1,"filterable":1},
