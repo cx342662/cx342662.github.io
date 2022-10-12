@@ -27,7 +27,16 @@
 {"key":"csp_BBB1","name":"🐈B 站","type":3,"api":"csp_Bili","searchable":1,"quickSearch":0,"filterable":1,"ext":"https://raw.iqiq.io/liu673cn/box/main/sub/ext/B站.txt"},
 
 {"key":"快看","name":"🌼快看loud","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
-
+{
+            "key" : "py_Bzjc",
+            "name" : "B站教程",
+            "type" : 3,
+            "api" : "py_Bzjc",
+            "searchable" : 1,
+            "quickSearch" : 1,
+            "filterable" : 1,
+            "ext" : "https://agit.ai/138001380000/MHQTV/raw/branch/master/py/py_Bzjc.py"
+        },
 {"key":"csp_apple","name":"🍎主打","type":3,"api":"csp_LiteApple","playerType":1,"searchable":1,"quickSearch":1,"filterable":1},  
 { 
  "key":"csp_XYQHiker_氢视频", 
