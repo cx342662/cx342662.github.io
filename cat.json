@@ -134,7 +134,7 @@
  "jar": "https://php.dawwiqingyi.repl.co/jar/0915.jar" 
  },  
  {"key":"csp_SP293","name":"293","type":3,"api":"csp_SP293","searchable":1,"quickSearch":1,"filterable":1}, 
-{"key":"csp_kuaikan","name":"👀快看┃SP","type":3,"api":"csp_Kuaikan","playerType":1,"searchable":1,"quickSearch":1,"filterable":1,"ext":"https://wuyun999.github.io/wuyun/kk.json"},
+{"key":"快看影视","name":"👀快看┃SP","type":3,"api":"csp_Kuaikan","playerType":1,"searchable":1,"quickSearch":1,"filterable":1,"ext":"https://wuyun999.github.io/wuyun/kk.json"},
 //{"key":"csp_KanSJ","name":"🗽看视界┃神器妹推介","api":"csp_KanSJ","type":3,"filterable":1,"quickSearch":1,"searchable":1},
 {"key":"csp_Nmys","name":"🌾农民┃SP","type":3,"api":"csp_Nmys","searchable":1,"quickSearch":1,"filterable":1,"ext":"./json/nmys.json"},
 {"key":"csp_XBiu_回响","name":"回响影音","type":3,"api":"csp_XBiu","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://hxys.tv/vodshow/{cateId}--------{catePg}---.html"},
