@@ -35,7 +35,7 @@
 	"lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9jeDM0MjY2Mi5naXRodWIuaW8vY3kudHh0"]}]}],
 	"sites":[
 
-{"key":"快看","name":"欢迎使用cat⭐️","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1, "ext":"https://wuyun999.github.io/wuyun/kk.json"},
+{"key":"快看","name":"欢迎使用cat⭐️","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1,"ext":"https://wuyun999.github.io/wuyun/kk.json"},
 {   "key":"360_spider",
      "name":"🔴官方同步360",
       "api":"csp_SP360",
