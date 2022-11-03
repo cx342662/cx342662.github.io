@@ -38,15 +38,13 @@
 {"key":"快看","name":"欢迎使用cat⭐️","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
 
 {
-      "key": "Cokemv",
-      "name": "可乐",
+      "key": "紙條",
+      "name": "紙條",
       "type": 3,
-      "api": "csp_Cokemv",
+      "api": "csp_Paper",
       "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1
+      "ext": "339541c49aab4f6c878119930894f7ab"
     },
-
 {
       "key": "Czsapp",
       "name": "厂长",
