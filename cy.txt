@@ -1,5 +1,5 @@
 港台,#genre#
-
+卫视卡式台,https://cn-sccd-ct-01-10.bilivideo.com/live-bvc/277260/live_372775317_46465575_1500/index.m3u8
 澳门莲花,http://anren.live/HK/BiIOU11uLA.m3u8
 澳门Macau,http://103.233.191.134:1935/ch3/ch3.live/playlist.m3u8
 澳门Macau,http://61.244.22.4/ch3/ch3.live/chunklist_w1228316132.m3u8
