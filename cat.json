@@ -39,7 +39,7 @@
 {"key":"快看","name":"欢迎使用cat⭐️","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
 
 {
-      "key": "Czsapp",
+      "key": "csp_Czsapp",
       "name": "厂长",
       "type": 3,
       "api": "csp_Czsapp",
