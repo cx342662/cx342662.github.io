@@ -490,11 +490,7 @@
  		"name": "GGTV聚合",
  		"type": 1,
  		"url": "https://play.fuqizhishi.com/juhe/API.php?appkey=caijijuhe220902&url="
- 	}, {
- 		"name": "云you",
- 		"type": 1,
- 		"url": "http://chaloli.cn/home/api?type=ys&uid=1942949&key=bfijlnovBCEGHJTV09&url="
- 	}, {
+ 	},{
  		"name": "未知",
  		"type": 1,
  		"url": "http://api.ckflv.cn/?url="
@@ -515,7 +511,6 @@
  	},
 
 {"name":"365","type":0,"url":"https://chaxun.truechat365.com/?url=","ext":{"flag":["qq","腾讯","qiyi","iqiyi","爱奇艺","奇艺","youku","优酷","mgtv","芒果","letv","乐视","pptv","PPTV","sohu","bilibili","哔哩哔哩","哔哩"]}},
-{"name":"Yoyo1","type":1,"url":"https://json.legendwhb.cn/json.php/?url="},
 {"name":"vip视频在线解析1","type":1,"url":"https://vip.agoni.top/?url="},
 {"name":"PPJ解析","type":1,"url":"https://jx.ppjbk.cn/?url="},
 {"name":"bz2","type":0,"url":"https://h5.freejson.xyz/player/?url="},
