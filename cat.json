@@ -38,7 +38,6 @@
 
 {"key":"快看","name":"欢迎使用cat⭐️","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
 
-{"key":"dr_豆瓣","name":"🔍豆瓣荐片(drpy)","type":3,"api":"https://agit.ai/Yoursmile7/TVBox/raw/branch/master/js/lib/drpy.min.js","searchable":2,"quickSearch":0,"filterable":0,"ext":"https://agit.ai/Yoursmile7/TVBox/raw/branch/master/js/%e8%b1%86%e7%93%a3.js"},
 
 {   "key":"360_spider",
      "name":"🔴官方同步360",
@@ -120,8 +119,6 @@
       "quickSearch": 1,
       "filterable": 0
     },
-{"key":"douban","name":"🔍豆瓣荐片(T4)","type":4,"api":"https://service-la7b1xlw-1308372858.gz.apigw.tencentcs.com/release/vod","searchable":1,"quickSearch":1,"filterable":0},
-{"key":"T4_douban","name":"🔍影视推荐(T4)","type":4,"api":"http://top.fuqizhishi.com/vod","searchable":1,"quickSearch":1,"filterable":1},
 {"key":"csp_Nkdy","name":"⏺南柯","type":3,"api":"csp_Nkdy","searchable":1,"quickSearch":1,"filterable":1},
 {"key":"Zjdr","name":"🌐追剧达人","type":3,"api":"csp_Zjdr","searchable":1,"quickSearch":1,"filterable":1},
 {"key":"csp_Ysgc","name":"🎥影视工厂","type":3,"api":"csp_Ysgc","searchable":1,"quickSearch":1,"filterable":1},
