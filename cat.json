@@ -38,6 +38,7 @@
 
 {"key":"快看","name":"欢迎使用cat⭐️","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
 
+{"key":"csp_xBPQ_素白白","name":"❤️素白白","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://agit.ai/Yoursmile7/TVBox/raw/branch/master/sub/sbb.json"},
 
 {   "key":"360_spider",
      "name":"🔴官方同步360",
@@ -54,14 +55,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1},
-    {
-      "key": "csp_QQ",
-      "name": "🔴官方同步腾讯️",
-      "type": 3,
-      "api": "csp_QQ",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1},
+   
     
     {
       "key": "csp_MGTV",
