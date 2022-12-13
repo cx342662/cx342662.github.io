@@ -40,31 +40,6 @@
 
 {"key":"csp_xBPQ_素白白","name":"❤️素白白","type":3,"api":"csp_xBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://agit.ai/Yoursmile7/TVBox/raw/branch/master/sub/sbb.json"},
 
-{   "key":"360_spider",
-     "name":"🔴官方同步360",
-      "api":"csp_SP360",
-      "type":3,
-      "filterable":1,
-      "quickSearch":1,
-      "searchable":1  },
-       {
-      "key": "csp_IQIYI",
-      "name": "🔴官方同步奇艺",
-      "type": 3,
-      "api": "csp_IQIYI",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1},
-   
-    
-    {
-      "key": "csp_MGTV",
-      "name": "🔴官方同步芒果️",
-      "type": 3,
-      "api": "csp_MGTV",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1},
    {
       "key": "江湖",
       "name": "🔴官方采集江湖️",
