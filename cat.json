@@ -2,7 +2,7 @@
 
 {
 
-"lives":[{"name":"直播","type":0,"url":"https://bit.ly/wy-aptv","epg":"https://epg.112114.xyz/?ch={name}&date={date}","logo":"https://epg.112114.xyz/logo/{name}.png"}],
+"lives":[{"name":"直播","type":0,"url":"https://wuyun999.github.io/wuyun/zb/aptv.txt","epg":"https://epg.112114.xyz/?ch={name}&date={date}","logo":"https://epg.112114.xyz/logo/{name}.png"}],
 
 
 	//"spider":"http://wp.anxwl.cn/down.php/2f2ddfd684736b506ea37f8b7ed12b1d.jar",
