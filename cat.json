@@ -5,7 +5,7 @@
 {
       "name": "TXT",
       "type": 0,
-      "url": "http://home.jundie.top:81/Cat/tv/live.txt",
+      "url": "https://bit.ly/wy-aptv",
       "epg": "http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}",
       "logo": "https://epg.112114.xyz/logo/{name}.png"
     },
