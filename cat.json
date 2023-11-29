@@ -15,7 +15,8 @@
 
 "sites":[
 {"key": "豆豆","name": "甜不辣免费制作","type": 3,"api": "csp_DouDou","searchable": 0,"quickSearch": 0,"filterable": 0},
-{
+{"key":"快看","name":"欢迎使用cat","type":3,"api":"csp_Kuaikan","searchable":1,"quickSearch":1,"filterable":1},
+	{
       "key": "豪华资源",
       "name": "甜不辣",
       "type": 1,
