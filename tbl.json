@@ -1,5 +1,11 @@
 {
-"spider":"./jar/pg.jar;md5;cfd021eff6e18972b72a5ecfa1454292",
+"spider": "https://jihulab.com/duomv/duo/-/raw/main/custom_spider.jar",//第1包
+ "spider": "https://agit.ai/Yoursmile7/TVBox/raw/branch/master/Yoursmile.jar;md5;DA553CABC9A4E1F4577D1DEFCAA3AB28",//第2包
+"spider": "https://agit.ai/65012833/Jar/raw/branch/master/zy2.jar",//第3包
+"spider": "https://agit.ai/Yoursmile7/TVBox/raw/branch/master/Yoursmile.jar;md5;6811778873C4CEAEEE0B6B14F5939F94",//测试包
+ "spider": "https://files.zohopublic.com.cn/public/workdrive-public/download/uyv0t678c488189af47bb91dc108484d17431;md5;4a0dc0ae860c90d0001f1fc0fae230f7",//新版线路jar包
+
+//"spider":"./jar/pg.jar;md5;cfd021eff6e18972b72a5ecfa1454292",
 "lives":[{"name":"初秋语","type":0,"url":"./list.txt","playerType":1,"epg":"http://epg.112114.xyz/?ch={name}&date={date}","logo":"https://epg.112114.xyz/logo/{name}.png"},
 {"name":"live","type":0,"url":"https://xhdwc.tk/tvlive.txt","playerType":1,"epg":"http://epg.112114.xyz/?ch={name}&date={date}","logo": "https://epg.112114.xyz/logo/{name}.png"}],
 "wallpaper":"http://饭太硬.top/深色壁纸/api.php",
