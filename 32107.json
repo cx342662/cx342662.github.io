@@ -12,7 +12,7 @@
 "lives": [{"group": "redirect","channels": [{"name":"『live","urls": ["proxy://do=live&type=txt&ext=aHR0cHM6Ly93ZHMuZWNzeHMuY29tLzIzMDg2NC5qc29u"]}]}],
 
 "sites":[
-{ "key": "drpy_js_豆瓣", "name": "🌺【春盈天下】💑（宽带路由器支持ipv6,畅想高清直播线路）💑", "type": 3, "api": "https://jihulab.com/yydfys/yydf/-/raw/main/yydf/lib/drpy2.min.js", "ext": "https://jihulab.com/yydfys/yydf/-/raw/main/yydf/lib/douban.js" }, 
+{ "key": "drpy_js_豆瓣", "name": "🌺【ix3车友特供】💑（宽带路由器支持ipv6,畅想高清直播线路）💑", "type": 3, "api": "https://jihulab.com/yydfys/yydf/-/raw/main/yydf/lib/drpy2.min.js", "ext": "https://jihulab.com/yydfys/yydf/-/raw/main/yydf/lib/douban.js" }, 
 
         {
             "key":"360影院",
