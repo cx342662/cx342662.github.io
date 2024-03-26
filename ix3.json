@@ -20,7 +20,7 @@
 {"key":"YGP","name":"👉春盈┃新片","type":3,"api":"csp_YGP","searchable":0,"quickSearch":0,"changeable":0},
     {
       "key": "csp_Bttoo",
-      "name": "🍄比特┃秒播",
+      "name": "🍄比特┃xing",
       "type": 3,
       "api": "csp_Bttwoo",
       "searchable": 1,
@@ -29,7 +29,7 @@
     },
     {
       "key": "萌米",
-      "name": "👀萌米┃App",
+      "name": "👀萌米┃xing",
       "type": 3,
       "api": "csp_AppTT",
       "timeout": 15,
@@ -38,7 +38,7 @@
     },
     {
       "key": "南瓜",
-      "name": "👉春盈┃南瓜",
+      "name": "xing┃南瓜",
       "type": 3,
       "api": "csp_NanGua",
       "searchable": 1,
@@ -49,7 +49,7 @@
     },
     {
       "key": "nmys_js",
-      "name": "👉春盈┃农民",
+      "name": "xing┃农民",
       "type": 3,
       "searchable": 1,
       "quickSearch": 1,
