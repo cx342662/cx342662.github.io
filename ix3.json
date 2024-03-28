@@ -1,4 +1,4 @@
-//所有资源均来自于网络各路大神无私分享.如有侵权.请联系删除。<所有内容仅供测试学习使用，请勿用于违法用途>
+8//所有资源均来自于网络各路大神无私分享.如有侵权.请联系删除。<所有内容仅供测试学习使用，请勿用于违法用途>
 //以下资源不能保证内容的合法性、准确性、完整性和有效性，请根据情况自行判断。
 //仅用于测试和学习研究，禁止用于商业用途，不得将其用于违反国家、地区、组织等的法律法规或相关规定的其他用途。
 //使用任何第三方硬件、软件、所造成的一切后果由使用的个人或组织承担，与本文内容无关。
@@ -31,6 +31,44 @@
 //"lives": [{"group": "redirect","channels": [{"name":"『live","urls": ["proxy://do=live&type=txt&ext=aHR0cHM6Ly93ZHMuZWNzeHMuY29tLzIzMDg2NC5qc29u"]}]}],
 
 "sites":[
+
+
+
+ {
+            "key": "csp_91黑料",
+            "name": "91黑料",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": {
+               "请求头": "User-Agent$PC_UA", 
+                "主页url": "https://kb17.oneoneno8cd345.xyz/one",
+                "首页": "400",
+                "数组": "<a&&</a >[不包含:91网曝黑料网#最近更新]",
+                "二次截取": "<div class=\"videoListBox\"&&el-pagination is-background",
+                "标题": "title\">&&</p >",
+                "副标题": "time\">&&</div>",
+                "链接": "href=\"&&\"",
+                "图片": "data-src=\"&&\"",
+                "线路数组": "unLoginBox&&</div>",
+                "线路标题": "黑料线路",
+                "播放数组": "unLoginBox&&</div>",
+                "播放列表": "<a&&</a >",
+                "播放标题": "<span>&&</span>",
+                "播放链接": "href=\"&&\"",
+                "跳转播放链接": "urlDecode(var player_*url\":\"&&\")",
+                "搜索url": "https://kb17.oneoneno8cd345.xyz/s/wd/{wd}/",
+                "分类url": "https://kb17.oneoneno8cd345.xyz/t/{cateId}-{catePg}/",
+               "分类数组": "<a&&</a >",
+                "分类标题": ">&&</a >",
+                "分类ID": "/t/&&/" 
+
+            }
+        },
+
+
 { "key": "drpy_js_豆瓣", "name": "❤️xing豆瓣推荐", "type": 3, "api": "https://jihulab.com/yydfys/yydf/-/raw/main/yydf/lib/drpy2.min.js", "ext": "https://jihulab.com/yydfys/yydf/-/raw/main/yydf/lib/douban.js" }, 
 {"key":"YGP","name":"❤️xing┃新片","type":3,"api":"csp_YGP","searchable":0,"quickSearch":0,"changeable":0},
     {
