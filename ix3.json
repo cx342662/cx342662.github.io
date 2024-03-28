@@ -91,7 +91,7 @@
 {"key":"酷云77","name":"👉春盈┃酷云","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1},
 {
 			"key": "csp_xml_优质",
-			"name": "👉春盈┃优质",
+			"name": "┃优质",
 			"type": 1,
 			"api": "https://api.1080zyku.com/inc/api_mac10.php?ac=list",
 			"searchable": 1,
@@ -129,7 +129,7 @@
 		},
     {
       "key": "闪电资源",
-      "name": "👉春盈┃闪电",
+      "name": "闪电",
       "type": 1,
       "api": "http://sdzyapi.com/api.php/provide/vod/",
       "searchable": 1,
@@ -137,7 +137,7 @@
     },
 		{
       "key": "49zy",
-      "name": "👉春盈┃♻️49",
+      "name": "49",
       "type": 1,
       "api": "https://49zyw.com/api.php/provide/vod/?ac=list",
       "searchable": 1,
@@ -180,7 +180,7 @@
       ]
     }, 
 
-{"key": "豪华资源",  "name": "👉春盈┃豪华", "type": 1, "api": "https://hhzyapi.com/api.php/provide/vod/?ac=list",  "searchable": 1,  "quickSearch": 1,
+{"key": "豪华资源",  "name": "豪华", "type": 1, "api": "https://hhzyapi.com/api.php/provide/vod/?ac=list",  "searchable": 1,  "quickSearch": 1,
  "categories": [
         "内地剧",
         "香港剧",
@@ -212,7 +212,7 @@
 
         {
             "key": "黑狐",
-            "name": "🐰春盈┃黑狐",
+            "name": "黑狐",
             "type": 3,
             "searchable": 1,
             "quickSearch": 1,
@@ -255,7 +255,7 @@
         },
     {
       "key": "玩偶哥哥",
-      "name": "🐰春盈┃玩偶哥哥",
+      "name": "玩偶哥哥",
       "type": 3,
       "api": "csp_WoGG",
       "searchable": 1,
@@ -267,7 +267,7 @@
 
         {
             "key": "zy_非凡资源",
-            "name": "🐰春盈┃接口非凡",
+            "name": "接口非凡",
             "type": 1,
             "api": "http://ffzy.tv/api.php/provide/vod/",
             "searchable": 1,
@@ -306,7 +306,7 @@
         },
         {
             "key": "zy_飞速资源",
-            "name": "🐰春盈┃接口飞速",
+            "name": "接口飞速",
             "type": 1,
             "api": "https://www.feisuzyapi.com/api.php/provide/vod/",
             "searchable": 1,
@@ -342,7 +342,7 @@
         },
         {
             "key": "zy_iKun资源",
-            "name": "🐰春盈┃接口iKun",
+            "name": "接口iKun",
             "type": 1,
             "api": "https://ikunzyapi.com/api.php/provide/vod/",
             "searchable": 1,
@@ -384,7 +384,7 @@
         },
         {
             "key": "zy_无尽资源",
-            "name": "🐰春盈┃接口无尽",
+            "name": "接口无尽",
             "type": 1,
             "api": "https://api.wujinapi.me/api.php/provide/vod/",
             "searchable": 1,
@@ -424,7 +424,7 @@
         },
         {
             "key": "zy_金鹰资源",
-            "name": "🐰春盈┃接口金鹰",
+            "name": "接口金鹰",
             "type": 1,
             "api": "https://jyzyapi.com/provide/vod/",
             "searchable": 1,
@@ -456,7 +456,7 @@
         },
         {
             "key": "zy_CK资源",
-            "name": "🐰春盈┃接口CK",
+            "name": "接口CK",
             "type": 1,
             "api": "https://ckzy.me/api.php/provide/vod/",
             "searchable": 1,
@@ -499,7 +499,7 @@
         },
         {
             "key": "zy_新浪资源",
-            "name": "🐰春盈┃接口新浪",
+            "name": "接口新浪",
             "type": 1,
             "api": "https://api.xinlangapi.com/xinlangapi.php/provide/vod/",
             "searchable": 1,
@@ -528,7 +528,7 @@
         },
         {
             "key": "zy_天空资源",
-            "name": "🐰春盈┃接口天空",
+            "name": "接口天空",
             "type": 1,
             "api": "https://tiankongzy.com/api.php/provide/vod/",
             "searchable": 1,
@@ -565,16 +565,16 @@
             ]
         },
 
-{"key":"卧龙资源","name":"🐰春盈┃卧龙资源(切)","type":1,"api":"https://collect.wolongzyw.com/api.php/provide/vod/","searchable":1,"quickSearch":1},
-{"key":"新浪资源","name":"🐰春盈┃新浪资源(切)","type":1,"api":"http://api.xinlangapi.com/xinlangapi.php/provide/vod/","searchable":1,"quickSearch":1},
-{"key":"天空资源","name":"🐰春盈┃天空资源(切)","type":1,"api":"https://api.tiankongapi.com/api.php/provide/vod/","searchable":1,"quickSearch":1},
-{"key":"csp_xml_天空资源","name":"🐰春盈┃天空资源","type":1,"api":"https://api.tiankongapi.com/api.php/provide/vod/","playUrl":"","searchable":1,"quickSearch":1},
-{"key": "csp_xml_爱坤","name": "🐰春盈┃爱坤","type": 1,"api": "https://ikunzyapi.com/api.php/provide/vod","searchable": 1,"quickSearch": 1,"filterable": 1,"playurl": "json:https://www.ikdmjx.com/?url=","categories": ["动作片","大陆剧","喜剧片","科幻片","恐怖片","爱情片","剧情片","战争片","纪录片","动漫电影","欧美剧","港澳剧","韩剧","台湾剧","日剧","海外剧","泰剧","体育","国产动漫","日韩动漫","欧美动漫","港台动漫","海外动漫","大陆综艺","港台综艺","日韩综艺","欧美综艺"]},
-{"key": "高清资源网","name": "🐰春盈┃高清","type": 1,"api": "https://api.1080zyku.com/inc/apijson.php","searchable": 1,"quickSearch": 1,"filterable": 1,"playurl": "json:http://jx.84jia.com/m3u8ts.php?url=","categories":["动作片","国产剧","喜剧片","爱情片","科幻片","恐怖片","剧情片","战争片","记录片","欧美剧","日本剧","泰国剧","韩国剧","台湾剧","香港剧","大陆综艺","港台综艺","日韩综艺","欧美综艺","国产动漫","日韩动漫","欧美动漫"]}, 
-{"key": "csp_xml_百度","name": "🐰春盈┃百度","type": 1,"api": "https://api.apibdzy.com/api.php/provide/vod/?ac=list","searchable": 1,"quickSearch": 1,"filterable": 1,"playurl": "json:http://jx.84jia.com/m3u8ts.php?url=","categories": ["动作片","喜剧片","科幻片","恐怖片","爱情片","剧情片","战争片","纪录片","动画电影","大陆剧","欧美剧","犯罪片","港澳剧","韩剧","泰剧","台湾剧","日剧","海外剧","其他片","悬疑片","奇幻片","动画片","体育赛事","国产动漫","日韩动漫","欧美动漫","港台动漫","海外动漫","大陆综艺","港台综艺","日韩综艺","欧美综艺"]},
+{"key":"卧龙资源","name":"卧龙资源(切)","type":1,"api":"https://collect.wolongzyw.com/api.php/provide/vod/","searchable":1,"quickSearch":1},
+{"key":"新浪资源","name":"新浪资源(切)","type":1,"api":"http://api.xinlangapi.com/xinlangapi.php/provide/vod/","searchable":1,"quickSearch":1},
+{"key":"天空资源","name":"天空资源(切)","type":1,"api":"https://api.tiankongapi.com/api.php/provide/vod/","searchable":1,"quickSearch":1},
+{"key":"csp_xml_天空资源","name":"天空资源","type":1,"api":"https://api.tiankongapi.com/api.php/provide/vod/","playUrl":"","searchable":1,"quickSearch":1},
+{"key": "csp_xml_爱坤","name": "爱坤","type": 1,"api": "https://ikunzyapi.com/api.php/provide/vod","searchable": 1,"quickSearch": 1,"filterable": 1,"playurl": "json:https://www.ikdmjx.com/?url=","categories": ["动作片","大陆剧","喜剧片","科幻片","恐怖片","爱情片","剧情片","战争片","纪录片","动漫电影","欧美剧","港澳剧","韩剧","台湾剧","日剧","海外剧","泰剧","体育","国产动漫","日韩动漫","欧美动漫","港台动漫","海外动漫","大陆综艺","港台综艺","日韩综艺","欧美综艺"]},
+{"key": "高清资源网","name": "高清","type": 1,"api": "https://api.1080zyku.com/inc/apijson.php","searchable": 1,"quickSearch": 1,"filterable": 1,"playurl": "json:http://jx.84jia.com/m3u8ts.php?url=","categories":["动作片","国产剧","喜剧片","爱情片","科幻片","恐怖片","剧情片","战争片","记录片","欧美剧","日本剧","泰国剧","韩国剧","台湾剧","香港剧","大陆综艺","港台综艺","日韩综艺","欧美综艺","国产动漫","日韩动漫","欧美动漫"]}, 
+{"key": "csp_xml_百度","name": "百度","type": 1,"api": "https://api.apibdzy.com/api.php/provide/vod/?ac=list","searchable": 1,"quickSearch": 1,"filterable": 1,"playurl": "json:http://jx.84jia.com/m3u8ts.php?url=","categories": ["动作片","喜剧片","科幻片","恐怖片","爱情片","剧情片","战争片","纪录片","动画电影","大陆剧","欧美剧","犯罪片","港澳剧","韩剧","泰剧","台湾剧","日剧","海外剧","其他片","悬疑片","奇幻片","动画片","体育赛事","国产动漫","日韩动漫","欧美动漫","港台动漫","海外动漫","大陆综艺","港台综艺","日韩综艺","欧美综艺"]},
         {
             "key": "saohuo",
-            "name": "🐰春盈┃骚火",
+            "name": "骚火",
             "type": 3,
             "searchable": 1,
             "changeable": 0,
@@ -597,7 +597,7 @@
         },
         {
             "key": "03影院",
-            "name": "🐰春盈┃03影",
+            "name": "03影",
             "type": 3,
             "api": "csp_XBPQ",
             "jar": "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1704761840381/c (1).txt;md5;bb155c3f0133bbce4756ad52003f5968",
@@ -623,7 +623,7 @@
         },
         {
             "key": "双黄",
-            "name": "🐰春盈┃双黄",
+            "name": "双黄",
             "type": 3,
             "jar": "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1704761840381/c (1).txt;md5;bb155c3f0133bbce4756ad52003f5968",
             "api": "csp_XBPQ",
@@ -640,7 +640,7 @@
         },
         {
             "key": "热播库",
-            "name": "🐰春盈┃热播",
+            "name": "热播",
             "type": 3,
             "changeable": 1,
             "jar": "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1704761840381/c (1).txt;md5;bb155c3f0133bbce4756ad52003f5968",
@@ -672,7 +672,7 @@
 
         {
             "key": "加速",
-            "name": "🐰春盈┃加速",
+            "name": "加速",
             "type": 3,
             "jar": "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1704761840381/c (1).txt;md5;bb155c3f0133bbce4756ad52003f5968",
             "api": "csp_AppYsV2",
@@ -682,30 +682,21 @@
         },
         {
             "key": "量子",
-            "name": "👉春盈┃量子",
+            "name": "量子",
             "type": 1,
             "api": "https://cj.lziapi.com/api.php/provide/vod",
             "searchable": 1,
             "changeable": 1
         },
-        {"key":"drpy_js_奇珍异兽","name":"👉春盈┃奇珍[js]","type":3,"api":"https://github.moeyy.xyz/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/drpy2.min.js","ext":"https://github.moeyy.xyz/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/奇珍异兽.js"},
-        {"key":"drpy_js_优酷","name":"👉春盈┃优酷[js]","type":3,"api":"https://github.moeyy.xyz/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/drpy2.min.js","ext":"https://github.moeyy.xyz/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/优酷.js"},
-        {"key":"drpy_js_腾云驾雾","name":"👉春盈┃腾云[js]","type":3,"api":"https://github.moeyy.xyz/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/drpy2.min.js","ext":"https://github.moeyy.xyz/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/腾云驾雾.js"},
+        {"key":"drpy_js_奇珍异兽","name":"奇珍[js]","type":3,"api":"https://github.moeyy.xyz/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/drpy2.min.js","ext":"https://github.moeyy.xyz/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/奇珍异兽.js"},
+        {"key":"drpy_js_优酷","name":"优酷[js]","type":3,"api":"https://github.moeyy.xyz/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/drpy2.min.js","ext":"https://github.moeyy.xyz/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/优酷.js"},
+        {"key":"drpy_js_腾云驾雾","name":"腾云[js]","type":3,"api":"https://github.moeyy.xyz/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/drpy2.min.js","ext":"https://github.moeyy.xyz/https://raw.githubusercontent.com/hjdhnx/dr_py/main/js/腾云驾雾.js"},
 
 //=========================================================
-		{
-			"key": "暴风",
-			"name": "👉春盈┃暴风",
-			"type": 1,
-			"api": "https://app.bfzyapi.com/api.php/provide/vod/",
-			"searchable": 1,
-			"filterable": 1,
-			"quickSearch": 1,
-			"categories": ["国产动漫", "日韩动漫", "欧美动漫", "海外动漫", "动画片", "国产剧", "韩国剧", "香港剧", "台湾剧", "欧美剧", "动作片", "科幻片", "喜剧片", "恐怖片", "战争片"]
-		},
+		
 		{
 			"key": "新浪",
-			"name": "👉春盈┃新浪",
+			"name": "┃新浪",
 			"type": 1,
 			"api": "http://api.xinlangapi.com/xinlangapi.php/provide/vod/",
 			"searchable": 1,
@@ -716,7 +707,7 @@
 		},
 		{
 			"key": "量子",
-			"name": "👉春盈┃量子",
+			"name": "┃量子",
 			"type": 1,
 			"api": "https://cj.lziapi.com/api.php/provide/vod/",
 			"searchable": 1,
@@ -724,11 +715,11 @@
 			"filterable": 1,
 			"categories": ["国产动漫", "日韩动漫", "欧美动漫", "港台动漫", "海外动漫", "国产剧", "韩国剧", "日本剧", "动作片", "喜剧片", "爱情片", "科幻片", "恐怖片", "剧情片", "战争片", "台湾剧", "香港剧", "欧美剧", "短剧", "记录片", "海外剧", "泰国剧", "大陆综艺", "港台综艺", "日韩综艺", "欧美综艺", "体育", "足球", "篮球", "网球", "斯落克"]
 		},
-{"key":"新6V","name":"👉春盈┃新6V","type":3,"api":"csp_SixV","searchable":1,"quickSearch":1,"changeable":0,"ext": "http://www.xb6v.com/"},
+{"key":"新6V","name":"新6V","type":3,"api":"csp_SixV","searchable":1,"quickSearch":1,"changeable":0,"ext": "http://www.xb6v.com/"},
  {"key":"csp_SP33","name":"🌺👉春盈┃三三","type":3,"api":"csp_SP33","searchable":1,"quickSearch":1,"filterable":1,"changeable":0},
         {
             "key": "csp_SP33",
-            "name": "👉春盈┃三三",
+            "name": "三三",
             "type": 3,
             "api": "csp_SP33",
             "searchable": 1,
@@ -738,7 +729,7 @@
         },
      {
          "key": "鑫鑫影院",
-         "name": "👉春盈┃鑫鑫",
+         "name": "鑫鑫",
          "type": 3,
          "api": "csp_AppYsV2",
          "searchable": 1,
@@ -746,10 +737,10 @@
          "filterable": 1,
          "ext": "http://yingszj.xn--654a.cc/api.php/app/"
       },
-{"key": "e173267b0d7e1f1a1189c22c3bb7b556", "name": "👉春盈┃淘片", "type": 0, "api": "https://taopianapi.com/cjapi/mc10/vod/xml.html"},
+{"key": "e173267b0d7e1f1a1189c22c3bb7b556", "name": "淘片", "type": 0, "api": "https://taopianapi.com/cjapi/mc10/vod/xml.html"},
 		{
 			"key": "sansan",
-			"name": "👉春盈┃1080P",
+			"name": "┃1080P",
 			"type": 3,
 			"api": "csp_SP33",
 			"searchable": 1,
@@ -1000,7 +991,7 @@
 
   {
       "key": "相声",
-      "name": "📻春盈┃相声",
+      "name": "相声",
       "type": 3,
       "searchable": 0,
       "style": {
@@ -1035,7 +1026,7 @@
     },
         {
             "key": "评书",
-            "name": "📻春盈┃评书",
+            "name": "评书",
             "type": 3,
             "searchable": 0,
             "style": {
@@ -1069,7 +1060,7 @@
             }
         },
         {"key": "戏曲自定义",
-    "name": "📻春盈┃戏曲",
+    "name": "戏曲",
     "type": 3,"api": "csp_Bili",
     "searchable": 1,
     "quickSearch": 1,
@@ -1079,7 +1070,7 @@
     },
     {
       "key": "88js",
-      "name": "⚽春盈┃看球",
+      "name": "看球",
       "type": 3,
       "api": "csp_Kanqiu",
       "style": {
