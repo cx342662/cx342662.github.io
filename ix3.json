@@ -34,6 +34,18 @@
 
 
 
+        {
+            "key": "csp_XBPQ_黑料",
+            "name": "💋黑料┃91",
+            "type": 3,
+            "api": "csp_XBPQ",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./lib/91黑料.json",
+            "jar": "./xyqxbpq.jar"
+        },
+
 { "key": "drpy_js_豆瓣", "name": "❤️xing豆瓣推荐", "type": 3, "api": "https://jihulab.com/yydfys/yydf/-/raw/main/yydf/lib/drpy2.min.js", "ext": "https://jihulab.com/yydfys/yydf/-/raw/main/yydf/lib/douban.js" }, 
 {"key":"YGP","name":"❤️xing┃新片","type":3,"api":"csp_YGP","searchable":0,"quickSearch":0,"changeable":0},
     {
