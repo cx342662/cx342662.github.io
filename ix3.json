@@ -11,7 +11,23 @@
  "spider": "https://fs-im-kefu.7moor-fs1.com/29397395/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1706645996429/fan.txt;md5;1ff3df38a66ee5378031e4fac1799596",
 "spider": "https://agit.ai/Yoursmile7/TVBox/raw/branch/master/Yoursmile.jar;md5;7B3C4534B2E7856406E435F095D4BA33",//音乐mtv
 "spider": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1711263158682/fan.txt;md5;6fcaf5603964547fd0e414312eb5cd92",//演唱会
-"lives": [{"group": "redirect","channels": [{"name":"『live","urls": ["proxy://do=live&type=txt&ext=aHR0cHM6Ly93ZHMuZWNzeHMuY29tLzIzMDg2NC5qc29u"]}]}],
+
+"lives": [
+        {
+            "name": "live",
+            "url": "https://cx342662.GitHub.io/ix3.txt",
+            "type": 0,
+            "playerType": 1,
+            "ua": "okhttp/3.12.13",
+            "epg": "http://epg.112114.xyz/?ch={name}&date={date}",
+            "logo": "https://epg.112114.xyz/logo/{name}.png"
+        }
+    ],
+    "warningText": "xing：网络收集接口，请勿贩卖，每次打开记得长按主页刷新",
+
+
+
+//"lives": [{"group": "redirect","channels": [{"name":"『live","urls": ["proxy://do=live&type=txt&ext=aHR0cHM6Ly93ZHMuZWNzeHMuY29tLzIzMDg2NC5qc29u"]}]}],
 
 "sites":[
 { "key": "drpy_js_豆瓣", "name": "xing豆瓣推荐🌼", "type": 3, "api": "https://jihulab.com/yydfys/yydf/-/raw/main/yydf/lib/drpy2.min.js", "ext": "https://jihulab.com/yydfys/yydf/-/raw/main/yydf/lib/douban.js" }, 
