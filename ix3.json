@@ -1390,7 +1390,7 @@
       
 
     {"name":"🌎DB","type":1,"url":"http://119.91.123.253:2345/Api/yun.php?url=","ext":{"flag":["qiyi","imgo","爱奇艺","奇艺","qq","腾讯","youku","优酷","pptv","PPTV","letv","乐视","leshi","bilibili","哔哩哔哩","哔哩","mgtv","芒果","sohu","xigua","fun","风行"],"header":{"User-Agent":"Mozilla/5.0"}},"header":{"User-Agent":"Mozilla/5.0"}}
-
+],
 	     {
 			"name": "蚂蚁🌾",
 			"type": 1,
@@ -1432,53 +1432,13 @@
 					"User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
 				}
 			}
-		}},
-		{
-			"name": "蚂蚁🌾",
-			"type": 1,
-			"url": "",
-			"ext": {
-				"flag": [
-					"NBY"
-				],
-				"header": {
-					"User-Agent": "okhttp/4.1.0"
-				}
-			}
-		},
-		{
-			"name": "米饭🌾",
-			"type": 1,
-			"url": "http://119.91.123.253:2345/Api/yun.php?url=",
-			"ext": {
-				"flag": [
-					"爱奇艺",
-					"奇艺",
-					"qq",
-					"腾讯",
-					"youku",
-					"优酷",
-					"pptv",
-					"PPTV",
-					"letv",
-					"乐视",
-					"leshi",
-					"bilibili",
-					"哔哩哔哩",
-					"哔哩",
-					"mgtv",
-					"芒果",
-					"芒果"
-				],
-				"header": {
-					"User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-				}
-			}
-		},
+		}
+		
+		
 
 	     
 
-],
+
   
  "flags": ["youku","优酷","优 酷","优酷视频","qq","腾讯","腾 讯","腾讯视频","iqiyi","qiyi","奇艺","爱奇艺","艺","m1爱 奇 905","xigua","letv","leshi","乐视","乐 视","sohu","搜狐","搜 狐","搜狐视频","tudou","pptv","mgtv","芒果","imgo","芒果TV","芒 果 T V","bilibili","哔 哩","哔 哩 哔 哩"],
 
