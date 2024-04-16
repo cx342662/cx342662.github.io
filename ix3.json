@@ -1280,7 +1280,7 @@
 {"host":"hdmoli.com","rule":[".m3u8"]},{"host":"https://api.live.bilibili.com","rule":["bilivideo.com","/index.m3u8"],"filter":["data.bilibili.com/log/web","i0.hdslb.com/bfs/live/"]},
 {"host":"www.agemys.cc","rule":["cdn-tos","obj/tos-cn"]},
 {"host":"www.fun4k.com","rule":["https://hd.ijycnd.com/play","index.m3u8"]},
-{"host":"zjmiao.com","rule":["play.videomiao.vip/API.php","time=","key=","path="]}
+{"host":"zjmiao.com","rule":["play.videomiao.vip/API.php","time=","key=","path="]},
 
 {"name":"kk","hosts":["kuaikan"],"regex":["5","20.123","20.167","#EXT-X-DISCONTINUITY\\r*\\n*((?!#EXT-X-DISCONTINUITY)[\\s\\S])*?#EXT-X-KEY:METHOD((?!#EXT-X-DISCONTINUITY)[\\s\\S])*?#EXT-X-DISCONTINUITY"]},
 {"name":"yqk","hosts":["yqk"],"regex":["18.4","15.1666","#EXT-X-DISCONTINUITY\\r*\\n*((?!#EXT-X-DISCONTINUITY)[\\s\\S])*?#EXT-X-CUE-OUT((?!#EXT-X-DISCONTINUITY)[\\s\\S])*?#EXT-X-CUE-IN"]},
