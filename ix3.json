@@ -9,7 +9,10 @@
 
 {
 "spider": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1716360806207/xmmmmm.jar;md5;b6def02ec13662a8739d9f80f1f42e89",//米
- "spider": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1718180909261/wex.txt;md5;6622c38b0681db3f6636ed592fbe9b49",//放牛娃儿歌包
+
+ //"spider": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1718180909261/wex.txt;md5;6622c38b0681db3f6636ed592fbe9b49",//放牛娃儿歌包
+
+"spider": "https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1721021780209/okpng.txt;md5;9959fec12fcc8b882b331e30161e23be",
 
 "lives": [
         {
@@ -25,13 +28,8 @@
 	
 //===========================================================================
 "sites":[
-    {
-      "key": "drpy_js_豆瓣",
-      "name": "豆瓣推荐",
-      "type": 3,
-      "api": "csp_Douban",
-      "searchable": 0
-    },
+    {"key":"豆瓣","name":"豆瓣推荐","type":3,"api":"csp_Douban","searchable":0,"changeable":1},
+    {"key":"配置中心","name":"👨‍🍳‍配置┃中心","type":3,"api":"csp_Config","searchable":0,"changeable":0,"indexs":0,"style":{"type":"rect","ratio":1.43}},
 //==================下面最新添加===================================================
 
     {
