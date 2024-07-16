@@ -16,12 +16,12 @@
 
 "spider": "https://files.zohopublic.com.cn/public/workdrive-public/download/gd5ic01b6d4922692401eac6018178d033d06",
 
-"lives": [
+"lives":[
         {
             "name": "live",
             "url": "https://cx342662.GitHub.io/ix3.txt",
             "type": 0,
-            "playerType": 1,
+            "playerType": 2,
             "ua": "okhttp/3.12.13",
             "epg": "http://epg.112114.xyz/?ch={name}&date={date}",
             "logo": "https://epg.112114.xyz/logo/{name}.png"
