@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>程田浩儿 | 极简博客</title>
+    <style>
+        body {
+            background: #0a0a0a;
+            color: #fff;
+            font-family: Arial;
+            text-align: center;
+            padding: 2rem;
+        }
+        .neon {
+            font-size: 4rem;
+            text-shadow: 0 0 10px #ff00ff,
+                       0 0 20px #ff00ff,
+                       0 0 30px #ff00ff;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff00ff; }
+            to { text-shadow: 0 0 30px #ff00ff; }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="neon">程田浩儿</h1>
+    <p>🚀 博客建设中...</p>
+</body>
+</html>
