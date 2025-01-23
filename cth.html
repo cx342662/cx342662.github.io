@@ -1,30 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>程田浩儿 | 极简博客</title>
+    <meta charset="UTF-8">
+    <title>程田浩儿</title>
     <style>
+        :root {
+            --ultra-red: #ff2a00;
+            --ultra-blue: #00b4ff;
+        }
+
         body {
-            background: #0a0a0a;
-            color: #fff;
-            font-family: Arial;
+            margin: 0;
+            background: #000 url('https://example.com/ultraman-bg.jpg') no-repeat center/cover;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 奥特曼光效层 */
+        .light-effect {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, 
+                rgba(255,42,0,0.2) 20%, 
+                transparent 60%);
+            animation: lightPulse 3s infinite;
+            pointer-events: none;
+        }
+
+        /* 标题动画 */
+        .ultra-title {
             text-align: center;
+            font-size: 4em;
+            margin: 1em 0;
+            background: linear-gradient(45deg, 
+                var(--ultra-blue), 
+                var(--ultra-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleGlow 2s ease-in-out infinite;
+        }
+
+        /* 动态内容卡片 */
+        .ultra-card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--ultra-blue);
+            border-radius: 15px;
             padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+            position: relative;
         }
-        .neon {
-            font-size: 4rem;
-            text-shadow: 0 0 10px #ff00ff,
-                       0 0 20px #ff00ff,
-                       0 0 30px #ff00ff;
-            animation: glow 1s ease-in-out infinite alternate;
+
+        .ultra-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px var(--ultra-red);
         }
-        @keyframes glow {
-            from { text-shadow: 0 0 10px #ff00ff; }
-            to { text-shadow: 0 0 30px #ff00ff; }
+
+        /* 战斗特效按钮 */
+        .ultra-button {
+            background: linear-gradient(45deg, 
+                var(--ultra-blue), 
+                var(--ultra-red));
+            border: none;
+            padding: 1rem 2rem;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .ultra-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent, 
+                rgba(255,255,255,0.2), 
+                transparent);
+            transform: rotate(45deg);
+            animation: buttonLight 2s infinite;
+        }
+
+        @keyframes lightPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { filter: drop-shadow(0 0 10px var(--ultra-red)); }
+            50% { filter: drop-shadow(0 0 20px var(--ultra-blue)); }
+        }
+
+        @keyframes buttonLight {
+            from { transform: translateX(-100%) rotate(45deg); }
+            to { transform: translateX(100%) rotate(45deg); }
         }
     </style>
 </head>
 <body>
-    <h1 class="neon">程田浩儿</h1>
-    <p>🚀 博客建设中...</p>
+    <div class="light-effect"></div>
+
+    <h1 class="ultra-title">程田浩儿的奥特基地</h1>
+
+    <div class="ultra-card">
+        <h2>✨ 最新动态</h2>
+        <p>今日解锁新形态：光子大地形态！</p>
+        <button class="ultra-button">查看进化记录</button>
+    </div>
+
+    <div class="ultra-card">
+        <h2>🛡️ 战斗日记</h2>
+        <p>VS 贝利亚：终极战斗全记录</p>
+        <button class="ultra-button">阅读战报</button>
+    </div>
+
+    <script>
+        // 动态背景特效
+        document.addEventListener('mousemove', (e) => {
+            const light = document.querySelector('.light-effect');
+            light.style.background = `
+                radial-gradient(circle at ${e.clientX}px ${e.clientY}px, 
+                rgba(255,42,0,0.3) 20%, 
+                transparent 60%)
+            `;
+        });
+
+        // 卡片浮动效果
+        document.querySelectorAll('.ultra-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width * 50 - 25;
+                const y = (e.clientY - rect.top) / rect.height * 50 - 25;
+                card.style.transform = `translate(${x}px, ${y}px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
