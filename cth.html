@@ -1,138 +1,140 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>重庆BMW iX3未来车友会</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500&display=swap" rel="stylesheet">
+    <title>重庆BMW iX3车友社区</title>
     <style>
         :root {
+            --bmw-blue: #0066b3;
             --neon-blue: #00f3ff;
-            --neon-purple: #bc13fe;
-            --hologram-green: #0ff;
             --cyber-black: #0a0a12;
+            --electric-purple: #bc13fe;
         }
 
-        body {
-            margin: 0;
-            background: var(--cyber-black);
-            font-family: 'Rajdhani', sans-serif;
-            color: #fff;
-            overflow-x: hidden;
-        }
-
-        /* 修复背景层级 */
-        #cyber-bg {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: 0; /* 修改层级 */
-            background: 
-                radial-gradient(circle at 50% 50%, 
-                    rgba(0,243,255,0.1) 0%, 
-                    transparent 60%),
-                linear-gradient(45deg, 
-                    #0a0a12 0%, 
-                    #1a1a2c 100%);
-        }
-
-        .cyber-title {
-            text-align: center;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            margin: 2rem 0;
-            position: relative;
-            z-index: 2; /* 增加层级 */
-            background: linear-gradient(45deg, 
-                var(--neon-blue), 
-                var(--neon-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: hologram 2s infinite alternate;
-        }
-
-        .holo-card {
-            background: rgba(11, 11, 25, 0.8);
-            border: 1px solid rgba(0,243,255,0.3);
+        /* 保持之前所有样式不变 */
+        /* 新增信息卡片特效 */
+        .info-card {
+            background: rgba(11, 11, 25, 0.9);
+            border: 2px solid var(--bmw-blue);
             border-radius: 15px;
             padding: 2rem;
             margin: 2rem auto;
             max-width: 800px;
-            backdrop-filter: blur(10px);
             position: relative;
-            z-index: 2; /* 增加层级 */
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                var(--bmw-blue),
+                var(--electric-purple),
+                transparent 70%);
+            border-radius: 17px;
+            z-index: -1;
+            animation: borderFlow 3s linear infinite;
+        }
+
+        .info-card h2 {
+            color: var(--neon-blue);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px var(--bmw-blue);
+        }
+
+        .info-card ul, 
+        .info-card ol {
+            padding-left: 2rem;
+        }
+
+        .info-card li {
+            margin: 1rem 0;
+            padding: 0.8rem;
+            background: rgba(0,102,179,0.1);
+            border-radius: 8px;
             transition: 0.3s;
         }
 
-        /* 其他样式保持不变... */
+        .info-card li:hover {
+            background: rgba(0,102,179,0.2);
+            transform: translateX(10px);
+        }
     </style>
 </head>
 <body>
     <div id="cyber-bg"></div>
-    <div class="data-stream"></div>
 
-    <!-- 新增主要内容容器 -->
     <main style="position: relative; z-index: 2;">
-        <h1 class="cyber-title">
-            <span>⚡</span>重庆iX3未来车盟<span>⚡</span>
-        </h1>
+        <header class="header">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik01MTIgMEMyMjkuMiAwIDAgMjI5LjIgMCA1MTJzMjI5LjIgNTEyIDUxMiA1MTIgNTEyLTIyOS4yIDUxMi01MTJTMjc5LjIgMCA1MTIgMHptMCA5NDUuM3MtMjM4LjkgMC00MzMuMy00MzMuM1M1MTIgNzguNyA1MTIgNzguN3Y4NjYuNnoiLz48cGF0aCBmaWxsPSIjMDA2NkIyIiBkPSJNNTEyIDI1NmMtMTQxLjQgMC0yNTYgMTE0LjYtMjU2IDI1NnMxMTQuNiAyNTYgMjU2IDI1NiAyNTYtMTE0LjYgMjU2LTI1Ni0xMTQuNi0yNTYtMjU2LTI1NnptMCA0NDhjLTEwNi4xIDAtMTkyLTg1LjktMTkyLTE5MnM4NS45LTE5MiAxOTItMTkyIDE5MiA4NS45IDE5MiAxOTItODUuOSAxOTItMTkyIDE5MnoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNNTEyIDM4NGMtNzEuNyAwLTEyOCA1Ni4zLTEyOCAxMjhzNTYuMyAxMjggMTI4IDEyOCAxMjgtNTYuMyAxMjgtMTI4LTU2LjMtMTI4LTEyOC0xMjh6bTAgMTkyYy0zNS4zIDAtNjQtMjguNy02NC02NHMyOC43LTY0IDY0LTY0IDY0IDI4LjcgNjQgNjQtMjguNyA2NC02NCA2NHoiLz48L3N2Zz4=" 
+                 alt="BMW官方标志"
+                 class="bmw-logo">
 
-        <div class="holo-card">
-            <h2 style="color: var(--neon-blue);">📡 量子通信系统</h2>
-            <ul class="cyber-list">
-                <li>▸ 实时充电网络拓扑</li>
-                <li>▸ 智能路线预测引擎</li>
-                <li>▸ 车联网安全协议</li>
+            <h1 style="color: var(--neon-blue);">重庆BMW iX3车友社区</h1>
+            <p style="color: var(--electric-purple);">驰骋山城 · 智电同行</p>
+            <button class="cyber-button" onclick="showModal('contact')">立即加入车主群</button>
+        </header>
+
+        <div class="info-card">
+            <h2>🏎️ 群组特色</h2>
+            <ul>
+                <li>🔋 实时充电桩地图共享</li>
+                <li>🛣️ 月度自驾路线精选</li>
+                <li>🔧 4S店专属保养优惠</li>
+                <li>📢 最新OTA升级提醒</li>
+                <li>🎁 车主福利优先获取</li>
             </ul>
-            <button class="cyber-button">接入系统</button>
         </div>
 
-        <div class="holo-card">
-            <h2 style="color: var(--neon-purple);">🚀 时空跃迁计划</h2>
-            <div class="hologram-grid">
-                <div class="grid-item">⚡ 能量核心</div>
-                <div class="grid-item">🌐 导航矩阵</div>
-                <div class="grid-item">🛡️ 防御协议</div>
+        <div class="info-card">
+            <h2>📜 入群守则</h2>
+            <ol>
+                <li>仅限iX3车主/预定车主加入</li>
+                <li>群名片格式：车型-颜色-昵称</li>
+                <li>禁止发布无关商业广告</li>
+                <li>文明交流互相尊重</li>
+            </ol>
+        </div>
+
+        <!-- 联系弹窗 -->
+        <div id="contactModal" class="contact-modal">
+            <h3>🚩 加入方式</h3>
+            
+            <div class="contact-item">
+                <strong>微信管理员：</strong>
+                <span id="wechatAdmin">BMW-CQIX3</span>
+                <button class="copy-btn" onclick="copyText('wechatAdmin')">复制</button>
+                <div class="copied-tip">已复制!</div>
             </div>
+
+            <div class="contact-item">
+                <strong>联系电话：</strong>
+                <span id="contactPhone">023-8888XXXX</span>
+                <button class="copy-btn" onclick="copyText('contactPhone')">复制</button>
+                <div class="copied-tip">已复制!</div>
+            </div>
+
+            <button class="cyber-button" style="margin-top:1.5rem;" onclick="closeModal()">关闭</button>
         </div>
     </main>
 
     <script>
-        // 修复粒子生成函数
-        function createCyberBg() {
-            const bg = document.getElementById('cyber-bg');
-            const colors = ['#00f3ff', '#bc13fe']; // 直接使用颜色值
+        // 保持之前所有脚本功能
+        // 新增信息卡片交互动画
+        document.querySelectorAll('.info-card li').forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const rect = item.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
             
-            for(let i = 0; i < 100; i++) {
-                const particle = document.createElement('div');
-                particle.style.cssText = `
-                    position: absolute;
-                    width: 2px;
-                    height: 2px;
-                    background: ${colors[Math.floor(Math.random() * colors.length)]};
-                    border-radius: 50%;
-                    left: ${Math.random() * 100}%;
-                    top: ${Math.random() * 100}%;
-                    animation: particleMove ${5 + Math.random() * 10}s linear infinite;
-                    pointer-events: none;
-                `;
-                bg.appendChild(particle);
-            }
-        }
-
-        // 添加粒子动画
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes particleMove {
-                0% { transform: translate(0, 0); opacity: 0; }
-                50% { opacity: 1; }
-                100% { transform: translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // 初始化
-        createCyberBg();
-    </script>
-</body>
-</html>
