@@ -24,7 +24,7 @@
             line-height: 1.6;
         }
 
-        /* 品牌头部 */
+        /* 头部样式 */
         .header {
             background: var(--bmw-blue);
             padding: 2rem 1rem;
@@ -32,85 +32,24 @@
             position: relative;
         }
 
+        /* BMW Logo样式 */
         .bmw-logo {
             width: 80px;
             margin: 0 auto 1.5rem;
             display: block;
         }
 
-        .header h1 {
-            color: var(--bmw-white);
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .header p {
-            color: rgba(255,255,255,0.9);
-            font-size: 0.95rem;
-        }
-
-        /* 简洁卡片 */
-        .bmw-card {
-            background: var(--bmw-white);
-            border: 2px solid var(--bmw-blue);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 2rem auto;
-            max-width: 800px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .bmw-card h2 {
-            color: var(--bmw-blue);
-            border-bottom: 2px solid var(--bmw-blue);
-            padding-bottom: 0.8rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-
-        /* 列表样式 */
-        .bmw-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .bmw-list li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-        }
-
-        .bmw-list li:last-child {
-            border-bottom: none;
-        }
-
-        .bmw-list li::before {
-            content: "•";
-            color: var(--bmw-blue);
-            margin-right: 0.8rem;
-            font-size: 1.2rem;
-        }
-
-        /* 功能按钮 */
-        .bmw-button {
-            background: var(--bmw-blue);
-            color: var(--bmw-white);
-            border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: 0.3s;
-            display: block;
+        /* 二维码样式 */
+        .qrcode-img {
+            width: 200px;
+            height: 200px;
             margin: 1rem auto;
-            font-size: 1rem;
+            border: 2px solid var(--bmw-blue);
+            padding: 10px;
+            border-radius: 8px;
         }
 
-        .bmw-button:hover {
-            background: #005999;
-        }
-
-        /* 联系弹窗 */
+        /* 弹窗样式 */
         .contact-modal {
             display: none;
             position: fixed;
@@ -125,50 +64,10 @@
             max-width: 400px;
             width: 90%;
         }
-
-        .contact-item {
-            margin: 1.5rem 0;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 6px;
-        }
-
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .bmw-card {
-                margin: 1rem;
-                padding: 1rem;
-            }
-            
-            .header {
-                padding: 1.5rem 1rem;
-            }
-        }
     </style>
 </head>
 <body>
     <header class="header">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik01MTIgMEMyMjkuMiAwIDAgMjI5LjIgMCA1MTJzMjI5LjIgNTEyIDUxMiA1MTIgNTEyLTIyOS4yIDUxMi01MTJTMjc5LjIgMCA1MTIgMHptMCA5NDUuM3MtMjM4LjkgMC00MzMuMy00MzMuM1M1MTIgNzguNyA1MTIgNzguN3Y4NjYuNnoiLz48cGF0aCBmaWxsPSIjMDA2NkIyIiBkPSJNNTEyIDI1NmMtMTQxLjQgMC0yNTYgMTE0LjYtMjU2IDI1NnMxMTQuNiAyNTYgMjU2IDI1NiAyNTYtMTE0LjYgMjU2LTI1Ni0xMTQuNi0yNTYtMjU2LTI1NnptMCA0NDhjLTEwNi4xIDAtMTkyLTg1LjktMTkyLTE5MnM4NS45LTE5MiAxOTItMTkyIDE5MiA4NS45IDE5MiAxOTItODUuOSAxOTItMTkyIDE5MnoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNNTEyIDM4NGMtNzEuNyAwLTEyOCA1Ni4zLTEyOCAxMjhzNTYuMyAxMjggMTI4IDEyOCAxMjgtNTYuMyAxMjgtMTI4LTU2LjMtMTI4LTEyOC0xMjh6bTAgMTkyYy0zNS4zIDAtNjQtMjguNy02NC02NHMyOC43LTY0IDY0LTY0IDY0IDI4LjcgNjQgNjQtMjguNyA2NC02NCA2NHoiLz48L3N2Zz4=" 
-             alt="BMW官方标志"
-             class="bmw-logo">
-        <h1>重庆BMW iX3车友群</h1>
-        <p>官方认证车主社群</p>
-        <button class="bmw-button" onclick="showModal()">立即加入</button>
-    </header>
-
-    <div class="bmw-card">
-        <h2>核心服务</h2>
-        <ul class="bmw-list">
-            <li>BMW官方技术支持</li>
-            <li>专属保养优惠计划</li>
-            <li>充电桩实时地图</li>
-            <li>车主线下活动</li>
-            <li>最新OTA更新提醒</li>
-        </ul>
-    </div>
-
-    <div class="bmw-card">
-        <h2>入群须知</h2>
-        <ul class="bmw-list">
-            <li>需验证车辆VIN码</li>
-            <li>群名片格式：车型-颜色
+        <!-- 完整BMW Logo Base64 -->
+        <img class="bmw-logo" 
+             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFMTZERDg0QzA3NjgxMUUzQkZGNDhENEJFQjM2OTcyRiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFMTZERDg0RDA3NjgxMUUzQkZGNDhENEJFQjM2OTcyRiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUxNkREODRBMDc2ODExRTNCRkY0OEQ0QkVCMzY5NzJGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUxNkREODRCMDc2ODExRTNCRkY0OEQ0QkVCMzY5NzJGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+O7ZdXgAAjB5JREFUeNrsfQd4XNeV5jnn3lcdjSBIECAB9i6KpEhRjVazJNtykZ3EsR07k8zEk9iTjSe7s5NsspNkM7s7m2Qym2QyZSeZOMWJ7bhJtmxZvXeJvXcQJEGiA0Svr9x79j33FQpAihQpNpDn+/CRIFD16r1zzz3/af8R/+N//A+JAAECBAhwjUH/9E//hAABAgQIcI0hCEACBAgQ4JpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBAgQ4BpFEIACBA
