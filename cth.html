@@ -2,82 +2,52 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>程田浩儿</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重庆BMW iX3车友群</title>
     <style>
         :root {
-            --ultra-red: #ff2a00;
-            --ultra-blue: #00b4ff;
+            --bmw-blue: #0066b3;
+            --bmw-gray: #2d2d2d;
+            --electric-blue: #00a8e8;
         }
 
         body {
             margin: 0;
-            background: #000 url('https://example.com/ultraman-bg.jpg') no-repeat center/cover;
-            color: white;
+            background: #f5f5f5;
             font-family: 'Arial', sans-serif;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
+            color: var(--bmw-gray);
         }
 
-        /* 奥特曼光效层 */
-        .light-effect {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, 
-                rgba(255,42,0,0.2) 20%, 
-                transparent 60%);
-            animation: lightPulse 3s infinite;
-            pointer-events: none;
-        }
-
-        /* 标题动画 */
-        .ultra-title {
+        .header {
+            background: linear-gradient(75deg, var(--bmw-blue) 60%, var(--electric-blue));
+            padding: 3rem 1rem;
             text-align: center;
-            font-size: 4em;
-            margin: 1em 0;
-            background: linear-gradient(45deg, 
-                var(--ultra-blue), 
-                var(--ultra-red));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: titleGlow 2s ease-in-out infinite;
-        }
-
-        /* 动态内容卡片 */
-        .ultra-card {
-            background: rgba(0, 0, 0, 0.7);
-            border: 2px solid var(--ultra-blue);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem auto;
-            max-width: 800px;
-            backdrop-filter: blur(5px);
-            transition: 0.3s;
+            color: white;
             position: relative;
         }
 
-        .ultra-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 30px var(--ultra-red);
+        .bmw-logo {
+            width: 80px;
+            position: absolute;
+            left: 20px;
+            top: 20px;
         }
 
-        /* 战斗特效按钮 */
-        .ultra-button {
-            background: linear-gradient(45deg, 
-                var(--ultra-blue), 
-                var(--ultra-red));
-            border: none;
-            padding: 1rem 2rem;
+        .join-button {
+            background: var(--bmw-blue);
             color: white;
-            border-radius: 50px;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
             cursor: pointer;
+            transition: 0.3s;
             position: relative;
             overflow: hidden;
-            transition: 0.3s;
+            margin: 2rem 0;
         }
 
-        .ultra-button::before {
+        .join-button::after {
             content: '';
             position: absolute;
             top: -50%;
@@ -86,69 +56,123 @@
             height: 200%;
             background: linear-gradient(45deg, 
                 transparent, 
-                rgba(255,255,255,0.2), 
+                rgba(255,255,255,0.3), 
                 transparent);
             transform: rotate(45deg);
-            animation: buttonLight 2s infinite;
+            animation: buttonFlow 2s infinite;
         }
 
-        @keyframes lightPulse {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.8; }
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--bmw-blue);
         }
 
-        @keyframes titleGlow {
-            0%, 100% { filter: drop-shadow(0 0 10px var(--ultra-red)); }
-            50% { filter: drop-shadow(0 0 20px var(--ultra-blue)); }
+        .contact-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            text-align: center;
+            z-index: 1000;
         }
 
-        @keyframes buttonLight {
+        .contact-item {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .copy-btn {
+            background: var(--bmw-blue);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 1rem;
+            transition: 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: var(--electric-blue);
+        }
+
+        @keyframes buttonFlow {
             from { transform: translateX(-100%) rotate(45deg); }
             to { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .copied-tip {
+            position: absolute;
+            right: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .copied-tip.show {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <div class="light-effect"></div>
+    <header class="header">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0NSIgZmlsbD0iIzAwNjZCMiIvPjxwYXRoIGQ9Ik0yNSA0NSA1MCA2NSA3NSA0NSA2NSA1MCA3NSA1NSA1MCAzNSA0MCA1MCAyNSA0NSA1MCA2NSIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==" 
+             alt="BMW Logo" 
+             class="bmw-logo">
+        <h1>重庆BMW iX3车友群</h1>
+        <p>纯电豪华 · 智享未来</p>
+        <button class="join-button" onclick="showContact()">立即加入车主群</button>
+    </header>
 
-    <h1 class="ultra-title">程田浩儿的奥特基地</h1>
-
-    <div class="ultra-card">
-        <h2>✨ 最新动态</h2>
-        <p>今日解锁新形态：光子大地形态！</p>
-        <button class="ultra-button">查看进化记录</button>
+    <div class="feature-card">
+        <h2>🚗 群组介绍</h2>
+        <ul>
+            <li>✅ 重庆地区最大iX3车主社群</li>
+            <li>🔋 充电桩位置实时共享</li>
+            <li>🛠️ 4S店优惠信息及时更新</li>
+            <li>🎉 每月组织车友自驾活动</li>
+            <li>💬 24小时技术问题交流</li>
+        </ul>
     </div>
 
-    <div class="ultra-card">
-        <h2>🛡️ 战斗日记</h2>
-        <p>VS 贝利亚：终极战斗全记录</p>
-        <button class="ultra-button">阅读战报</button>
+    <div class="feature-card">
+        <h2>📌 入群须知</h2>
+        <ol>
+            <li>仅限BMW iX3车主/准车主加入</li>
+            <li>修改群名片为「车型-颜色-昵称」</li>
+            <li>遵守群规，友善交流</li>
+            <li>禁止商业广告行为</li>
+        </ol>
     </div>
 
-    <script>
-        // 动态背景特效
-        document.addEventListener('mousemove', (e) => {
-            const light = document.querySelector('.light-effect');
-            light.style.background = `
-                radial-gradient(circle at ${e.clientX}px ${e.clientY}px, 
-                rgba(255,42,0,0.3) 20%, 
-                transparent 60%)
-            `;
-        });
+    <div id="contactModal" class="contact-modal">
+        <h3>📲 加入方式</h3>
+        <div class="contact-item">
+            <strong>微信群管理员微信：</strong>
+            <span id="wechatId">BMW-CQ-IX3</span>
+            <button class="copy-btn" onclick="copyText('wechatId')">复制</button>
+            <div class="copied-tip">已复制!</div>
+        </div>
 
-        // 卡片浮动效果
-        document.querySelectorAll('.ultra-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width * 50 - 25;
-                const y = (e.clientY - rect.top) / rect.height * 50 - 25;
-                card.style.transform = `translate(${x}px, ${y}px)`;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
-        });
-    </script>
-</body>
-</html>
+        <div class="contact-item">
+            <strong>群管理员电话：</strong>
+            <span id="phoneNu
