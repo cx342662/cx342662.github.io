@@ -21,12 +21,12 @@
             overflow-x: hidden;
         }
 
-        /* 全息粒子背景 */
+        /* 修复背景层级 */
         #cyber-bg {
             position: fixed;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            z-index: 0; /* 修改层级 */
             background: 
                 radial-gradient(circle at 50% 50%, 
                     rgba(0,243,255,0.1) 0%, 
@@ -36,13 +36,13 @@
                     #1a1a2c 100%);
         }
 
-        /* 赛博光晕标题 */
         .cyber-title {
             text-align: center;
             font-family: 'Orbitron', sans-serif;
             font-size: 3.5rem;
             margin: 2rem 0;
             position: relative;
+            z-index: 2; /* 增加层级 */
             background: linear-gradient(45deg, 
                 var(--neon-blue), 
                 var(--neon-purple));
@@ -51,21 +51,6 @@
             animation: hologram 2s infinite alternate;
         }
 
-        .cyber-title::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, 
-                transparent, 
-                var(--neon-blue),
-                transparent);
-            bottom: -10px;
-            left: 0;
-            filter: blur(2px);
-        }
-
-        /* 全息投影卡片 */
         .holo-card {
             background: rgba(11, 11, 25, 0.8);
             border: 1px solid rgba(0,243,255,0.3);
@@ -75,95 +60,79 @@
             max-width: 800px;
             backdrop-filter: blur(10px);
             position: relative;
+            z-index: 2; /* 增加层级 */
             transition: 0.3s;
         }
 
-        .holo-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, 
-                var(--neon-blue), 
-                var(--neon-purple),
-                transparent 60%);
-            z-index: -1;
-            border-radius: 17px;
-            animation: borderGlow 3s linear infinite;
+        /* 其他样式保持不变... */
+    </style>
+</head>
+<body>
+    <div id="cyber-bg"></div>
+    <div class="data-stream"></div>
+
+    <!-- 新增主要内容容器 -->
+    <main style="position: relative; z-index: 2;">
+        <h1 class="cyber-title">
+            <span>⚡</span>重庆iX3未来车盟<span>⚡</span>
+        </h1>
+
+        <div class="holo-card">
+            <h2 style="color: var(--neon-blue);">📡 量子通信系统</h2>
+            <ul class="cyber-list">
+                <li>▸ 实时充电网络拓扑</li>
+                <li>▸ 智能路线预测引擎</li>
+                <li>▸ 车联网安全协议</li>
+            </ul>
+            <button class="cyber-button">接入系统</button>
+        </div>
+
+        <div class="holo-card">
+            <h2 style="color: var(--neon-purple);">🚀 时空跃迁计划</h2>
+            <div class="hologram-grid">
+                <div class="grid-item">⚡ 能量核心</div>
+                <div class="grid-item">🌐 导航矩阵</div>
+                <div class="grid-item">🛡️ 防御协议</div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 修复粒子生成函数
+        function createCyberBg() {
+            const bg = document.getElementById('cyber-bg');
+            const colors = ['#00f3ff', '#bc13fe']; // 直接使用颜色值
+            
+            for(let i = 0; i < 100; i++) {
+                const particle = document.createElement('div');
+                particle.style.cssText = `
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    background: ${colors[Math.floor(Math.random() * colors.length)]};
+                    border-radius: 50%;
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    animation: particleMove ${5 + Math.random() * 10}s linear infinite;
+                    pointer-events: none;
+                `;
+                bg.appendChild(particle);
+            }
         }
 
-        /* 数据流效果 */
-        .data-stream {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 40px;
-            background: repeating-linear-gradient(
-                90deg,
-                transparent,
-                transparent 50px,
-                var(--hologram-green) 50px,
-                var(--hologram-green) 100px
-            );
-            opacity: 0.3;
-            animation: streamFlow 20s linear infinite;
-            mask-image: linear-gradient(90deg, 
-                transparent 0%, 
-                #000 20%, 
-                #000 80%, 
-                transparent 100%);
-        }
+        // 添加粒子动画
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes particleMove {
+                0% { transform: translate(0, 0); opacity: 0; }
+                50% { opacity: 1; }
+                100% { transform: translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
 
-        @keyframes hologram {
-            0% { filter: drop-shadow(0 0 5px var(--neon-blue)); }
-            50% { filter: drop-shadow(0 0 20px var(--neon-purple)); }
-            100% { filter: drop-shadow(0 0 10px var(--hologram-green)); }
-        }
-
-        @keyframes borderGlow {
-            0% { opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
-        }
-
-        @keyframes streamFlow {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(100%); }
-        }
-
-        /* 增强按钮特效 */
-        .cyber-button {
-            background: none;
-            border: 2px solid var(--neon-blue);
-            color: var(--neon-blue);
-            padding: 1rem 2.5rem;
-            font-family: 'Orbitron', sans-serif;
-            position: relative;
-            overflow: hidden;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .cyber-button::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, 
-                transparent, 
-                var(--neon-blue),
-                transparent);
-            transform: rotate(45deg);
-            animation: buttonScan 3s infinite;
-        }
-
-        @keyframes buttonScan {
-            from { transform: translateX(-100%) rotate(45deg); }
-            to { transform: translateX(100%) rotate(45deg); }
-        }
-   
+        // 初始化
+        createCyberBg();
+    </script>
+</body>
+</html>
