@@ -7,50 +7,150 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: #0a0a0a;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      text-align: center;
     }
-    header, footer {
+    header {
       padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #222;
       background: #111;
     }
-    h1 { font-size: 2.2em; margin: 40px 0 10px; }
-    p { color: #bbb; margin: 0 0 20px; }
+    header h1 { margin: 0; font-size: 28px; }
+    nav a {
+      margin: 0 10px;
+      color: #bbb;
+      text-decoration: none;
+    }
+    nav a:hover { color: #fff; }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #111, #222);
+    }
+    .hero h2 { font-size: 42px; margin-bottom: 10px; }
+    .hero p { color: #bbb; font-size: 18px; }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    section p {
+      color: #ccc;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #333;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .card h3 { margin: 10px 0; }
+    .card p { color: #aaa; font-size: 14px; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #222;
+      color: #777;
+    }
     .btn {
       display: inline-block;
-      padding: 12px 24px;
-      margin: 10px;
+      margin-top: 15px;
+      padding: 10px 20px;
       border: 1px solid #fff;
-      border-radius: 8px;
+      border-radius: 6px;
       text-decoration: none;
       color: #fff;
     }
-    main { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .btn:hover { background: #fff; color: #000; }
   </style>
 </head>
 <body>
+
+  <!-- 顶部导航 -->
   <header>
-    <h2>CHENG</h2>
+    <h1>CHENG</h1>
+    <nav>
+      <a href="#story">品牌故事</a>
+      <a href="#products">产品展示</a>
+      <a href="#contact">联系</a>
+    </nav>
   </header>
 
-  <main>
-    <h1>自成一派 · 成就不凡</h1>
+  <!-- 封面区域 -->
+  <section class="hero">
+    <h2>自成一派 · 成就不凡</h2>
     <p>Define Your Style. Create Your Wave.</p>
-    <a href="#products" class="btn">Explore</a>
-  </main>
-
-  <section id="products">
-    <h2>Featured Products</h2>
-    <p>这里可以放置你的潮牌商品展示</p>
+    <a href="#products" class="btn">立即探索</a>
   </section>
 
+  <!-- 品牌故事 -->
+  <section id="story">
+    <h2>品牌故事</h2>
+    <p>
+      CHENG，源自“成”之意，象征着突破与蜕变。  
+      我们融合街头的锋芒与东方的内敛，让潮流不仅是衣服，而是一种态度。  
+      在 CHENG，每一件单品都是自我表达的盔甲。  
+    </p>
+  </section>
+
+  <!-- 产品展示 -->
+  <section id="products">
+    <h2>产品展示</h2>
+    <div class="products">
+      <div class="card">
+        <img src="https://via.placeholder.com/400x300?text=CHENG+Tee" alt="CHENG Tee">
+        <h3>CHENG Tee</h3>
+        <p>极简字标 / 纯棉</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x300?text=Wave+Hoodie" alt="Wave Hoodie">
+        <h3>Wave Hoodie</h3>
+        <p>浪形压纹 / 连帽</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x300?text=Street+Cargo" alt="Street Cargo">
+        <h3>Street Cargo</h3>
+        <p>机能口袋 / 宽松版型</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系方式 -->
+  <section id="contact">
+    <h2>联系与合作</h2>
+    <p>商务合作 / 零售渠道 / 品牌联名</p>
+    <p>📧 contact@cheng.style</p>
+    <a href="mailto:contact@cheng.style" class="btn">发送邮件</a>
+  </section>
+
+  <!-- 页脚 -->
   <footer>
-    <p>© 2025 CHENG</p>
+    © 2025 CHENG — Define Your Style. Create Your Wave.
   </footer>
+
 </body>
 </html>
