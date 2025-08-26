@@ -1,0 +1,39 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CHENG — Define Your Style. Create Your Wave.</title>
+<meta name="description" content="CHENG 潮流品牌：自成一派，成就不凡。">
+<style>
+  body{margin:0;font-family:system-ui,Arial;background:#0a0a0a;color:#f5f5f5;text-align:center}
+  header,footer{padding:16px;border-bottom:1px solid #222} footer{border-top:1px solid #222;border-bottom:0}
+  .hero{padding:80px 20px} h1{font-size:40px;margin:0 0 10px} p{color:#b9bcc1;margin:8px 0 0}
+  .btn{display:inline-block;margin-top:16px;padding:10px 16px;border:1px solid #333;border-radius:10px}
+  .grid{max-width:880px;margin:28px auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .card{border:1px dashed #2c2c2c;border-radius:12px;padding:14px} @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  body.en .zh{display:none} body:not(.en) .en{display:none}
+</style></head><body>
+<header>
+  <strong>CHENG</strong>
+  <button id="lang" style="margin-left:12px" aria-pressed="false">中文 / EN</button>
+</header>
+
+<section class="hero">
+  <h1><span class="zh">自成一派，成就不凡。</span><span class="en">Define Your Style. Create Your Wave.</span></h1>
+  <p><span class="zh">街头锋芒 × 东方气韵</span><span class="en">Street edge × Eastern calm</span></p>
+  <a class="btn" href="#products"><span class="zh">开始探索</span><span class="en">Explore</span></a>
+</section>
+
+<section id="products">
+  <div class="grid">
+    <div class="card">CHENG Tee</div>
+    <div class="card">Wave Hoodie</div>
+    <div class="card">Street Cargo</div>
+  </div>
+</section>
+
+<footer>© <span id="y"></span> CHENG</footer>
+<script>
+  const b=document.body,btn=document.getElementById('lang');(localStorage.getItem('cheng-lang')==='en')&&(b.classList.add('en'),btn.ariaPressed='true');
+  btn.onclick=()=>{const en=!b.classList.contains('en');b.classList.toggle('en',en);btn.ariaPressed=String(en);localStorage.setItem('cheng-lang',en?'en':'zh')}
+  document.getElementById('y').textContent=new Date().getFullYear();
+</script>
+</body></html>
