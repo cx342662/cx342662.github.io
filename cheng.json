@@ -99,16 +99,15 @@
     }
   ],
   "sites": [
-    {
-      "key": "程爱笑片单导航",
-      "name": "阿良影视",
-      "type": 3,
-      "api": "csp_Douban",
-      "jar": "https://jsnz.pages.dev/f/8788241d.jar",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 1,
-      "ext": ""
+ {
+      "key" : "点我切源",
+      "name" : "豆豆┃片单",
+      "type" : 3,
+      "api" : "csp_DouDouGuard",
+      "indexs" : 1,
+      "searchable" : 0,
+      "quickSearch" : 0,
+      "changeable" : 0
     },
     {
       "key": "1",
