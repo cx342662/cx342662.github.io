@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>拾贰的快乐龟庭 - 3D 搞笑乌龟互动演示</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入圆润中文字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- 引入 Three.js r128 与 OrbitControls -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f7efe5;
+        }
+        #canvas-container {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+        }
+        /* 毛玻璃拟态卡片 */
+        .glass-panel {
+            background: rgba(255, 251, 245, 0.78);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            box-shadow: 0 8px 32px rgba(84, 62, 42, 0.14);
+            color: #3d2c1e;
+        }
+        .glass-panel-dark {
+            background: rgba(24, 28, 44, 0.78);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+            color: #f8fafc;
+        }
+        /* 浮动台词气泡 */
+        .speech-bubble {
+            position: fixed;
+            pointer-events: none;
+            z-index: 25;
+            transform: translate(-50%, -100%);
+            animation: popFloat 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        @keyframes popFloat {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            14% {
+                opacity: 1;
+                transform: translate(-50%, -115%) scale(1.06);
+            }
+            82% {
+                opacity: 1;
+                transform: translate(-50%, -140%) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -165%) scale(0.95);
+            }
+        }
+        /* 按钮弹性动效 */
+        .btn-fun {
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .btn-fun:hover {
+            transform: translateY(-2px);
+        }
+        .btn-fun:active {
+            transform: scale(0.94);
+        }
+        #loading-screen {
+            transition: opacity 0.7s ease, visibility 0.7s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- 加载画面 -->
+    <div id="loading-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#fdf6ec] text-[#4a3525]">
+        <div class="text-6xl mb-4 animate-bounce">🐢✨</div>
+        <h1 class="text-2xl font-black tracking-wider mb-1">拾贰的快乐龟庭</h1>
+        <p class="text-sm text-[#8c6d5e]">正在擦亮大金链子与大光头...</p>
+    </div>
+
+    <!-- 3D 画布 -->
+    <div id="canvas-container"></div>
+
+    <!-- 浮动台词与头顶名牌层 -->
+    <div id="fx-layer" class="fixed inset-0 pointer-events-none z-20 overflow-hidden">
+        <!-- 拾贰头顶常驻名牌 -->
+        <div id="shier-nametag" class="fixed pointer-events-none transform -translate-x-1/2 -translate-y-full transition-transform duration-75">
+            <div class="flex flex-col items-center">
+                <div class="px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-stone-900 font-black text-xs sm:text-sm shadow-lg border-2 border-white flex items-center gap-1">
+                    <span>🐢 拾贰</span>
+                    <span class="text-[10px] bg-black/80 text-amber-300 px-1.5 py-0.2 rounded-full font-bold">庭院一哥</span>
+                </div>
+                <div class="w-2 h-2 bg-amber-400 rotate-45 -mt-1 border-r border-b border-white"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 顶部栏：标题与拾贰状态卡 -->
+    <div class="fixed top-4 left-4 right-4 z-30 flex flex-wrap items-start justify-between gap-3 pointer-events-none">
+        <!-- 左上角徽章 -->
+        <div id="brand-card" class="glass-panel rounded-2xl px-4 py-2.5 pointer-events-auto transition-colors duration-500">
+            <div class="flex items-center gap-2.5">
+                <span class="text-2xl">🕶️</span>
+                <div>
+                    <h1 class="text-sm sm:text-base font-black leading-tight">拾贰的快乐龟庭 · Shi'er</h1>
+                    <p id="hint-text" class="text-xs opacity-80 mt-0.5">直接点击拾贰的光头、大金链或肚皮试试！</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右上角拾贰实时状态卡 -->
+        <div id="status-card" class="glass-panel rounded-2xl p-3.5 w-64 sm:w-72 pointer-events-auto transition-all duration-500">
+            <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-200 to-amber-400 flex items-center justify-center text-xl shadow-inner border border-amber-500/40">
+                        🐢
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="font-black text-sm">拾贰 (Shi'er)</span>
+                            <span id="state-badge" class="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-800 font-bold">揣手巡视</span>
+                        </div>
+                        <p id="action-desc" class="text-xs opacity-80 mt-0.5">双手插兜，展示大金链子与腹甲</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 排面值与快乐度 -->
+            <div class="grid grid-cols-2 gap-2 mt-2 pt-2 border-t border-black/10 text-xs">
+                <div>
+                    <div class="flex justify-between mb-1">
+                        <span class="opacity-75">✨ 光头亮度</span>
+                        <span id="shine-val" class="font-bold text-amber-600">99%</span>
+                    </div>
+                    <div class="w-full h-1.5 rounded-full bg-black/10 overflow-hidden">
+                        <div id="shine-bar" class="h-full rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 transition-all duration-300" style="width: 99%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1">
+                        <span class="opacity-75">🍉 饱腹快乐</span>
+                        <span id="happy-val" class="font-bold text-emerald-600">85%</span>
+                    </div>
+                    <div class="w-full h-1.5 rounded-full bg-black/10 overflow-hidden">
+                        <div id="happy-bar" class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-green-500 transition-all duration-300" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部悬浮控制台 -->
+    <div class="fixed bottom-4 left-4 right-4 z-30 flex flex-col items-center pointer-events-none">
+        <button id="btn-toggle-ui" class="glass-panel btn-fun pointer-events-auto mb-2 px-3.5 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-sm">
+            <span id="toggle-icon">🔽</span>
+            <span id="toggle-text">收起整活面板</span>
+        </button>
+
+        <div id="control-panel" class="glass-panel rounded-3xl p-3 sm:p-4 max-w-4xl w-full pointer-events-auto transition-all duration-500">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+                
+                <!-- 1. 拾贰专属搞笑整活按钮 (占7列) -->
+                <div class="md:col-span-7 flex flex-col justify-between bg-white/45 rounded-2xl p-2.5">
+                    <span class="text-[11px] font-black uppercase tracking-wider opacity-65 mb-1.5 px-1">🕺 拾贰整活动作</span>
+                    <div class="grid grid-cols-4 gap-1.5">
+                        <button id="btn-dance" class="action-btn btn-fun flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-white/80 hover:bg-white text-xs font-bold shadow-sm">
+                            <span class="text-base mb-0.5">🕺</span>
+                            <span>社会摇蹦迪</span>
+                        </button>
+                        <button id="btn-shell" class="action-btn btn-fun flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-white/80 hover:bg-white text-xs font-bold shadow-sm">
+                            <span class="text-base mb-0.5">🐢</span>
+                            <span>缩头乌龟</span>
+                        </button>
+                        <button id="btn-feed" class="action-btn btn-fun flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-white/80 hover:bg-white text-xs font-bold shadow-sm">
+                            <span class="text-base mb-0.5">🍉</span>
+                            <span>投喂西瓜</span>
+                        </button>
+                        <button id="btn-chill" class="action-btn btn-fun flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-white/80 hover:bg-white text-xs font-bold shadow-sm">
+                            <span class="text-base mb-0.5">🕶️</span>
+                            <span>墨镜躺平</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. 镜头与光影控制 (占5列) -->
+                <div class="md:col-span-5 flex flex-col justify-between bg-white/45 rounded-2xl p-2.5">
+                    <span class="text-[11px] font-black uppercase tracking-wider opacity-65 mb-1.5 px-1">📷 视角与昼夜氛围</span>
+                    <div class="grid grid-cols-5 gap-1.5">
+                        <button data-cam="closeup" class="cam-btn btn-fun flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-amber-500 text-white text-xs font-bold shadow-sm">
+                            <span class="text-sm mb-0.5">🔍</span>
+                            <span>特写</span>
+                        </button>
+                        <button data-cam="overview" class="cam-btn btn-fun flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-white/80 hover:bg-white text-xs font-bold">
+                            <span class="text-sm mb-0.5">🏡</span>
+                            <span>全景</span>
+                        </button>
+                        <button data-time="day" class="time-btn btn-fun flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-amber-500 text-white text-xs font-bold shadow-sm">
+                            <span class="text-sm mb-0.5">☀️</span>
+                            <span>午后</span>
+                        </button>
+                        <button data-time="sunset" class="time-btn btn-fun flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-white/80 hover:bg-white text-xs font-bold">
+                            <span class="text-sm mb-0.5">🌇</span>
+                            <span>黄昏</span>
+                        </button>
+                        <button data-time="night" class="time-btn btn-fun flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-white/80 hover:bg-white text-xs font-bold">
+                            <span class="text-sm mb-0.5">🌙</span>
+                            <span>夜场</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 底部快捷条：恢复常态 + 音效开关 -->
+            <div class="flex items-center justify-between mt-2.5 pt-2 border-t border-black/10 px-1 text-xs">
+                <div class="flex items-center gap-2">
+                    <button id="btn-idle" class="btn-fun px-3 py-1 rounded-full bg-amber-500/20 hover:bg-amber-500/30 font-bold text-amber-900">
+                        🚶 恢复揣手巡视
+                    </button>
+                    <span class="opacity-65 hidden sm:inline">提示：点击拾贰头部、肚子或龟壳触发不同彩蛋</span>
+                </div>
+                <button id="btn-sound" class="btn-fun px-3 py-1 rounded-full bg-black/10 hover:bg-black/15 font-bold flex items-center gap-1">
+                    <span id="sound-icon">🔊</span>
+                    <span id="sound-text">音效已开</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    /**
+     * ============================================================================
+     * 拾贰的快乐龟庭 (Shi'er the Anthropomorphic Turtle 3D Courtyard)
+     * 完整单文件 Three.js 程序化角色建模、搞笑动画状态机与 Web Audio 喜剧音效
+     * ============================================================================
+     */
+
+    // ----------------------------------------------------------------------------
+    // 1. Web Audio API 喜剧音效与蹦迪节拍合成器
+    // ----------------------------------------------------------------------------
+    class ComedyAudioEngine {
+        constructor() {
+            this.ctx = null;
+            this.enabled = true;
+            this.discoInterval = null;
+            this.beatStep = 0;
+        }
+
+        init() {
+            if (!this.ctx) {
+                const AC = window.AudioContext || window.webkitAudioContext;
+                if (AC) this.ctx = new AC();
+            }
+            if (this.ctx && this.ctx.state === 'suspended') {
+                this.ctx.resume();
+            }
+        }
+
+        // 卡通弹簧“Duang / Boing”音效（摸光头/缩头）
+        playBoing(startFreq = 180, endFreq = 520) {
+            if (!this.enabled) return;
+            this.init();
+            if (!this.ctx) return;
+
+            const now = this.ctx.currentTime;
+            const osc = this.ctx.createOscillator();
+            const lfo = this.ctx.createOscillator();
+            const lfoGain = this.ctx.createGain();
+            const gain = this.ctx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(startFreq, now);
+            osc.frequency.exponentialRampToValueAtTime(endFreq, now + 0.16);
+            osc.frequency.exponentialRampToValueAtTime(startFreq * 1.3, now + 0.42);
+
+            lfo.type = 'sine';
+            lfo.frequency.setValueAtTime(22, now);
+            lfoGain.gain.setValueAtTime(45, now);
+
+            gain.gain.setValueAtTime(0.001, now);
+            gain.gain.linearRampToValueAtTime(0.22, now + 0.03);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+
+            lfo.connect(lfoGain);
+            lfoGain.connect(osc.frequency);
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+
+            osc.start(now);
+            lfo.start(now);
+            osc.stop(now + 0.48);
+            lfo.stop(now + 0.48);
+        }
+
+        // 清脆光头反光“叮~”声
+        playSparkle() {
+            if (!this.enabled) return;
+            this.init();
+            if (!this.ctx) return;
+
+            const now = this.ctx.currentTime;
+            [1320, 1760].forEach((freq, idx) => {
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(freq, now + idx * 0.07);
+                gain.gain.setValueAtTime(0.001, now + idx * 0.07);
+                gain.gain.linearRampToValueAtTime(0.14, now + idx * 0.07 + 0.02);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.07 + 0.35);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start(now + idx * 0.07);
+                osc.stop(now + idx * 0.07 + 0.38);
+            });
+        }
+
+        // 啃西瓜“咔嚓咔嚓”音效
+        playMunch() {
+            if (!this.enabled) return;
+            this.init();
+            if (!this.ctx) return;
+
+            const now = this.ctx.currentTime;
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            osc.type = 'square';
+            osc.frequency.setValueAtTime(220, now);
+            osc.frequency.exponentialRampToValueAtTime(90, now + 0.09);
+
+            gain.gain.setValueAtTime(0.12, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start(now);
+            osc.stop(now + 0.11);
+        }
+
+        // 开启/关闭社会摇电音动次打次循环
+        startDiscoBeat() {
+            this.stopDiscoBeat();
+            if (!this.enabled) return;
+            this.init();
+            this.beatStep = 0;
+            const bassNotes = [110, 110, 146.83, 130.81, 110, 110, 164.81, 146.83];
+
+            this.discoInterval = setInterval(() => {
+                if (!this.enabled || !this.ctx) return;
+                const now = this.ctx.currentTime;
+
+                // 底鼓 Kick
+                const kick = this.ctx.createOscillator();
+                const kickGain = this.ctx.createGain();
+                kick.type = 'sine';
+                kick.frequency.setValueAtTime(145, now);
+                kick.frequency.exponentialRampToValueAtTime(42, now + 0.14);
+                kickGain.gain.setValueAtTime(0.28, now);
+                kickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
+                kick.connect(kickGain);
+                kickGain.connect(this.ctx.destination);
+                kick.start(now);
+                kick.stop(now + 0.19);
+
+                // 魔性电子合成器旋律
+                const synth = this.ctx.createOscillator();
+                const synthGain = this.ctx.createGain();
+                synth.type = 'sawtooth';
+                const note = bassNotes[this.beatStep % bassNotes.length] * (this.beatStep % 2 === 1 ? 2 : 1);
+                synth.frequency.setValueAtTime(note, now);
+                synthGain.gain.setValueAtTime(0.07, now);
+                synthGain.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+                synth.connect(synthGain);
+                synthGain.connect(this.ctx.destination);
+                synth.start(now);
+                synth.stop(now + 0.17);
+
+                this.beatStep++;
+            }, 240);
+        }
+
+        stopDiscoBeat() {
+            if (this.discoInterval) {
+                clearInterval(this.discoInterval);
+                this.discoInterval = null;
+            }
+        }
+    }
+
+    const audio = new ComedyAudioEngine();
+
+    // ----------------------------------------------------------------------------
+    // 2. 全局状态与场景配置
+    // ----------------------------------------------------------------------------
+    const STATE = {
+        timeOfDay: 'day',       // 'day' | 'sunset' | 'night'
+        uiExpanded: true,
+        cameraTransition: null,
+        shineScore: 99,
+        happyScore: 85
+    };
+
+    let scene, camera, renderer, controls, clock;
+    let sunLight, hemiLight;
+    let lanternLights = [];
+    let discoLights = [];
+    let houseShojiMat, houseWarmLight;
+    let waterMesh, koiFishList = [];
+    let petalSystem, petalData = [];
+    let shierTurtle;
+    let interactiveParts = [];
+    let watermelonSliceMesh, watermelonActive = false;
+    let loungeChairPos = new THREE.Vector3(3.2, 0.35, 2.2);
+    let boomboxGroup;
+
+    const CAMERA_PRESETS = {
+        closeup:  { pos: new THREE.Vector3(2.2, 2.1, 3.6),  target: new THREE.Vector3(0, 1.15, 0.2) },
+        overview: { pos: new THREE.Vector3(8.5, 6.5, 9.2),  target: new THREE.Vector3(0, 1.0, 0) }
+    };
+
+    const ATMOSPHERE = {
+        day: {
+            bgColor: 0xffeeda,
+            fogColor: 0xffeeda,
+            sunColor: 0xfff4db,
+            sunIntensity: 1.48,
+            sunPos: new THREE.Vector3(11, 18, 10),
+            hemiSky: 0xfff8eb,
+            hemiGround: 0x8fb376,
+            hemiIntensity: 0.78,
+            lanternIntensity: 0,
+            shojiIntensity: 0.15,
+            isDark: false
+        },
+        sunset: {
+            bgColor: 0xf7b086,
+            fogColor: 0xf2a377,
+            sunColor: 0xff773d,
+            sunIntensity: 1.35,
+            sunPos: new THREE.Vector3(-14, 7, 12),
+            hemiSky: 0xffb38a,
+            hemiGround: 0x695866,
+            hemiIntensity: 0.65,
+            lanternIntensity: 1.1,
+            shojiIntensity: 0.65,
+            isDark: false
+        },
+        night: {
+            bgColor: 0x131b2e,
+            fogColor: 0x131b2e,
+            sunColor: 0x7ea2ff,
+            sunIntensity: 0.45,
+            sunPos: new THREE.Vector3(-10, 16, -8),
+            hemiSky: 0x2a3b63,
+            hemiGround: 0x182232,
+            hemiIntensity: 0.48,
+            lanternIntensity: 2.3,
+            shojiIntensity: 1.15,
+            isDark: true
+        }
+    };
+
+    // ----------------------------------------------------------------------------
+    // 3. 程序化纹理生成（龟背甲纹、腹甲纹、爬行动物鳞片、拾贰面部表情贴图）
+    // ----------------------------------------------------------------------------
+    function createTortoiseShellTexture() {
+        const canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 512;
+        const ctx = canvas.getContext('2d');
+
+        // 深棕底色
+        ctx.fillStyle = '#3b2818';
+        ctx.fillRect(0, 0, 512, 512);
+
+        // 绘制龟甲六边形盾片与年轮纹理
+        const rows = 4;
+        const cols = 4;
+        const cellW = 512 / cols;
+        const cellH = 512 / rows;
+
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+                const cx = (c + 0.5) * cellW + (r % 2 === 0 ? 0 : cellW * 0.25);
+                const cy = (r + 0.5) * cellH;
+
+                // 盾片外圈浅棕
+                const grad = ctx.createRadialGradient(cx, cy, 8, cx, cy, cellW * 0.46);
+                grad.addColorStop(0, '#c89d54');
+                grad.addColorStop(0.55, '#8c6232');
+                grad.addColorStop(0.88, '#4a3219');
+                grad.addColorStop(1, '#26180c');
+
+                ctx.fillStyle = grad;
+                ctx.beginPath();
+                for (let i = 0; i < 6; i++) {
+                    const ang = (i / 6) * Math.PI * 2;
+                    const px = cx + Math.cos(ang) * (cellW * 0.46);
+                    const py = cy + Math.sin(ang) * (cellH * 0.46);
+                    if (i === 0) ctx.moveTo(px, py);
+                    else ctx.lineTo(px, py);
+                }
+                ctx.closePath();
+                ctx.fill();
+
+                // 生长年轮细纹
+                ctx.strokeStyle = 'rgba(38, 24, 12, 0.35)';
+                ctx.lineWidth = 2;
+                for (let ring = 1; ring <= 3; ring++) {
+                    ctx.beginPath();
+                    ctx.arc(cx, cy, ring * 14, 0, Math.PI * 2);
+                    ctx.stroke();
+                }
+            }
+        }
+        const tex = new THREE.CanvasTexture(canvas);
+        return tex;
+    }
+
+    function createPlastronTexture() {
+        // 淡黄色分块腹甲纹理（还原参考图肚子上的格子腹甲）
+        const canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 512;
+        const ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = '#f3dca6';
+        ctx.fillRect(0, 0, 512, 512);
+
+        // 斑驳质感颗粒
+        for (let i = 0; i < 1400; i++) {
+            ctx.fillStyle = Math.random() > 0.5 ? 'rgba(185, 145, 78, 0.18)' : 'rgba(255, 248, 225, 0.25)';
+            ctx.beginPath();
+            ctx.arc(Math.random() * 512, Math.random() * 512, 1.5 + Math.random() * 3, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // 腹甲中线与横向分块沟壑
+        ctx.strokeStyle = '#9c7840';
+        ctx.lineWidth = 6;
+        ctx.beginPath();
+        ctx.moveTo(256, 0);
+        ctx.lineTo(256, 512);
+        ctx.stroke();
+
+        [110, 210, 315, 415].forEach((y) => {
+            ctx.beginPath();
+            ctx.moveTo(40, y);
+            ctx.quadraticCurveTo(256, y + 18, 472, y);
+            ctx.stroke();
+        });
+
+        return new THREE.CanvasTexture(canvas);
+    }
+
+    function createScalySkinTexture() {
+        // 黄橄榄绿乌龟脖颈与粗腿鳞片纹理
+        const canvas = document.createElement('canvas');
+        canvas.width = 256;
+        canvas.height = 256;
+        const ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = '#9da158';
+        ctx.fillRect(0, 0, 256, 256);
+
+        for (let y = 0; y < 256; y += 14) {
+            for (let x = 0; x < 256; x += 14) {
+                const ox = x + (y % 28 === 0 ? 7 : 0);
+                ctx.fillStyle = (x + y) % 28 === 0 ? '#878b46' : '#b2b66b';
+                ctx.beginPath();
+                ctx.arc(ox, y, 5.5, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.strokeStyle = 'rgba(65, 68, 30, 0.45)';
+                ctx.lineWidth = 1.2;
+                ctx.stroke();
+            }
+        }
+        const tex = new THREE.CanvasTexture(canvas);
+        tex.wrapS = THREE.RepeatWrapping;
+        tex.wrapT = THREE.RepeatWrapping;
+        tex.repeat.set(3, 3);
+        return tex;
+    }
+
+    function createShierFaceTexture() {
+        // 还原参考图中光头“拾贰”自信邪魅一笑、微红脸颊与细腻五官
+        const canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 512;
+        const ctx = canvas.getContext('2d');
+
+        // 温暖健康肤色底色
+        const skinGrad = ctx.createRadialGradient(256, 230, 40, 256, 256, 250);
+        skinGrad.addColorStop(0, '#ffe0cc');
+        skinGrad.addColorStop(0.7, '#f5c3a8');
+        skinGrad.addColorStop(1, '#e2a687');
+        ctx.fillStyle = skinGrad;
+        ctx.fillRect(0, 0, 512, 512);
+
+        // 光头额头高光光泽
+        const shineGrad = ctx.createRadialGradient(225, 135, 5, 225, 135, 65);
+        shineGrad.addColorStop(0, 'rgba(255, 255, 255, 0.65)');
+        shineGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+        ctx.fillStyle = shineGrad;
+        ctx.beginPath();
+        ctx.arc(225, 135, 65, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 脸颊微红腮红
+        [[190, 275], [322, 275]].forEach(([bx, by]) => {
+            const blush = ctx.createRadialGradient(bx, by, 4, bx, by, 34);
+            blush.addColorStop(0, 'rgba(244, 114, 128, 0.42)');
+            blush.addColorStop(1, 'rgba(244, 114, 128, 0)');
+            ctx.fillStyle = blush;
+            ctx.beginPath();
+            ctx.arc(bx, by, 34, 0, Math.PI * 2);
+            ctx.fill();
+        });
+
+        // 眉毛（略带一丝得意挑眉）
+        ctx.strokeStyle = '#3b2b23';
+        ctx.lineWidth = 6;
+        ctx.lineCap = 'round';
+        // 左眉
+        ctx.beginPath();
+        ctx.moveTo(188, 212);
+        ctx.quadraticCurveTo(212, 202, 234, 210);
+        ctx.stroke();
+        // 右眉（微微挑起）
+        ctx.beginPath();
+        ctx.moveTo(278, 210);
+        ctx.quadraticCurveTo(302, 196, 326, 206);
+        ctx.stroke();
+
+        // 自信笑眼（细长含笑双眼）
+        [[212, 234], [300, 234]].forEach(([ex, ey]) => {
+            // 眼白
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.ellipse(ex, ey, 20, 10, 0, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 深棕瞳孔
+            ctx.fillStyle = '#231712';
+            ctx.beginPath();
+            ctx.arc(ex, ey, 8.5, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 眼神高光
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(ex - 3, ey - 3, 2.8, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 上眼睑线条
+            ctx.strokeStyle = '#2b1d16';
+            ctx.lineWidth = 3.5;
+            ctx.beginPath();
+            ctx.arc(ex, ey + 2, 20, Math.PI * 1.1, Math.PI * 1.9);
+            ctx.stroke();
+        });
+
+        // 立体圆润鼻头
+        ctx.strokeStyle = 'rgba(168, 108, 82, 0.55)';
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.arc(256, 268, 12, 0.15 * Math.PI, 0.85 * Math.PI);
+        ctx.stroke();
+
+        // 标志性“歪嘴自信微笑” (Smirk)
+        ctx.strokeStyle = '#9e4747';
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        ctx.moveTo(222, 308);
+        ctx.quadraticCurveTo(258, 320, 294, 300); // 右嘴角上扬
+        ctx.stroke();
+
+        // 嘴角笑窝弧线
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(296, 298, 7, -0.4, 1.2);
+        ctx.stroke();
+
+        // 下唇微光
+        ctx.fillStyle = 'rgba(225, 115, 120, 0.45)';
+        ctx.beginPath();
+        ctx.ellipse(257, 317, 18, 5, -0.08, 0, Math.PI * 2);
+        ctx.fill();
+
+        const tex = new THREE.CanvasTexture(canvas);
+        return tex;
+    }
+
+    function createGrassTexture() {
+        const canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 512;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#8cc268';
+        ctx.fillRect(0, 0, 512, 512);
+        const palette = ['#7ab056', '#9ed47b', '#a8db86', '#70a34d'];
+        for (let i = 0; i < 1600; i++) {
+            ctx.fillStyle = palette[i % palette.length];
+            ctx.beginPath();
+            ctx.arc(Math.random() * 512, Math.random() * 512, 2 + Math.random() * 5, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        const tex = new THREE.CanvasTexture(canvas);
+        tex.wrapS = THREE.RepeatWrapping;
+        tex.wrapT = THREE.RepeatWrapping;
+        tex.repeat.set(6, 6);
+        return tex;
+    }
+
+    function createWoodTexture(base, line) {
+        const canvas = document.createElement('canvas');
+        canvas.width = 256;
+        canvas.height = 256;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = base;
+        ctx.fillRect(0, 0, 256, 256);
+        ctx.strokeStyle = line;
+        ctx.globalAlpha = 0.28;
+        ctx.lineWidth = 2;
+        for (let y = 32; y < 256; y += 32) {
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(256, y);
+            ctx.stroke();
+        }
+        const tex = new THREE.CanvasTexture(canvas);
+        tex.wrapS = THREE.RepeatWrapping;
+        tex.wrapT = THREE.RepeatWrapping;
+        return tex;
+    }
+
+    // ----------------------------------------------------------------------------
+    // 4. 初始化 Three.js 场景与灯光
+    // ----------------------------------------------------------------------------
+    function initEngine() {
+        clock = new THREE.Clock();
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(ATMOSPHERE.day.bgColor);
+        scene.fog = new THREE.FogExp2(ATMOSPHERE.day.fogColor, 0.018);
+
+        camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 120);
+        camera.position.copy(CAMERA_PRESETS.closeup.pos);
+
+        renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.05;
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.target.copy(CAMERA_PRESETS.closeup.target);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.06;
+        controls.maxPolarAngle = Math.PI * 0.47;
+        controls.minDistance = 2.0;
+        controls.maxDistance = 22;
+        controls.addEventListener('start', () => { STATE.cameraTransition = null; });
+
+        hemiLight = new THREE.HemisphereLight(ATMOSPHERE.day.hemiSky, ATMOSPHERE.day.hemiGround, ATMOSPHERE.day.hemiIntensity);
+        scene.add(hemiLight);
+
+        sunLight = new THREE.DirectionalLight(ATMOSPHERE.day.sunColor, ATMOSPHERE.day.sunIntensity);
+        sunLight.position.copy(ATMOSPHERE.day.sunPos);
+        sunLight.castShadow = true;
+        sunLight.shadow.mapSize.width = 2048;
+        sunLight.shadow.mapSize.height = 2048;
+        const d = 11;
+        sunLight.shadow.camera.left = -d;
+        sunLight.shadow.camera.right = d;
+        sunLight.shadow.camera.top = d;
+        sunLight.shadow.camera.bottom = -d;
+        sunLight.shadow.bias = -0.0005;
+        scene.add(sunLight);
+
+        // 蹦迪彩色舞台灯（默认关闭）
+        const partyColors = [0xff007f, 0x00f0ff, 0xffd700];
+        partyColors.forEach((col, i) => {
+            const spot = new THREE.SpotLight(col, 0, 14, Math.PI / 4, 0.5);
+            spot.position.set(Math.cos(i * 2.1) * 4, 5.5, Math.sin(i * 2.1) * 4);
+            scene.add(spot);
+            discoLights.push(spot);
+        });
+    }
+
+    // ----------------------------------------------------------------------------
+    // 5. 构建温馨喜剧庭院（木廊、音响、躺椅、锦鲤池、樱花树、石灯笼）
+    // ----------------------------------------------------------------------------
+    function buildCourtyard() {
+        const grassTex = createGrassTexture();
+        const woodTex = createWoodTexture('#c78d59', '#8a5830');
+        const darkWoodTex = createWoodTexture('#6b442a', '#3d2414');
+
+        // 草地底座
+        const ground = new THREE.Mesh(
+            new THREE.CylinderGeometry(11.5, 11.2, 0.8, 48),
+            new THREE.MeshStandardMaterial({ map: grassTex, roughness: 0.88 })
+        );
+        ground.position.y = -0.4;
+        ground.receiveShadow = true;
+        scene.add(ground);
+
+        // 1. 日式木廊小屋 (Engawa)
+        const houseGroup = new THREE.Group();
+        houseGroup.position.set(-3.6, 0, -2.8);
+        scene.add(houseGroup);
+
+        const engawaFloor = new THREE.Mesh(
+            new THREE.BoxGeometry(6.4, 0.55, 5.0),
+            new THREE.MeshStandardMaterial({ map: woodTex, roughness: 0.65 })
+        );
+        engawaFloor.position.y = 0.275;
+        engawaFloor.castShadow = true;
+        engawaFloor.receiveShadow = true;
+        houseGroup.add(engawaFloor);
+
+        const roomBody = new THREE.Mesh(
+            new THREE.BoxGeometry(5.4, 3.0, 3.4),
+            new THREE.MeshStandardMaterial({ color: 0xf4ead5, roughness: 0.85 })
+        );
+        roomBody.position.set(-0.2, 2.0, -0.6);
+        roomBody.castShadow = true;
+        houseGroup.add(roomBody);
+
+        houseShojiMat = new THREE.MeshStandardMaterial({
+            color: 0xfff8eb,
+            emissive: 0xffd28a,
+            emissiveIntensity: 0.15
+        });
+        for (let i = 0; i < 3; i++) {
+            const shoji = new THREE.Mesh(new THREE.BoxGeometry(1.35, 2.2, 0.08), houseShojiMat);
+            shoji.position.set(-1.45 + i * 1.4, 1.7, 1.12);
+            houseGroup.add(shoji);
+        }
+
+        // 斜屋顶
+        const roofMat = new THREE.MeshStandardMaterial({ color: 0x4a5568, roughness: 0.75 });
+        const roofFront = new THREE.Mesh(new THREE.BoxGeometry(7.2, 0.22, 3.6), roofMat);
+        roofFront.position.set(0, 3.9, 1.3);
+        roofFront.rotation.x = 0.3;
+        roofFront.castShadow = true;
+        houseGroup.add(roofFront);
+
+        const roofBack = new THREE.Mesh(new THREE.BoxGeometry(7.2, 0.22, 3.4), roofMat);
+        roofBack.position.set(0, 3.9, -1.3);
+        roofBack.rotation.x = -0.3;
+        roofBack.castShadow = true;
+        houseGroup.add(roofBack);
+
+        houseWarmLight = new THREE.PointLight(0xffb454, 0.5, 9);
+        houseWarmLight.position.set(-2.5, 2.2, -0.5);
+        scene.add(houseWarmLight);
+
+        // 木廊上的复古手提大音响 (Boombox - 社会摇道具)
+        boomboxGroup = new THREE.Group();
+        boomboxGroup.position.set(-1.6, 0.75, -0.8);
+        boomboxGroup.rotation.y = 0.45;
+        scene.add(boomboxGroup);
+
+        const bbBody = new THREE.Mesh(
+            new THREE.BoxGeometry(0.95, 0.42, 0.34),
+            new THREE.MeshStandardMaterial({ color: 0x22252a, roughness: 0.4, metalness: 0.4 })
+        );
+        bbBody.castShadow = true;
+        boomboxGroup.add(bbBody);
+
+        [-0.28, 0.28].forEach((sx) => {
+            const speaker = new THREE.Mesh(
+                new THREE.CylinderGeometry(0.15, 0.15, 0.36, 16),
+                new THREE.MeshStandardMaterial({ color: 0xfbbf24, metalness: 0.7, roughness: 0.3 })
+            );
+            speaker.rotation.x = Math.PI / 2;
+            speaker.position.x = sx;
+            boomboxGroup.add(speaker);
+        });
+
+        // 2. 锦鲤池塘
+        const pondGroup = new THREE.Group();
+        pondGroup.position.set(3.4, 0.02, -2.4);
+        scene.add(pondGroup);
+
+        waterMesh = new THREE.Mesh(
+            new THREE.CircleGeometry(2.0, 32),
+            new THREE.MeshStandardMaterial({ color: 0x56b4d3, roughness: 0.15, transparent: true, opacity: 0.88 })
+        );
+        waterMesh.rotation.x = -Math.PI / 2;
+        waterMesh.position.y = 0.04;
+        pondGroup.add(waterMesh);
+
+        const rockMat = new THREE.MeshStandardMaterial({ color: 0x87909c, roughness: 0.88 });
+        for (let i = 0; i < 16; i++) {
+            const ang = (i / 16) * Math.PI * 2;
+            const rock = new THREE.Mesh(new THREE.DodecahedronGeometry(0.28, 1), rockMat);
+            rock.position.set(Math.cos(ang) * 2.02, 0.12, Math.sin(ang) * 2.02);
+            rock.scale.set(1.2, 0.7, 1);
+            rock.castShadow = true;
+            pondGroup.add(rock);
+        }
+
+        [0xff6b4a, 0xffffff, 0xffaa33].forEach((c, i) => {
+            const koi = new THREE.Mesh(new THREE.ConeGeometry(0.1, 0.35, 8), new THREE.MeshStandardMaterial({ color: c }));
+            koi.rotation.x = Math.PI / 2;
+            pondGroup.add(koi);
+            koiFishList.push({ mesh: koi, angle: i * 2.1, radius: 0.7 + i * 0.32, speed: 0.65 + i * 0.12 });
+        });
+
+        // 3. 沙滩休闲躺椅（供拾贰墨镜躺平晒太阳）
+        const chairGroup = new THREE.Group();
+        chairGroup.position.copy(loungeChairPos);
+        chairGroup.rotation.y = -0.65;
+        scene.add(chairGroup);
+
+        const frameMat = new THREE.MeshStandardMaterial({ map: darkWoodTex, roughness: 0.7 });
+        const clothMat = new THREE.MeshStandardMaterial({ color: 0x38bdf8, roughness: 0.85 });
+
+        const seat = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.1, 1.3), clothMat);
+        seat.position.set(0, 0.25, 0.3);
+        seat.castShadow = true;
+        chairGroup.add(seat);
+
+        const backrest = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.1, 1.2), clothMat);
+        backrest.position.set(0, 0.62, -0.55);
+        backrest.rotation.x = 0.65;
+        backrest.castShadow = true;
+        chairGroup.add(backrest);
+
+        [[-0.5, 0.7], [0.5, 0.7], [-0.5, -0.6], [0.5, -0.6]].forEach(([lx, lz]) => {
+            const leg = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.35, 0.08), frameMat);
+            leg.position.set(lx, 0.17, lz);
+            chairGroup.add(leg);
+        });
+
+        // 4. 樱花树与飘落花瓣
+        const treeGroup = new THREE.Group();
+        treeGroup.position.set(-4.6, 0, 3.0);
+        scene.add(treeGroup);
+
+        const trunk = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.24, 0.42, 2.8, 10),
+            new THREE.MeshStandardMaterial({ color: 0x5c3d2e, roughness: 0.9 })
+        );
+        trunk.position.y = 1.4;
+        trunk.castShadow = true;
+        treeGroup.add(trunk);
+
+        const blossomColors = [0xffb7c5, 0xffccd5, 0xff9ebb];
+        [[0, 3.6, 0, 1.45], [1.1, 3.3, 0.4, 1.15], [-1.0, 3.4, -0.3, 1.1], [0.3, 4.3, -0.4, 1.15]].forEach(([cx, cy, cz, cr], idx) => {
+            const crown = new THREE.Mesh(
+                new THREE.DodecahedronGeometry(cr, 1),
+                new THREE.MeshStandardMaterial({ color: blossomColors[idx % 3], roughness: 0.75 })
+            );
+            crown.position.set(cx, cy, cz);
+            crown.castShadow = true;
+            treeGroup.add(crown);
+        });
+
+        // 5. 石灯笼
+        createStoneLantern(1.4, 0, -1.2);
+        createStoneLantern(-2.6, 0, 4.4);
+
+        // 6. 樱花花瓣粒子
+        const petalGeo = new THREE.PlaneGeometry(0.12, 0.08);
+        const petalMat = new THREE.MeshBasicMaterial({ color: 0xffb7c5, side: THREE.DoubleSide, transparent: true, opacity: 0.88 });
+        petalSystem = new THREE.InstancedMesh(petalGeo, petalMat, 100);
+        scene.add(petalSystem);
+        for (let i = 0; i < 100; i++) {
+            petalData.push({
+                x: (Math.random() - 0.5) * 14,
+                y: 1 + Math.random() * 6,
+                z: (Math.random() - 0.5) * 14,
+                speedY: 0.35 + Math.random() * 0.4,
+                phase: Math.random() * Math.PI * 2
+            });
+        }
+    }
+
+    function createStoneLantern(x, y, z) {
+        const g = new THREE.Group();
+        g.position.set(x, y, z);
+        const stoneMat = new THREE.MeshStandardMaterial({ color: 0x9aa2ad, roughness: 0.9 });
+        const base = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.4, 0.22, 6), stoneMat);
+        base.position.y = 0.11;
+        g.add(base);
+        const post = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.18, 0.7, 8), stoneMat);
+        post.position.y = 0.55;
+        g.add(post);
+        const glowMat = new THREE.MeshStandardMaterial({ color: 0xffdf9e, emissive: 0xff9e2c, emissiveIntensity: 0.2 });
+        const box = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.34, 0.34), glowMat);
+        box.position.y = 1.05;
+        g.add(box);
+        const cap = new THREE.Mesh(new THREE.ConeGeometry(0.46, 0.32, 6), stoneMat);
+        cap.position.y = 1.38;
+        g.add(cap);
+        const pLight = new THREE.PointLight(0xffa63b, 0, 6.5);
+        pLight.position.y = 1.05;
+        g.add(pLight);
+        lanternLights.push({ light: pLight, mat: glowMat });
+        scene.add(g);
+    }
+
+    // ----------------------------------------------------------------------------
+    // 6. 核心角色建模：社会乌龟“拾贰” (还原参考图每一个特征)
+    // ----------------------------------------------------------------------------
+    class ShierTurtleCharacter {
+        constructor() {
+            this.group = new THREE.Group();
+            this.group.position.set(0, 0, 0.4);
+            scene.add(this.group);
+
+            this.state = 'idle'; // 'idle' | 'dance' | 'shell' | 'eat' | 'chill' | 'shock'
+            this.animTime = 0;
+            this.stateTimer = 0;
+            this.targetPos = new THREE.Vector3(0, 0, 0.4);
+            this.patrolPoints = [
+                new THREE.Vector3(0, 0, 0.4),
+                new THREE.Vector3(1.5, 0, 1.4),
+                new THREE.Vector3(-1.2, 0, 1.6),
+                new THREE.Vector3(0.4, 0, -0.2)
+            ];
+            this.patrolIdx = 0;
+            this.bellyJiggle = 0;
+            this.headGlintTimer = 0;
+
+            this.buildCharacterMesh();
+        }
+
+        buildCharacterMesh() {
+            const shellTex = createTortoiseShellTexture();
+            const plastronTex = createPlastronTexture();
+            const skinTex = createScalySkinTexture();
+            const faceTex = createShierFaceTexture();
+
+            // 材质定义
+            const carapaceMat = new THREE.MeshStandardMaterial({ map: shellTex, roughness: 0.55, metalness: 0.08 });
+            const plastronMat = new THREE.MeshStandardMaterial({ map: plastronTex, roughness: 0.65 });
+            const reptileMat = new THREE.MeshStandardMaterial({ map: skinTex, roughness: 0.72 });
+            const shirtMat = new THREE.MeshStandardMaterial({ color: 0x1b1d21, roughness: 0.82 }); // 黑色敞怀短袖衬衫
+            const goldMat = new THREE.MeshStandardMaterial({
+                color: 0xffd700,
+                metalness: 0.88,
+                roughness: 0.18,
+                emissive: 0x553b00,
+                emissiveIntensity: 0.25
+            });
+            const silverMat = new THREE.MeshStandardMaterial({ color: 0xe2e8f0, metalness: 0.9, roughness: 0.15 });
+            this.headMat = new THREE.MeshStandardMaterial({
+                map: faceTex,
+                roughness: 0.32, // 光头自带自然高光反射
+                metalness: 0.04
+            });
+
+            // 根骨骼
+            this.bodyPivot = new THREE.Group();
+            this.group.add(this.bodyPivot);
+
+            // 1. 圆鼓鼓的淡黄分块腹甲躯干 (Plastron)
+            const torsoGeo = new THREE.SphereGeometry(0.56, 28, 24);
+            torsoGeo.scale(0.95, 1.18, 0.85);
+            this.torsoMesh = new THREE.Mesh(torsoGeo, plastronMat);
+            this.torsoMesh.position.set(0, 0.98, 0.04);
+            this.torsoMesh.castShadow = true;
+            this.torsoMesh.receiveShadow = true;
+            this.torsoMesh.userData.part = 'belly';
+            this.bodyPivot.add(this.torsoMesh);
+            interactiveParts.push(this.torsoMesh);
+
+            // 2. 背部大型拱形龟壳 (Carapace - 从黑衬衫背后拱出)
+            const shellGroup = new THREE.Group();
+            shellGroup.position.set(0, 1.05, -0.22);
+            this.bodyPivot.add(shellGroup);
+
+            const domeGeo = new THREE.SphereGeometry(0.68, 28, 22, 0, Math.PI * 2, 0, Math.PI * 0.58);
+            domeGeo.scale(0.92, 1.15, 0.78);
+            this.carapaceMesh = new THREE.Mesh(domeGeo, carapaceMat);
+            this.carapaceMesh.rotation.x = -Math.PI / 2;
+            this.carapaceMesh.castShadow = true;
+            this.carapaceMesh.receiveShadow = true;
+            this.carapaceMesh.userData.part = 'shell';
+            shellGroup.add(this.carapaceMesh);
+            interactiveParts.push(this.carapaceMesh);
+
+            // 龟壳边缘厚实裙边
+            const rimGeo = new THREE.TorusGeometry(0.62, 0.085, 12, 28);
+            rimGeo.scale(0.92, 1.15, 1);
+            const shellRim = new THREE.Mesh(rimGeo, carapaceMat);
+            shellRim.position.z = 0.02;
+            shellRim.castShadow = true;
+            shellGroup.add(shellRim);
+
+            // 3. 敞怀黑色短袖衬衫（左右前襟 + 后领口，露出中间大肚皮）
+            this.shirtGroup = new THREE.Group();
+            this.bodyPivot.add(this.shirtGroup);
+
+            // 左前襟
+            const leftFlapGeo = new THREE.CylinderGeometry(0.58, 0.61, 0.72, 20, 1, true, 0.28, 1.15);
+            leftFlapGeo.scale(0.96, 1, 0.88);
+            const leftFlap = new THREE.Mesh(leftFlapGeo, shirtMat);
+            leftFlap.position.set(0, 1.12, 0.04);
+            leftFlap.castShadow = true;
+            this.shirtGroup.add(leftFlap);
+
+            // 右前襟
+            const rightFlapGeo = new THREE.CylinderGeometry(0.58, 0.61, 0.72, 20, 1, true, -1.43, 1.15);
+            rightFlapGeo.scale(0.96, 1, 0.88);
+            const rightFlap = new THREE.Mesh(rightFlapGeo, shirtMat);
+            rightFlap.position.set(0, 1.12, 0.04);
+            rightFlap.castShadow = true;
+            this.shirtGroup.add(rightFlap);
+
+            // 衬衫翻领
+            const collar = new THREE.Mesh(new THREE.TorusGeometry(0.32, 0.055, 10, 24, Math.PI * 1.45), shirtMat);
+            collar.position.set(0, 1.48, 0.05);
+            collar.rotation.set(Math.PI * 0.45, 0, Math.PI * 0.78);
+            this.shirtGroup.add(collar);
+
+            // 4. 粗壮的爬虫鳞片脖颈 + 灵魂大金链子 (Chunky Gold Chain)
+            this.neckAndHeadPivot = new THREE.Group();
+            this.neckAndHeadPivot.position.set(0, 1.48, 0.06);
+            this.bodyPivot.add(this.neckAndHeadPivot);
+
+            const neckMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.30, 0.34, 18), reptileMat);
+            neckMesh.position.y = 0.12;
+            neckMesh.castShadow = true;
+            this.neckAndHeadPivot.add(neckMesh);
+
+            // 粗犷大金链子（由多颗金属链环组成，随动作晃动）
+            this.goldChainPivot = new THREE.Group();
+            this.goldChainPivot.position.set(0, 0.02, 0.04);
+            this.bodyPivot.add(this.goldChainPivot);
+
+            const chainCurve = new THREE.CatmullRomCurve3([
+                new THREE.Vector3(-0.22, 1.50, -0.05),
+                new THREE.Vector3(-0.24, 1.34, 0.25),
+                new THREE.Vector3(0, 1.24, 0.45),
+                new THREE.Vector3(0.24, 1.34, 0.25),
+                new THREE.Vector3(0.22, 1.50, -0.05)
+            ], true);
+            const chainGeo = new THREE.TubeGeometry(chainCurve, 32, 0.036, 10, true);
+            const chainMesh = new THREE.Mesh(chainGeo, goldMat);
+            chainMesh.castShadow = true;
+            chainMesh.userData.part = 'chain';
+            this.goldChainPivot.add(chainMesh);
+            interactiveParts.push(chainMesh);
+
+            // 5. 拾贰标志性圆润大光头 + 双耳银色圆环耳环
+            this.headGroup = new THREE.Group();
+            this.headGroup.position.set(0, 0.48, 0.04);
+            this.neckAndHeadPivot.add(this.headGroup);
+
+            const headGeo = new THREE.SphereGeometry(0.34, 32, 28);
+            headGeo.scale(0.95, 1.08, 0.98);
+            this.headMesh = new THREE.Mesh(headGeo, this.headMat);
+            // 旋转贴图使五官正对前方 (+Z)
+            this.headMesh.rotation.y = -Math.PI / 2;
+            this.headMesh.castShadow = true;
+            this.headMesh.userData.part = 'head';
+            this.headGroup.add(this.headMesh);
+            interactiveParts.push(this.headMesh);
+
+            // 立体小鼻子增强侧面轮廓
+            const noseBridge = new THREE.Mesh(
+                new THREE.SphereGeometry(0.042, 12, 12),
+                new THREE.MeshStandardMaterial({ color: 0xf2bca0, roughness: 0.45 })
+            );
+            noseBridge.position.set(0, -0.02, 0.33);
+            noseBridge.scale.set(0.9, 1.1, 0.8);
+            this.headGroup.add(noseBridge);
+
+            // 双耳与银色 hoop 耳环
+            const earSkinMat = new THREE.MeshStandardMaterial({ color: 0xefc0a6, roughness: 0.5 });
+            [-0.32, 0.32].forEach((ex) => {
+                const ear = new THREE.Mesh(new THREE.SphereGeometry(0.065, 12, 12), earSkinMat);
+                ear.scale.set(0.45, 1.1, 0.75);
+                ear.position.set(ex, -0.02, -0.02);
+                this.headGroup.add(ear);
+
+                // 银耳环
+                const earring = new THREE.Mesh(new THREE.TorusGeometry(0.036, 0.008, 8, 18), silverMat);
+                earring.position.set(ex * 1.03, -0.09, -0.02);
+                earring.rotation.y = Math.PI / 2;
+                this.headGroup.add(earring);
+            });
+
+            // 炫酷黑墨镜（默认隐藏，躺平或装酷时戴上）
+            this.sunglassesGroup = new THREE.Group();
+            this.sunglassesGroup.position.set(0, 0.04, 0.33);
+            this.sunglassesGroup.visible = false;
+            this.headGroup.add(this.sunglassesGroup);
+
+            const glassMat = new THREE.MeshStandardMaterial({ color: 0x111111, metalness: 0.85, roughness: 0.1 });
+            [-0.11, 0.11].forEach((gx) => {
+                const lens = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.09, 0.03), glassMat);
+                lens.position.x = gx;
+                this.sunglassesGroup.add(lens);
+            });
+            const bridge = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.025, 0.03), glassMat);
+            bridge.position.y = 0.02;
+            this.sunglassesGroup.add(bridge);
+
+            // 光头反光特效十字星（点击光头时闪烁）
+            this.glintSprite = new THREE.Mesh(
+                new THREE.OctahedronGeometry(0.11, 0),
+                new THREE.MeshBasicMaterial({ color: 0xffffff })
+            );
+            this.glintSprite.position.set(0.14, 0.28, 0.24);
+            this.glintSprite.visible = false;
+            this.headGroup.add(this.glintSprite);
+
+            // 6. 双臂与黑衬衫短袖（默认双手揣兜/叉腰大佬姿态）
+            this.leftArmPivot = this.createSwaggerArm(1, shirtMat, reptileMat);
+            this.rightArmPivot = this.createSwaggerArm(-1, shirtMat, reptileMat);
+            this.bodyPivot.add(this.leftArmPivot);
+            this.bodyPivot.add(this.rightArmPivot);
+
+            // 7. 粗壮的龟腿与带爪大脚掌
+            this.leftLegPivot = this.createTortoiseLeg(0.28, reptileMat);
+            this.rightLegPivot = this.createTortoiseLeg(-0.28, reptileMat);
+            this.bodyPivot.add(this.leftLegPivot);
+            this.bodyPivot.add(this.rightLegPivot);
+        }
+
+        createSwaggerArm(side, shirtMat, reptileMat) {
+            const armPivot = new THREE.Group();
+            armPivot.position.set(side * 0.52, 1.34, 0.04);
+
+            // 黑衬衫短袖筒
+            const sleeve = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.18, 0.26, 14), shirtMat);
+            sleeve.position.set(side * 0.06, -0.08, 0);
+            sleeve.rotation.z = side * 0.35;
+            sleeve.castShadow = true;
+            armPivot.add(sleeve);
+
+            // 鳞片上臂（向外微张）
+            const upperArm = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.11, 0.32, 12), reptileMat);
+            upperArm.position.set(side * 0.14, -0.24, -0.02);
+            upperArm.rotation.z = side * 0.42;
+            upperArm.castShadow = true;
+            armPivot.add(upperArm);
+
+            // 鳞片前臂（向内收拢揣进腰间口袋）
+            const foreArm = new THREE.Mesh(new THREE.CylinderGeometry(0.105, 0.09, 0.32, 12), reptileMat);
+            foreArm.position.set(side * 0.12, -0.46, 0.08);
+            foreArm.rotation.z = -side * 0.48;
+            foreArm.rotation.x = -0.35;
+            foreArm.castShadow = true;
+            armPivot.add(foreArm);
+
+            return armPivot;
+        }
+
+        createTortoiseLeg(xOffset, reptileMat) {
+            const legPivot = new THREE.Group();
+            legPivot.position.set(xOffset, 0.56, 0.02);
+
+            const thigh = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.15, 0.46, 14), reptileMat);
+            thigh.position.y = -0.22;
+            thigh.castShadow = true;
+            legPivot.add(thigh);
+
+            // 厚实龟脚掌
+            const foot = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.21, 0.16, 14), reptileMat);
+            foot.position.set(0, -0.48, 0.06);
+            foot.scale.set(1.0, 1.0, 1.35);
+            foot.castShadow = true;
+            legPivot.add(foot);
+
+            // 三颗白色厚指甲
+            const clawMat = new THREE.MeshStandardMaterial({ color: 0xe6cfa8, roughness: 0.5 });
+            [-0.1, 0, 0.1].forEach((cx) => {
+                const claw = new THREE.Mesh(new THREE.ConeGeometry(0.036, 0.09, 8), clawMat);
+                claw.rotation.x = Math.PI / 2;
+                claw.position.set(cx, -0.51, 0.31);
+                legPivot.add(claw);
+            });
+
+            return legPivot;
+        }
+
+        // 点击角色不同部位触发专属爆笑反应
+        onPartClicked(partName) {
+            if (partName === 'head') {
+                audio.playSparkle();
+                this.headGlintTimer = 1.2;
+                this.headGroup.rotation.z = (Math.random() - 0.5) * 0.45;
+                STATE.shineScore = 100;
+                updateStatusUI('光头反光', '别摸我光头，刚打过蜡反光！');
+                const lines = [
+                    '✨ 别摸我光头，刚打过蜡反光！',
+                    '💡 晚上省电全靠我这颗脑门！',
+                    '😎 摸光头能蹭欧气，准了！'
+                ];
+                spawnSpeechBubble(this.group.position, lines[Math.floor(Math.random() * lines.length)], '#d97706');
+            } else if (partName === 'chain') {
+                audio.playSparkle();
+                this.goldChainPivot.position.y = 0.12;
+                const lines = [
+                    '⛓️ 这大金链子纯金的，沉得慌！',
+                    '💰 庭院一哥的排面，懂？',
+                    '✨ 阳光一照，闪瞎对面锦鲤！'
+                ];
+                spawnSpeechBubble(this.group.position, lines[Math.floor(Math.random() * lines.length)], '#b45309');
+            } else if (partName === 'belly') {
+                audio.playBoing(220, 480);
+                this.bellyJiggle = 1.0;
+                const lines = [
+                    '🥁 戳啥呢！这是纯天然防弹腹甲！',
+                    '🍉 刚吃饱，腹肌暂时九九归一了~',
+                    '😆 痒痒痒！别戳我肚皮！'
+                ];
+                spawnSpeechBubble(this.group.position, lines[Math.floor(Math.random() * lines.length)], '#059669');
+            } else {
+                // 点击龟壳触发受惊缩头
+                this.setAction('shell');
+            }
+        }
+
+        setAction(newState) {
+            this.state = newState;
+            this.animTime = 0;
+            this.sunglassesGroup.visible = false;
+            audio.stopDiscoBeat();
+            discoLights.forEach(l => l.intensity = 0);
+
+            if (newState === 'idle') {
+                updateStatusUI('揣手巡视', '双手插兜，展示大金链子与腹甲');
+                spawnSpeechBubble(this.group.position, '🚶 出来溜达溜达，巡视领地~');
+            } else if (newState === 'dance') {
+                this.stateTimer = 12.0;
+                this.sunglassesGroup.visible = true;
+                audio.startDiscoBeat();
+                discoLights.forEach(l => l.intensity = 2.4);
+                updateStatusUI('社会摇蹦迪', '音响开最大！大金链子甩起来！');
+                spawnSpeechBubble(this.group.position, '🕺 动次打次！这波社会摇稳不稳？', '#db2777');
+            } else if (newState === 'shell') {
+                this.stateTimer = 4.2;
+                audio.playBoing(480, 150);
+                updateStatusUI('缩头乌龟', '遇到危险先缩壳里躲一会儿...');
+                spawnSpeechBubble(this.group.position, '🐢 看不见我！我是块大石头！', '#7c3aed');
+            } else if (newState === 'eat') {
+                this.stateTimer = 6.5;
+                updateStatusUI('干饭模式', '发现冰镇大西瓜，火速冲锋！');
+                spawnSpeechBubble(this.group.position, '🍉 哇塞！冰镇西瓜，我来啦！', '#dc2626');
+            } else if (newState === 'chill') {
+                this.stateTimer = 10.0;
+                this.sunglassesGroup.visible = true;
+                audio.playSparkle();
+                updateStatusUI('墨镜躺平', '戴上墨镜，在沙滩椅上晒龟壳');
+                spawnSpeechBubble(this.group.position, '🕶️ 龟生苦短，先躺平晒个背~', '#0284c7');
+            }
+        }
+
+        update(dt, elapsed) {
+            this.animTime += dt;
+
+            // 光头高光星闪烁特效
+            if (this.headGlintTimer > 0) {
+                this.headGlintTimer -= dt;
+                this.glintSprite.visible = true;
+                this.glintSprite.rotation.y += dt * 8;
+                const s = 0.8 + Math.sin(elapsed * 25) * 0.4;
+                this.glintSprite.scale.set(s, s, s);
+            } else {
+                this.glintSprite.visible = false;
+            }
+
+            // 肚皮果冻弹动衰减
+            if (this.bellyJiggle > 0) {
+                this.bellyJiggle = Math.max(0, this.bellyJiggle - dt * 2.5);
+                const jiggle = Math.sin(elapsed * 32) * 0.14 * this.bellyJiggle;
+                this.torsoMesh.scale.set(0.95 + jiggle, 1.18 - jiggle, 0.85 + jiggle);
+            } else {
+                this.torsoMesh.scale.set(0.95, 1.18, 0.85);
+            }
+
+            // 金链子物理惯性回弹
+            this.goldChainPivot.position.y += (0.02 - this.goldChainPivot.position.y) * Math.min(1, dt * 10);
+
+            // 状态机驱动
+            switch (this.state) {
+                case 'idle': {
+                    // 揣手大佬摇摆巡视
+                    this.resetLimbTransforms(dt);
+                    const wp = this.patrolPoints[this.patrolIdx];
+                    const arrived = this.moveTowards(wp, 0.85, dt, 6.5);
+                    // 走路时霸气左右晃肩 + 歪头微笑
+                    this.bodyPivot.rotation.z = Math.sin(elapsed * 6.5) * 0.06;
+                    this.headGroup.rotation.z = Math.sin(elapsed * 2.2) * 0.09;
+                    this.headGroup.rotation.y = Math.sin(elapsed * 1.5) * 0.15;
+                    if (arrived) {
+                        this.patrolIdx = (this.patrolIdx + 1) % this.patrolPoints.length;
+                    }
+                    break;
+                }
+
+                case 'dance': {
+                    // 魔性社会摇蹦迪动作
+                    this.stateTimer -= dt;
+                    this.resetLimbTransforms(dt);
+                    const beat = elapsed * 13.0;
+                    // 膝盖微屈上下弹跳
+                    this.bodyPivot.position.y = Math.abs(Math.sin(beat)) * 0.14;
+                    // 胯部与躯干左右大幅摇摆
+                    this.bodyPivot.rotation.z = Math.sin(beat * 0.5) * 0.22;
+                    this.bodyPivot.rotation.y = Math.cos(beat * 0.5) * 0.25;
+                    // 头部魔性点头晃脑
+                    this.headGroup.rotation.x = Math.sin(beat) * 0.22;
+                    this.headGroup.rotation.z = -Math.sin(beat * 0.5) * 0.28;
+                    // 大金链子跟着节奏上下颠簸
+                    this.goldChainPivot.position.y = 0.02 + Math.abs(Math.cos(beat)) * 0.09;
+                    // 音响跟着震动缩放
+                    if (boomboxGroup) {
+                        const pump = 1 + Math.abs(Math.sin(beat)) * 0.12;
+                        boomboxGroup.scale.set(pump, pump, pump);
+                    }
+                    if (this.stateTimer <= 0) {
+                        if (boomboxGroup) boomboxGroup.scale.set(1, 1, 1);
+                        this.setAction('idle');
+                    }
+                    break;
+                }
+
+                case 'shell': {
+                    // 缩头乌龟动作：头颈和四肢缩入龟壳，壳在地上左右不倒翁摇晃
+                    this.stateTimer -= dt;
+                    // 头部缩进身体内部
+                    this.neckAndHeadPivot.position.y += (0.85 - this.neckAndHeadPivot.position.y) * Math.min(1, dt * 12);
+                    this.neckAndHeadPivot.scale.lerp(new THREE.Vector3(0.4, 0.4, 0.4), dt * 10);
+                    // 四肢缩起
+                    this.leftArmPivot.scale.lerp(new THREE.Vector3(0.2, 0.2, 0.2), dt * 10);
+                    this.rightArmPivot.scale.lerp(new THREE.Vector3(0.2, 0.2, 0.2), dt * 10);
+                    this.leftLegPivot.scale.lerp(new THREE.Vector3(0.3, 0.3, 0.3), dt * 10);
+                    this.rightLegPivot.scale.lerp(new THREE.Vector3(0.3, 0.3, 0.3), dt * 10);
+                    // 整体落到地面并像不倒翁一样晃动
+                    this.bodyPivot.position.y += (-0.38 - this.bodyPivot.position.y) * Math.min(1, dt * 10);
+                    this.bodyPivot.rotation.z = Math.sin(elapsed * 9) * 0.24;
+
+                    // 最后1.2秒偷偷探出光头观察
+                    if (this.stateTimer < 1.2) {
+                        this.neckAndHeadPivot.position.y += (1.35 - this.neckAndHeadPivot.position.y) * Math.min(1, dt * 8);
+                        this.neckAndHeadPivot.scale.lerp(new THREE.Vector3(1, 1, 1), dt * 8);
+                        this.headGroup.rotation.y = Math.sin(elapsed * 8) * 0.45;
+                    }
+                    if (this.stateTimer <= 0) {
+                        audio.playBoing(180, 460);
+                        spawnSpeechBubble(this.group.position, '😏 虚惊一场，继续帅！');
+                        this.setAction('idle');
+                    }
+                    break;
+                }
+
+                case 'eat': {
+                    // 冲向西瓜并大口啃食
+                    this.stateTimer -= dt;
+                    this.resetLimbTransforms(dt);
+                    if (watermelonSliceMesh && watermelonActive) {
+                        const eatSpot = watermelonSliceMesh.position.clone().add(new THREE.Vector3(0, 0, 0.65));
+                        const arrived = this.moveTowards(eatSpot, 1.9, dt, 11);
+                        if (arrived) {
+                            this.group.lookAt(watermelonSliceMesh.position.x, 0, watermelonSliceMesh.position.z);
+                            // 低头咔嚓啃西瓜
+                            this.headGroup.rotation.x = 0.55 + Math.sin(elapsed * 16) * 0.18;
+                            this.bodyPivot.position.y = Math.abs(Math.sin(elapsed * 16)) * 0.05;
+                            if (Math.floor(elapsed * 5) !== Math.floor((elapsed - dt) * 5)) {
+                                audio.playMunch();
+                            }
+                        }
+                    }
+                    if (this.stateTimer <= 0) {
+                        watermelonActive = false;
+                        if (watermelonSliceMesh) watermelonSliceMesh.visible = false;
+                        STATE.happyScore = Math.min(100, STATE.happyScore + 12);
+                        spawnSpeechBubble(this.group.position, '🍉 真甜！饱腹快乐值拉满！', '#16a34a');
+                        this.setAction('idle');
+                    }
+                    break;
+                }
+
+                case 'chill': {
+                    // 走到沙滩椅旁戴墨镜躺平晒太阳
+                    this.stateTimer -= dt;
+                    const chillSpot = new THREE.Vector3(2.5, 0, 2.6);
+                    const arrived = this.moveTowards(chillSpot, 1.3, dt, 8);
+                    if (arrived) {
+                        // 后仰靠在躺椅上惬意晃脚
+                        this.group.rotation.y = -0.65;
+                        this.bodyPivot.position.y = 0.12;
+                        this.bodyPivot.rotation.x = -0.52;
+                        this.leftLegPivot.rotation.x = -0.7 + Math.sin(elapsed * 3) * 0.12;
+                        this.rightLegPivot.rotation.x = -0.7 - Math.sin(elapsed * 3) * 0.12;
+                        this.headGroup.rotation.z = Math.sin(elapsed * 1.5) * 0.12;
+                    } else {
+                        this.resetLimbTransforms(dt);
+                    }
+                    if (this.stateTimer <= 0) {
+                        this.setAction('idle');
+                    }
+                    break;
+                }
+            }
+        }
+
+        resetLimbTransforms(dt) {
+            const k = Math.min(1, dt * 10);
+            this.bodyPivot.position.y += (0 - this.bodyPivot.position.y) * k;
+            this.bodyPivot.rotation.x += (0 - this.bodyPivot.rotation.x) * k;
+            this.bodyPivot.rotation.y += (0 - this.bodyPivot.rotation.y) * k;
+            this.neckAndHeadPivot.position.y += (1.48 - this.neckAndHeadPivot.position.y) * k;
+            this.neckAndHeadPivot.scale.lerp(new THREE.Vector3(1, 1, 1), k);
+            this.leftArmPivot.scale.lerp(new THREE.Vector3(1, 1, 1), k);
+            this.rightArmPivot.scale.lerp(new THREE.Vector3(1, 1, 1), k);
+            this.leftLegPivot.scale.lerp(new THREE.Vector3(1, 1, 1), k);
+            this.rightLegPivot.scale.lerp(new THREE.Vector3(1, 1, 1), k);
+            this.headGroup.rotation.x += (0 - this.headGroup.rotation.x) * k;
+        }
+
+        moveTowards(target, speed, dt, legFreq) {
+            const dx = target.x - this.group.position.x;
+            const dz = target.z - this.group.position.z;
+            const dist = Math.hypot(dx, dz);
+
+            if (dist < 0.14) {
+                this.leftLegPivot.rotation.x = 0;
+                this.rightLegPivot.rotation.x = 0;
+                return true;
+            }
+
+            const targetAngle = Math.atan2(dx, dz);
+            let diff = targetAngle - this.group.rotation.y;
+            while (diff > Math.PI) diff -= Math.PI * 2;
+            while (diff < -Math.PI) diff += Math.PI * 2;
+            this.group.rotation.y += diff * Math.min(1, dt * 7);
+
+            const step = Math.min(dist, speed * dt);
+            this.group.position.x += Math.sin(this.group.rotation.y) * step;
+            this.group.position.z += Math.cos(this.group.rotation.y) * step;
+
+            const swing = Math.sin(this.animTime * legFreq) * 0.42;
+            this.leftLegPivot.rotation.x = swing;
+            this.rightLegPivot.rotation.x = -swing;
+            return false;
+        }
+    }
+
+    // ----------------------------------------------------------------------------
+    // 7. 投喂大西瓜道具构建
+    // ----------------------------------------------------------------------------
+    function initWatermelonProp() {
+        watermelonSliceMesh = new THREE.Group();
+        watermelonSliceMesh.position.set(0.6, 0.22, 1.8);
+        watermelonSliceMesh.visible = false;
+        scene.add(watermelonSliceMesh);
+
+        // 绿色西瓜皮半圆弧
+        const rind = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.42, 0.42, 0.16, 20, 1, false, 0, Math.PI),
+            new THREE.MeshStandardMaterial({ color: 0x15803d, roughness: 0.6 })
+        );
+        rind.rotation.z = Math.PI / 2;
+        rind.rotation.y = Math.PI / 2;
+        rind.castShadow = true;
+        watermelonSliceMesh.add(rind);
+
+        // 鲜红西瓜瓤
+        const flesh = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.37, 0.37, 0.165, 20, 1, false, 0, Math.PI),
+            new THREE.MeshStandardMaterial({ color: 0xef4444, roughness: 0.4 })
+        );
+        flesh.rotation.z = Math.PI / 2;
+        flesh.rotation.y = Math.PI / 2;
+        watermelonSliceMesh.add(flesh);
+    }
+
+    function spawnWatermelon() {
+        watermelonSliceMesh.visible = true;
+        watermelonActive = true;
+        shierTurtle.setAction('eat');
+    }
+
+    // ----------------------------------------------------------------------------
+    // 8. 浮动气泡、头顶名牌投影与射线点击检测
+    // ----------------------------------------------------------------------------
+    function spawnSpeechBubble(worldPos, text, color = '#3d2c1e') {
+        const vec = worldPos.clone();
+        vec.y += 2.35;
+        vec.project(camera);
+
+        const x = (vec.x * 0.5 + 0.5) * window.innerWidth;
+        const y = (-(vec.y * 0.5) + 0.5) * window.innerHeight;
+
+        const el = document.createElement('div');
+        el.className = 'speech-bubble text-xs sm:text-sm px-3.5 py-1.5 rounded-2xl bg-white/95 shadow-lg border border-amber-300';
+        el.style.left = `${x}px`;
+        el.style.top = `${y}px`;
+        el.style.color = color;
+        el.textContent = text;
+
+        document.getElementById('fx-layer').appendChild(el);
+        setTimeout(() => el.remove(), 2200);
+    }
+
+    function updateNameTagProjection() {
+        if (!shierTurtle) return;
+        const tagEl = document.getElementById('shier-nametag');
+        const pos = shierTurtle.group.position.clone();
+        pos.y += (shierTurtle.state === 'shell' ? 1.25 : 2.28);
+        pos.project(camera);
+
+        if (pos.z > 1) {
+            tagEl.style.display = 'none';
+            return;
+        }
+        tagEl.style.display = 'block';
+        const x = (pos.x * 0.5 + 0.5) * window.innerWidth;
+        const y = (-(pos.y * 0.5) + 0.5) * window.innerHeight;
+        tagEl.style.left = `${x}px`;
+        tagEl.style.top = `${y}px`;
+    }
+
+    function setupInteractions() {
+        const raycaster = new THREE.Raycaster();
+        const pointer = new THREE.Vector2();
+        let downPos = { x: 0, y: 0 };
+
+        renderer.domElement.addEventListener('pointerdown', (e) => {
+            downPos = { x: e.clientX, y: e.clientY };
+        });
+
+        renderer.domElement.addEventListener('pointerup', (e) => {
+            if (Math.hypot(e.clientX - downPos.x, e.clientY - downPos.y) > 6) return;
+
+            pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
+            pointer.y = -(e.clientY / window.innerHeight) * 2 + 1;
+            raycaster.setFromCamera(pointer, camera);
+
+            const hits = raycaster.intersectObjects(interactiveParts);
+            if (hits.length > 0) {
+                const part = hits[0].object.userData.part;
+                shierTurtle.onPartClicked(part);
+            }
+        });
+    }
+
+    // ----------------------------------------------------------------------------
+    // 9. UI 事件绑定与昼夜切换
+    // ----------------------------------------------------------------------------
+    function updateStatusUI(badge, desc) {
+        document.getElementById('state-badge').textContent = badge;
+        document.getElementById('action-desc').textContent = desc;
+        document.getElementById('shine-val').textContent = `${STATE.shineScore}%`;
+        document.getElementById('shine-bar').style.width = `${STATE.shineScore}%`;
+        document.getElementById('happy-val').textContent = `${STATE.happyScore}%`;
+        document.getElementById('happy-bar').style.width = `${STATE.happyScore}%`;
+    }
+
+    function applyAtmosphere(mode) {
+        STATE.timeOfDay = mode;
+        const cfg = ATMOSPHERE[mode];
+
+        scene.background.setHex(cfg.bgColor);
+        scene.fog.color.setHex(cfg.fogColor);
+        sunLight.color.setHex(cfg.sunColor);
+        sunLight.intensity = cfg.sunIntensity;
+        sunLight.position.copy(cfg.sunPos);
+
+        hemiLight.color.setHex(cfg.hemiSky);
+        hemiLight.groundColor.setHex(cfg.hemiGround);
+        hemiLight.intensity = cfg.hemiIntensity;
+
+        houseShojiMat.emissiveIntensity = cfg.shojiIntensity;
+        houseWarmLight.intensity = mode === 'night' ? 1.8 : (mode === 'sunset' ? 1.1 : 0.4);
+
+        lanternLights.forEach((item) => {
+            item.light.intensity = cfg.lanternIntensity;
+            item.mat.emissiveIntensity = cfg.lanternIntensity > 0 ? 1.35 : 0.15;
+        });
+
+        const panels = ['brand-card', 'status-card', 'control-panel', 'btn-toggle-ui'];
+        panels.forEach((id) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            if (cfg.isDark) {
+                el.classList.remove('glass-panel');
+                el.classList.add('glass-panel-dark');
+            } else {
+                el.classList.remove('glass-panel-dark');
+                el.classList.add('glass-panel');
+            }
+        });
+    }
+
+    function setupUI() {
+        document.getElementById('btn-dance').addEventListener('click', () => shierTurtle.setAction('dance'));
+        document.getElementById('btn-shell').addEventListener('click', () => shierTurtle.setAction('shell'));
+        document.getElementById('btn-feed').addEventListener('click', () => spawnWatermelon());
+        document.getElementById('btn-chill').addEventListener('click', () => shierTurtle.setAction('chill'));
+        document.getElementById('btn-idle').addEventListener('click', () => shierTurtle.setAction('idle'));
+
+        // 视角预设
+        document.querySelectorAll('.cam-btn').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.cam-btn').forEach(b => {
+                    b.classList.remove('bg-amber-500', 'text-white');
+                    b.classList.add('bg-white/80');
+                });
+                btn.classList.remove('bg-white/80');
+                btn.classList.add('bg-amber-500', 'text-white');
+
+                const preset = CAMERA_PRESETS[btn.dataset.cam];
+                if (preset) {
+                    if (btn.dataset.cam === 'closeup') {
+                        // 动态对准拾贰当前位置特写
+                        STATE.cameraTransition = {
+                            pos: shierTurtle.group.position.clone().add(new THREE.Vector3(2.1, 2.0, 3.2)),
+                            target: shierTurtle.group.position.clone().add(new THREE.Vector3(0, 1.15, 0))
+                        };
+                    } else {
+                        STATE.cameraTransition = { pos: preset.pos.clone(), target: preset.target.clone() };
+                    }
+                }
+            });
+        });
+
+        // 昼夜切换
+        document.querySelectorAll('.time-btn').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.time-btn').forEach(b => {
+                    b.classList.remove('bg-amber-500', 'text-white');
+                    b.classList.add('bg-white/80');
+                });
+                btn.classList.remove('bg-white/80');
+                btn.classList.add('bg-amber-500', 'text-white');
+                applyAtmosphere(btn.dataset.time);
+            });
+        });
+
+        // 音效开关
+        document.getElementById('btn-sound').addEventListener('click', () => {
+            audio.enabled = !audio.enabled;
+            document.getElementById('sound-icon').textContent = audio.enabled ? '🔊' : '🔇';
+            document.getElementById('sound-text').textContent = audio.enabled ? '音效已开' : '已静音';
+            if (!audio.enabled) audio.stopDiscoBeat();
+            else if (shierTurtle.state === 'dance') audio.startDiscoBeat();
+        });
+
+        // 折叠面板
+        document.getElementById('btn-toggle-ui').addEventListener('click', () => {
+            STATE.uiExpanded = !STATE.uiExpanded;
+            document.getElementById('control-panel').style.display = STATE.uiExpanded ? 'block' : 'none';
+            document.getElementById('toggle-icon').textContent = STATE.uiExpanded ? '🔽' : '🔼';
+            document.getElementById('toggle-text').textContent = STATE.uiExpanded ? '收起整活面板' : '展开整活面板';
+        });
+    }
+
+    // ----------------------------------------------------------------------------
+    // 10. 主循环
+    // ----------------------------------------------------------------------------
+    const dummyObj = new THREE.Object3D();
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+        const dt = Math.min(clock.getDelta(), 0.05);
+        const elapsed = clock.getElapsedTime();
+
+        if (STATE.cameraTransition) {
+            camera.position.lerp(STATE.cameraTransition.pos, dt * 3.8);
+            controls.target.lerp(STATE.cameraTransition.target, dt * 3.8);
+            if (camera.position.distanceTo(STATE.cameraTransition.pos) < 0.05) {
+                STATE.cameraTransition = null;
+            }
+        }
+        controls.update();
+
+        // 更新拾贰角色
+        if (shierTurtle) {
+            shierTurtle.update(dt, elapsed);
+            updateNameTagProjection();
+        }
+
+        // 蹦迪聚光灯旋转扫射
+        if (shierTurtle && shierTurtle.state === 'dance') {
+            discoLights.forEach((spot, i) => {
+                const ang = elapsed * 3.5 + i * 2.1;
+                spot.position.set(
+                    shierTurtle.group.position.x + Math.cos(ang) * 3.2,
+                    5.2,
+                    shierTurtle.group.position.z + Math.sin(ang) * 3.2
+                );
+                spot.target = shierTurtle.group;
+            });
+        }
+
+        // 锦鲤游动
+        koiFishList.forEach((koi) => {
+            koi.angle += koi.speed * dt;
+            koi.mesh.position.set(Math.cos(koi.angle) * koi.radius, 0.02, Math.sin(koi.angle) * koi.radius);
+            koi.mesh.rotation.y = -koi.angle;
+        });
+
+        // 飘落樱花
+        if (petalSystem) {
+            for (let i = 0; i < petalData.length; i++) {
+                const p = petalData[i];
+                p.y -= p.speedY * dt;
+                p.x += Math.sin(elapsed * 1.4 + p.phase) * 0.25 * dt;
+                if (p.y < 0.05) {
+                    p.y = 5.8 + Math.random() * 1.5;
+                    p.x = -4.5 + (Math.random() - 0.3) * 10;
+                }
+                dummyObj.position.set(p.x, p.y, p.z);
+                dummyObj.rotation.set(elapsed + p.phase, elapsed * 0.8, p.phase);
+                dummyObj.updateMatrix();
+                petalSystem.setMatrixAt(i, dummyObj.matrix);
+            }
+            petalSystem.instanceMatrix.needsUpdate = true;
+        }
+
+        renderer.render(scene, camera);
+    }
+
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    window.onload = function () {
+        initEngine();
+        buildCourtyard();
+        initWatermelonProp();
+        shierTurtle = new ShierTurtleCharacter();
+        setupInteractions();
+        setupUI();
+        applyAtmosphere('day');
+
+        const loader = document.getElementById('loading-screen');
+        loader.style.opacity = '0';
+        loader.style.visibility = 'hidden';
+
+        // 开场打招呼气泡
+        setTimeout(() => {
+            spawnSpeechBubble(shierTurtle.group.position, '😎 哟！我是拾贰，这片庭院我罩着！', '#d97706');
+        }, 600);
+
+        animate();
+    };
+    </script>
+</body>
+</html>
