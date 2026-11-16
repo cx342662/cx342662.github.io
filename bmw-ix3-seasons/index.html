@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>2022 BMW iX3 · 穿越四季大山河流手绘长卷</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #141922;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      touch-action: manipulation;
+    }
+
+    /* 全屏铺满视口 */
+    #mainCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* 顶部极简透明状态胶囊（绝不遮挡画面主体） */
+    #top-pill {
+      position: fixed;
+      top: max(14px, env(safe-area-inset-top, 14px));
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px 6px 13px;
+      border-radius: 999px;
+      background: rgba(18, 24, 34, 0.56);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+      transition: opacity 0.28s ease, transform 0.28s ease;
+    }
+
+    #top-pill.hidden-ui {
+      opacity: 0;
+      transform: translate(-50%, -18px);
+      pointer-events: none;
+    }
+
+    #timer-label {
+      font-variant-numeric: tabular-nums;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    #btn-hide {
+      appearance: none;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      border-radius: 999px;
+      padding: 2px 9px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #btn-hide:active {
+      transform: scale(0.94);
+    }
+
+    /* 右下角极简重播按钮 */
+    #btn-replay {
+      position: fixed;
+      bottom: max(18px, env(safe-area-inset-bottom, 18px));
+      right: 16px;
+      z-index: 20;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(18, 24, 34, 0.56);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #ffffff;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+      cursor: pointer;
+      transition: opacity 0.28s ease, transform 0.28s ease;
+    }
+
+    #btn-replay:active {
+      transform: scale(0.92);
+    }
+
+    #btn-replay.hidden-ui {
+      opacity: 0;
+      transform: translateY(16px);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="mainCanvas"></canvas>
+
+  <!-- 顶部极简浮动胶囊 -->
+  <div id="top-pill">
+    <span id="season-label">🌸 春 · 桃花江畔</span>
+    <span style="opacity: 0.45;">|</span>
+    <span id="timer-label">00.0s / 20.0s</span>
+    <button id="btn-hide" type="button">隐藏</button>
+  </div>
+
+  <!-- 右下角极简重播按钮 -->
+  <button id="btn-replay" type="button" aria-label="重新开始" title="从 00.0s 重新播放">↺</button>
+
+  <script>
+    /**
+     * 2022 款 LCI 矿石白 BMW iX3 · 穿越四季大山河流手绘建筑钢笔水彩单页
+     * - 车辆朝左前方行驶，微俯视前侧 3/4 视角，精细还原 G08 LCI iX3 全车设计语言
+     * - 大开大合雪山群峰、蜿蜒江河、河岸村舍林带、沿河盘山柏油公路
+     * - 严格 20.0s 无缝循环（每季 5.0s，末尾 0.85s 水彩晕染融合）
+     */
+    (function () {
+      const canvas = document.getElementById('mainCanvas');
+      const ctx = canvas.getContext('2d');
+
+      const topPill = document.getElementById('top-pill');
+      const seasonLabel = document.getElementById('season-label');
+      const timerLabel = document.getElementById('timer-label');
+      const btnHide = document.getElementById('btn-hide');
+      const btnReplay = document.getElementById('btn-replay');
+
+      const LOOP_DURATION = 20.0;
+      const SEASON_DURATION = 5.0;
+      const BLEND_DURATION = 0.85;
+
+      let currentTime = 0.0;
+      let travelDist = 0.0;
+      let lastTimestamp = null;
+      let uiHidden = false;
+
+      // 9:16 竖屏高清虚拟逻辑画布
+      const VW = 720;
+      const VH = 1280;
+      let viewScale = 1;
+      let virtualW = VW;
+      let virtualH = VH;
+
+      // 离屏冷压水彩纸纤维纹理
+      let paperCanvas = null;
+
+      // 四季高山河谷色板定义
+      const SEASONS = [
+        {
+          label: '🌸 春 · 桃花江畔',
+          skyTop: [176, 218, 246],
+          skyMid: [246, 228, 240],
+          skyBot: [254, 248, 242],
+          sunPos: [0.24, 0.13],
+          sunCore: [255, 250, 224],
+          farPeak: [134, 174, 206],
+          mainPeak: [98, 144, 178],
+          peakRock: [76, 114, 148],
+          snowCap: [250, 252, 255],
+          riverTop: [52, 178, 176],
+          riverBot: [28, 138, 152],
+          riverShimmer: [216, 252, 248],
+          bankGrass: [122, 194, 126],
+          bankDeep: [84, 158, 96],
+          roadTop: [78, 84, 94],
+          roadBot: [46, 51, 60],
+          beamPower: 0.20
+        },
+        {
+          label: '☀️ 夏 · 苍翠峡谷',
+          skyTop: [36, 138, 224],
+          skyMid: [122, 198, 248],
+          skyBot: [216, 242, 255],
+          sunPos: [0.76, 0.12],
+          sunCore: [255, 252, 204],
+          farPeak: [82, 154, 204],
+          mainPeak: [52, 126, 112],
+          peakRock: [38, 98, 88],
+          snowCap: [244, 250, 255],
+          riverTop: [24, 146, 212],
+          riverBot: [14, 108, 178],
+          riverShimmer: [196, 242, 255],
+          bankGrass: [64, 174, 86],
+          bankDeep: [42, 136, 66],
+          roadTop: [72, 80, 92],
+          roadBot: [42, 47, 56],
+          beamPower: 0.14
+        },
+        {
+          label: '🍁 秋 · 金秋长河',
+          skyTop: [204, 108, 66],
+          skyMid: [246, 178, 112],
+          skyBot: [254, 226, 178],
+          sunPos: [0.22, 0.17],
+          sunCore: [255, 206, 112],
+          farPeak: [168, 102, 86],
+          mainPeak: [148, 84, 58],
+          peakRock: [112, 60, 44],
+          snowCap: [255, 232, 196], // 夕照金顶
+          riverTop: [34, 116, 124],
+          riverBot: [22, 84, 96],
+          riverShimmer: [254, 214, 142],
+          bankGrass: [214, 134, 46],
+          bankDeep: [176, 86, 36],
+          roadTop: [76, 72, 78],
+          roadBot: [44, 41, 48],
+          beamPower: 0.58
+        },
+        {
+          label: '❄️ 冬 · 冰川雪谷',
+          skyTop: [40, 62, 108],
+          skyMid: [92, 122, 172],
+          skyBot: [184, 206, 232],
+          sunPos: [0.74, 0.14],
+          sunCore: [236, 246, 255],
+          farPeak: [148, 174, 208],
+          mainPeak: [174, 198, 226],
+          peakRock: [112, 136, 168],
+          snowCap: [252, 254, 255],
+          riverTop: [72, 118, 158],
+          riverBot: [48, 86, 124],
+          riverShimmer: [224, 242, 255],
+          bankGrass: [232, 242, 252],
+          bankDeep: [194, 212, 234],
+          roadTop: [60, 68, 82],
+          roadBot: [34, 40, 52],
+          beamPower: 1.0
+        }
+      ];
+
+      // 漫天四季飞舞粒子池
+      const skyParticles = [];
+      for (let i = 0; i < 72; i++) {
+        skyParticles.push({
+          x: Math.random() * 1100 - 150,
+          y: Math.random() * 1350 - 60,
+          size: 3.8 + Math.random() * 5.6,
+          vx: 2.2 + Math.random() * 2.8, // 车向左前方疾驰，气流与花瓣向右上/右后方掠过
+          vy: 0.85 + Math.random() * 1.45,
+          rot: Math.random() * Math.PI * 2,
+          vRot: (Math.random() - 0.5) * 0.08,
+          phase: Math.random() * Math.PI * 2,
+          kind: Math.random()
+        });
+      }
+
+      // 车轮后方卷起的四季气流颗粒
+      const wheelWake = [];
+      for (let i = 0; i < 28; i++) {
+        wheelWake.push({
+          life: Math.random(),
+          speed: 0.75 + Math.random() * 0.55,
+          spreadY: (Math.random() - 0.35) * 32,
+          size: 2.4 + Math.random() * 3.6,
+          rot: Math.random() * Math.PI * 2,
+          wheelIdx: i % 2 // 0: 左前轮, 1: 左后轮
+        });
+      }
+
+      function initPaperTexture() {
+        paperCanvas = document.createElement('canvas');
+        paperCanvas.width = 256;
+        paperCanvas.height = 256;
+        const pctx = paperCanvas.getContext('2d');
+
+        for (let i = 0; i < 2400; i++) {
+          const x = Math.random() * 256;
+          const y = Math.random() * 256;
+          const r = 0.5 + Math.random() * 1.1;
+          pctx.fillStyle = i % 2 === 0
+            ? 'rgba(92, 78, 62, 0.036)'
+            : 'rgba(255, 255, 255, 0.065)';
+          pctx.beginPath();
+          pctx.arc(x, y, r, 0, Math.PI * 2);
+          pctx.fill();
+        }
+
+        pctx.strokeStyle = 'rgba(116, 102, 86, 0.022)';
+        pctx.lineWidth = 1;
+        for (let y = 0; y < 256; y += 6) {
+          pctx.beginPath();
+          pctx.moveTo(0, y);
+          pctx.lineTo(256, y + (Math.random() - 0.5) * 1.4);
+          pctx.stroke();
+        }
+      }
+
+      function resizeCanvas() {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+
+        canvas.width = Math.max(1, Math.round(w * dpr));
+        canvas.height = Math.max(1, Math.round(h * dpr));
+
+        if (w <= h) {
+          viewScale = canvas.width / VW;
+        } else {
+          viewScale = canvas.height / (VH * 0.78);
+        }
+        virtualW = canvas.width / viewScale;
+        virtualH = canvas.height / viewScale;
+      }
+
+      function lerp(a, b, t) {
+        return a + (b - a) * t;
+      }
+
+      function mixColor(c1, c2, t, alpha = 1) {
+        const r = Math.round(lerp(c1[0], c2[0], t));
+        const g = Math.round(lerp(c1[1], c2[1], t));
+        const b = Math.round(lerp(c1[2], c2[2], t));
+        return alpha < 1 ? `rgba(${r},${g},${b},${alpha})` : `rgb(${r},${g},${b})`;
+      }
+
+      function getSeasonState(t) {
+        const wrapped = ((t % LOOP_DURATION) + LOOP_DURATION) % LOOP_DURATION;
+        const idx1 = Math.floor(wrapped / SEASON_DURATION) % 4;
+        const idx2 = (idx1 + 1) % 4;
+        const inSeason = wrapped - idx1 * SEASON_DURATION;
+
+        let blend = 0;
+        const startBlend = SEASON_DURATION - BLEND_DURATION;
+        if (inSeason > startBlend) {
+          const u = (inSeason - startBlend) / BLEND_DURATION;
+          blend = u * u * (3 - 2 * u);
+        }
+
+        const weights = [0, 0, 0, 0];
+        weights[idx1] = 1 - blend;
+        weights[idx2] += blend;
+
+        return {
+          idx1,
+          idx2,
+          blend,
+          weights,
+          s1: SEASONS[idx1],
+          s2: SEASONS[idx2]
+        };
+      }
+
+      let lastBadgeIdx = -1;
+      function updateHUD(st) {
+        timerLabel.textContent = `${currentTime.toFixed(1).padStart(4, '0')}s / 20.0s`;
+        const activeIdx = st.blend > 0.5 ? st.idx2 : st.idx1;
+        if (activeIdx !== lastBadgeIdx) {
+          lastBadgeIdx = activeIdx;
+          seasonLabel.textContent = SEASONS[activeIdx].label;
+        }
+      }
+
+      // =========================================================================
+      // 1. 顶部天际（0% - 34%）：水彩渐变天空、朝阳/暮光、手绘积云与巍峨雪山群峰
+      // =========================================================================
+      function drawSkyAndMountains(st) {
+        const valleyBaseY = virtualH * 0.37;
+
+        // 1.1 水彩天空渐变
+        const skyGrad = ctx.createLinearGradient(0, 0, 0, valleyBaseY + 20);
+        skyGrad.addColorStop(0, mixColor(st.s1.skyTop, st.s2.skyTop, st.blend));
+        skyGrad.addColorStop(0.58, mixColor(st.s1.skyMid, st.s2.skyMid, st.blend));
+        skyGrad.addColorStop(1, mixColor(st.s1.skyBot, st.s2.skyBot, st.blend));
+        ctx.fillStyle = skyGrad;
+        ctx.fillRect(0, 0, virtualW, valleyBaseY + 30);
+
+        // 太阳 / 冬日寒阳水彩光晕
+        const sunX = virtualW * lerp(st.s1.sunPos[0], st.s2.sunPos[0], st.blend);
+        const sunY = virtualH * lerp(st.s1.sunPos[1], st.s2.sunPos[1], st.blend);
+        const sunGlow = ctx.createRadialGradient(sunX, sunY, 8, sunX, sunY, 195);
+        sunGlow.addColorStop(0, mixColor(st.s1.sunCore, st.s2.sunCore, st.blend, 0.96));
+        sunGlow.addColorStop(0.32, mixColor(st.s1.sunCore, st.s2.sunCore, st.blend, 0.38));
+        sunGlow.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.fillStyle = sunGlow;
+        ctx.beginPath();
+        ctx.arc(sunX, sunY, 195, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 手绘水彩蓬松积云（车向左行驶，云朵缓慢向右视差移动）
+        const cloudSpan = virtualW + 460;
+        for (let i = 0; i < 4; i++) {
+          const cx = ((i * (cloudSpan / 4) + travelDist * 0.035) % cloudSpan) - 210;
+          const cy = virtualH * (0.095 + (i % 2) * 0.065);
+          drawWatercolorCloud(cx, cy, 0.86 + (i % 2) * 0.24);
+        }
+
+        // 1.2 远景青黛连绵雪山剪影
+        ctx.save();
+        ctx.fillStyle = mixColor(st.s1.farPeak, st.s2.farPeak, st.blend, 0.85);
+        ctx.beginPath();
+        ctx.moveTo(0, valleyBaseY + 20);
+        for (let x = 0; x <= virtualW + 20; x += 20) {
+          const wx = x - travelDist * 0.08;
+          const h = Math.sin(wx * 0.0052) * 58 + Math.cos(wx * 0.011) * 32 + Math.sin(wx * 0.023) * 12;
+          ctx.lineTo(x, virtualH * 0.235 - h);
+        }
+        ctx.lineTo(virtualW, valleyBaseY + 20);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+
+        // 1.3 主景巍峨大山群峰（带钢笔山脊皴擦线、向阳岩壁与峰顶积雪/秋日金顶）
+        const peakPeriod = 460;
+        const totalPeakSpan = Math.ceil((virtualW + 600) / peakPeriod) * peakPeriod;
+        const mainColor = mixColor(st.s1.mainPeak, st.s2.mainPeak, st.blend);
+        const rockShadow = mixColor(st.s1.peakRock, st.s2.peakRock, st.blend);
+        const snowColor = mixColor(st.s1.snowCap, st.s2.snowCap, st.blend, 0.95);
+
+        for (let i = -1; i <= totalPeakSpan / peakPeriod + 1; i++) {
+          const basePx = i * peakPeriod + ((travelDist * 0.16) % peakPeriod) - 180;
+          const peakH = 165 + ((Math.abs(i * 73) % 5) * 26);
+          const peakW = 295 + ((Math.abs(i * 41) % 3) * 35);
+          const peakTopY = valleyBaseY - peakH;
+
+          ctx.save();
+          // 大山向阳面水彩主体
+          ctx.fillStyle = mainColor;
+          ctx.beginPath();
+          ctx.moveTo(basePx - peakW, valleyBaseY + 15);
+          ctx.lineTo(basePx - peakW * 0.36, peakTopY + peakH * 0.34);
+          ctx.lineTo(basePx, peakTopY);
+          ctx.lineTo(basePx + peakW * 0.38, peakTopY + peakH * 0.38);
+          ctx.lineTo(basePx + peakW, valleyBaseY + 15);
+          ctx.closePath();
+          ctx.fill();
+
+          // 山脊右侧背阴岩壁（钢笔皴擦与水彩暗面）
+          ctx.fillStyle = rockShadow;
+          ctx.beginPath();
+          ctx.moveTo(basePx, peakTopY);
+          ctx.lineTo(basePx + peakW * 0.38, peakTopY + peakH * 0.38);
+          ctx.lineTo(basePx + peakW, valleyBaseY + 15);
+          ctx.lineTo(basePx + peakW * 0.06, valleyBaseY + 15);
+          ctx.lineTo(basePx - peakW * 0.04, peakTopY + peakH * 0.48);
+          ctx.closePath();
+          ctx.fill();
+
+          // 峰顶积雪（冬季积雪覆盖率大幅扩张至半山腰）
+          const snowRatio = lerp(0.36, 0.72, st.weights[3]);
+          ctx.fillStyle = snowColor;
+          ctx.beginPath();
+          ctx.moveTo(basePx, peakTopY);
+          ctx.lineTo(basePx - peakW * 0.36 * snowRatio * 1.4, peakTopY + peakH * snowRatio);
+          ctx.lineTo(basePx - peakW * 0.12 * snowRatio, peakTopY + peakH * snowRatio * 0.78);
+          ctx.lineTo(basePx + peakW * 0.04, peakTopY + peakH * snowRatio * 1.05);
+          ctx.lineTo(basePx + peakW * 0.22 * snowRatio, peakTopY + peakH * snowRatio * 0.82);
+          ctx.lineTo(basePx + peakW * 0.38 * snowRatio * 1.4, peakTopY + peakH * snowRatio);
+          ctx.closePath();
+          ctx.fill();
+
+          // 建筑钢笔山脊线与岩石皴擦线条
+          ctx.strokeStyle = 'rgba(35, 40, 48, 0.58)';
+          ctx.lineWidth = 1.6;
+          ctx.lineJoin = 'round';
+          ctx.beginPath();
+          ctx.moveTo(basePx - peakW, valleyBaseY + 15);
+          ctx.lineTo(basePx - peakW * 0.36, peakTopY + peakH * 0.34);
+          ctx.lineTo(basePx, peakTopY);
+          ctx.lineTo(basePx + peakW * 0.38, peakTopY + peakH * 0.38);
+          ctx.lineTo(basePx + peakW, valleyBaseY + 15);
+          ctx.stroke();
+
+          // 中央主山脊棱线与几笔钢笔斜向皴纹
+          ctx.lineWidth = 1.25;
+          ctx.beginPath();
+          ctx.moveTo(basePx, peakTopY);
+          ctx.lineTo(basePx - peakW * 0.05, peakTopY + peakH * 0.52);
+          ctx.lineTo(basePx + peakW * 0.08, valleyBaseY + 10);
+          ctx.moveTo(basePx + peakW * 0.14, peakTopY + peakH * 0.42);
+          ctx.lineTo(basePx + peakW * 0.28, peakTopY + peakH * 0.65);
+          ctx.moveTo(basePx - peakW * 0.18, peakTopY + peakH * 0.46);
+          ctx.lineTo(basePx - peakW * 0.32, peakTopY + peakH * 0.68);
+          ctx.stroke();
+
+          ctx.restore();
+        }
+      }
+
+      function drawWatercolorCloud(x, y, scale) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.scale(scale, scale);
+
+        const puffs = [
+          { x: -38, y: 10, r: 30 },
+          { x: -6, y: -4, r: 42 },
+          { x: 34, y: -12, r: 48 },
+          { x: 76, y: 2, r: 36 },
+          { x: 32, y: 14, r: 42 }
+        ];
+
+        puffs.forEach(p => {
+          const g = ctx.createRadialGradient(p.x, p.y - 6, p.r * 0.18, p.x, p.y, p.r);
+          g.addColorStop(0, 'rgba(255, 255, 255, 0.84)');
+          g.addColorStop(0.75, 'rgba(255, 252, 246, 0.45)');
+          g.addColorStop(1, 'rgba(255, 255, 255, 0)');
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        ctx.strokeStyle = 'rgba(84, 102, 128, 0.28)';
+        ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        ctx.moveTo(-62, 20);
+        ctx.quadraticCurveTo(-52, -18, -18, -22);
+        ctx.quadraticCurveTo(22, -56, 72, -26);
+        ctx.quadraticCurveTo(106, -18, 102, 20);
+        ctx.stroke();
+
+        ctx.restore();
+      }
+
+      // =========================================================================
+      // 2. 中景江河与对岸风光（34% - 56%）：S形蜿蜒江河、雪山倒影、水波纹、
+      //    河畔村舍木屋、四季林带与芦苇草甸
+      // =========================================================================
+      function drawRiverAndValley(st) {
+        const farBankY = virtualH * 0.365;
+        const nearBankTopY = virtualH * 0.515;
+
+        // 2.1 远岸起伏丘陵草坡
+        ctx.fillStyle = mixColor(st.s1.bankDeep, st.s2.bankDeep, st.blend);
+        ctx.beginPath();
+        ctx.moveTo(0, nearBankTopY);
+        for (let x = 0; x <= virtualW + 20; x += 20) {
+          const wx = x - travelDist * 0.28;
+          const y = farBankY + Math.sin(wx * 0.008) * 11 + Math.cos(wx * 0.017) * 5;
+          ctx.lineTo(x, y);
+        }
+        ctx.lineTo(virtualW, nearBankTopY);
+        ctx.closePath();
+        ctx.fill();
+
+        // 远岸点缀手绘坡顶村舍木屋与四季树林
+        const villagePeriod = 340;
+        const villageSpan = Math.ceil((virtualW + 400) / villagePeriod) * villagePeriod;
+        for (let i = 0; i < villageSpan / villagePeriod; i++) {
+          const vx = ((i * villagePeriod + travelDist * 0.34) % villageSpan) - 80;
+          const vy = farBankY + 8 + Math.sin((vx - travelDist * 0.28) * 0.008) * 9;
+
+          // 每隔一段画一座川西/阿尔卑斯风手绘尖顶木屋
+          if (i % 2 === 0) {
+            drawValleyCottage(vx + 45, vy - 2, st);
+          }
+          drawSeasonTree(vx, vy + 2, 0.62, i, st);
+          drawSeasonTree(vx + 92, vy + 4, 0.56, i + 3, st);
+        }
+
+        // 2.2 S形蜿蜒奔流的大河水面
+        const riverGrad = ctx.createLinearGradient(0, farBankY + 8, 0, nearBankTopY + 12);
+        riverGrad.addColorStop(0, mixColor(st.s1.riverTop, st.s2.riverTop, st.blend));
+        riverGrad.addColorStop(1, mixColor(st.s1.riverBot, st.s2.riverBot, st.blend));
+
+        ctx.fillStyle = riverGrad;
+        ctx.beginPath();
+        // 对岸S形水岸线
+        for (let x = 0; x <= virtualW + 20; x += 20) {
+          const wx = x - travelDist * 0.38;
+          const y = farBankY + 18 + Math.sin(wx * 0.0065) * 16;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        // 近岸S形水岸线
+        for (let x = virtualW + 20; x >= 0; x -= 20) {
+          const wx = x - travelDist * 0.58;
+          const y = nearBankTopY - 6 + Math.sin(wx * 0.0055 + 1.2) * 18;
+          ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.fill();
+
+        // 江面雪山倒影柔光带
+        const reflGrad = ctx.createLinearGradient(0, farBankY + 16, 0, nearBankTopY - 12);
+        reflGrad.addColorStop(0, mixColor(st.s1.snowCap, st.s2.snowCap, st.blend, 0.26));
+        reflGrad.addColorStop(0.55, mixColor(st.s1.riverShimmer, st.s2.riverShimmer, st.blend, 0.14));
+        reflGrad.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.fillStyle = reflGrad;
+        ctx.fill();
+
+        // 江面动态手绘水波光纹与钢笔水流细线
+        const shimmerColor = mixColor(st.s1.riverShimmer, st.s2.riverShimmer, st.blend, 0.65);
+        ctx.strokeStyle = shimmerColor;
+        ctx.lineCap = 'round';
+        for (let row = 0; row < 5; row++) {
+          const ry = farBankY + 32 + row * 26;
+          const speed = 0.45 + row * 0.12;
+          const waveGap = 155;
+          const span = Math.ceil((virtualW + 240) / waveGap) * waveGap;
+          ctx.lineWidth = 1.4 + row * 0.28;
+
+          for (let i = 0; i < span / waveGap; i++) {
+            const wx = ((i * waveGap + travelDist * speed + row * 53) % span) - 90;
+            const len = 34 + (i % 3) * 18;
+            ctx.beginPath();
+            ctx.moveTo(wx, ry);
+            ctx.quadraticCurveTo(wx + len * 0.5, ry - 2.2, wx + len, ry);
+            ctx.stroke();
+          }
+        }
+
+        // 近岸蜿蜒河滩与芦苇花草带（过渡到沿河公路）
+        ctx.fillStyle = mixColor(st.s1.bankGrass, st.s2.bankGrass, st.blend);
+        ctx.beginPath();
+        ctx.moveTo(0, virtualH * 0.57);
+        for (let x = 0; x <= virtualW + 20; x += 20) {
+          const wx = x - travelDist * 0.58;
+          const y = nearBankTopY - 6 + Math.sin(wx * 0.0055 + 1.2) * 18;
+          ctx.lineTo(x, y);
+        }
+        ctx.lineTo(virtualW, virtualH * 0.57);
+        ctx.closePath();
+        ctx.fill();
+
+        // 河岸水边建筑钢笔勾线
+        ctx.strokeStyle = 'rgba(35, 40, 48, 0.45)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        for (let x = 0; x <= virtualW + 20; x += 20) {
+          const wx = x - travelDist * 0.58;
+          const y = nearBankTopY - 6 + Math.sin(wx * 0.0055 + 1.2) * 18;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        // 近河岸边沿途四季繁花乔木与芦苇丛
+        const bankTreeGap = 165;
+        const bankSpan = Math.ceil((virtualW + 320) / bankTreeGap) * bankTreeGap;
+        for (let i = 0; i < bankSpan / bankTreeGap; i++) {
+          const bx = ((i * bankTreeGap + travelDist * 0.72) % bankSpan) - 110;
+          const by = nearBankTopY + 10 + Math.sin((bx - travelDist * 0.58) * 0.0055 + 1.2) * 12;
+          drawSeasonTree(bx, by, 0.88 + (i % 2) * 0.14, i + 7, st);
+        }
+      }
+
+      // 河谷远岸手绘尖顶木屋
+      function drawValleyCottage(x, y, st) {
+        const wWinter = st.weights[3];
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.strokeStyle = '#232830';
+        ctx.lineWidth = 1.3;
+
+        // 木屋墙体
+        ctx.fillStyle = '#f5efe6';
+        ctx.beginPath();
+        ctx.rect(-14, -14, 28, 15);
+        ctx.fill();
+        ctx.stroke();
+
+        // 坡屋顶（冬季覆盖厚白雪）
+        ctx.fillStyle = wWinter > 0.4 ? '#f8fcff' : '#8c4a32';
+        ctx.beginPath();
+        ctx.moveTo(-18, -13);
+        ctx.lineTo(0, -25);
+        ctx.lineTo(18, -13);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // 暖色小窗
+        ctx.fillStyle = '#fbbf24';
+        ctx.fillRect(-6, -10, 5, 5);
+        ctx.fillRect(3, -10, 5, 5);
+
+        ctx.restore();
+      }
+
+      // 四季手绘树（春桃花粉樱 / 夏苍翠绿冠 / 秋红枫金杏 / 冬雾凇雪松）
+      function drawSeasonTree(x, y, scale, seed, st) {
+        const [wSpring, wSummer, wAutumn, wWinter] = st.weights;
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.scale(scale, scale);
+
+        // 钢笔树干
+        ctx.strokeStyle = '#3d2c1e';
+        ctx.lineWidth = 4.2;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(0, 6);
+        ctx.quadraticCurveTo(-2, -20, 0, -44);
+        ctx.moveTo(0, -22);
+        ctx.lineTo(-14, -35);
+        ctx.moveTo(0, -27);
+        ctx.lineTo(13, -38);
+        ctx.stroke();
+
+        const canopyAlpha = 1 - wWinter * 0.92;
+        if (canopyAlpha > 0.03) {
+          const cSpring = seed % 2 === 0 ? [255, 174, 204] : [255, 214, 230];
+          const cSummer = seed % 2 === 0 ? [42, 154, 78] : [74, 180, 92];
+          const cAutumn = seed % 2 === 0 ? [242, 164, 32] : [214, 56, 34];
+
+          const r = Math.round(cSpring[0] * wSpring + cSummer[0] * wSummer + cAutumn[0] * wAutumn + 215 * wWinter);
+          const g = Math.round(cSpring[1] * wSpring + cSummer[1] * wSummer + cAutumn[1] * wAutumn + 228 * wWinter);
+          const b = Math.round(cSpring[2] * wSpring + cSummer[2] * wSummer + cAutumn[2] * wAutumn + 240 * wWinter);
+
+          const blobs = [
+            { dx: 0, dy: -54, rad: 30 },
+            { dx: -21, dy: -43, rad: 23 },
+            { dx: 21, dy: -42, rad: 24 },
+            { dx: -12, dy: -66, rad: 20 },
+            { dx: 14, dy: -64, rad: 19 }
+          ];
+
+          blobs.forEach(p => {
+            ctx.fillStyle = `rgba(${r},${g},${b},${0.9 * canopyAlpha})`;
+            ctx.beginPath();
+            ctx.arc(p.dx, p.dy, p.rad, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = `rgba(255,255,255,${0.25 * canopyAlpha})`;
+            ctx.beginPath();
+            ctx.arc(p.dx - 5, p.dy - 6, p.rad * 0.48, 0, Math.PI * 2);
+            ctx.fill();
+          });
+
+          ctx.strokeStyle = `rgba(35, 40, 48, ${0.42 * canopyAlpha})`;
+          ctx.lineWidth = 1.35;
+          ctx.beginPath();
+          ctx.arc(0, -52, 33, Math.PI * 1.06, Math.PI * 1.94);
+          ctx.stroke();
+        }
+
+        // 冬季积雪苍松
+        if (wWinter > 0.03) {
+          const tiers = [
+            { y: -24, w: 35, h: 26 },
+            { y: -43, w: 28, h: 24 },
+            { y: -62, w: 20, h: 22 }
+          ];
+          tiers.forEach(t => {
+            ctx.fillStyle = `rgba(32, 68, 58, ${0.96 * wWinter})`;
+            ctx.beginPath();
+            ctx.moveTo(0, t.y - t.h);
+            ctx.lineTo(-t.w, t.y);
+            ctx.lineTo(t.w, t.y);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.fillStyle = `rgba(248, 252, 255, ${0.97 * wWinter})`;
+            ctx.strokeStyle = `rgba(35, 40, 48, ${0.45 * wWinter})`;
+            ctx.lineWidth = 1.2;
+            ctx.beginPath();
+            ctx.moveTo(0, t.y - t.h);
+            ctx.lineTo(-t.w * 0.68, t.y - t.h * 0.34);
+            ctx.quadraticCurveTo(0, t.y - t.h * 0.16, t.w * 0.68, t.y - t.h * 0.34);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+          });
+        }
+
+        ctx.restore();
+      }
+
+      // =========================================================================
+      // 3. 前景沿河柏油公路与近景草甸（56% - 100%）：高对比沥青路面衬托矿石白车漆
+      // =========================================================================
+      function drawRiversideRoad(st) {
+        const roadTop = virtualH * 0.562;
+        const roadBot = virtualH * 0.815;
+        const roadH = roadBot - roadTop;
+
+        // 沿河护栏防撞柱（快速向右后方掠过，强化向左疾驰速度感）
+        const guardPeriod = 92;
+        const guardSpan = Math.ceil((virtualW + 180) / guardPeriod) * guardPeriod;
+        ctx.strokeStyle = 'rgba(226, 232, 240, 0.85)';
+        ctx.lineWidth = 3.2;
+        ctx.beginPath();
+        ctx.moveTo(0, roadTop - 11);
+        ctx.lineTo(virtualW, roadTop - 11);
+        ctx.stroke();
+
+        for (let i = 0; i < guardSpan / guardPeriod; i++) {
+          const gx = ((i * guardPeriod + travelDist * 2.6) % guardSpan) - 40;
+          ctx.fillStyle = '#cbd5e1';
+          ctx.strokeStyle = '#232830';
+          ctx.lineWidth = 1.3;
+          ctx.fillRect(gx - 2.5, roadTop - 15, 5, 15);
+          ctx.strokeRect(gx - 2.5, roadTop - 15, 5, 15);
+        }
+
+        // 深炭灰水彩沥青路面
+        const roadGrad = ctx.createLinearGradient(0, roadTop, 0, roadBot);
+        roadGrad.addColorStop(0, mixColor(st.s1.roadTop, st.s2.roadTop, st.blend));
+        roadGrad.addColorStop(1, mixColor(st.s1.roadBot, st.s2.roadBot, st.blend));
+        ctx.fillStyle = roadGrad;
+        ctx.fillRect(0, roadTop, virtualW, roadH);
+
+        // 水彩笔刷纵向微质感
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+        ctx.lineWidth = 2;
+        for (let i = 1; i <= 4; i++) {
+          const ly = roadTop + (roadH / 5) * i;
+          ctx.beginPath();
+          ctx.moveTo(0, ly);
+          ctx.lineTo(virtualW, ly);
+          ctx.stroke();
+        }
+
+        // 公路上下白实线
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
+        ctx.lineWidth = 3.6;
+        ctx.beginPath();
+        ctx.moveTo(0, roadTop + 8);
+        ctx.lineTo(virtualW, roadTop + 8);
+        ctx.moveTo(0, roadBot - 10);
+        ctx.lineTo(virtualW, roadBot - 10);
+        ctx.stroke();
+
+        // 公路中央高速向右掠过的白色虚线
+        const dashW = 82;
+        const gapW = 64;
+        const period = dashW + gapW;
+        const offset = (travelDist * 2.95) % period;
+        const midLaneY = roadTop + roadH * 0.47;
+
+        ctx.fillStyle = 'rgba(255, 252, 240, 0.92)';
+        for (let x = offset - period; x < virtualW + period; x += period) {
+          ctx.beginPath();
+          ctx.roundRect(x, midLaneY - 3.5, dashW, 7, 3.5);
+          ctx.fill();
+        }
+
+        // 公路下方近景草坡 / 秋叶坡 / 雪坡（至 100vh）
+        const fgGrad = ctx.createLinearGradient(0, roadBot, 0, virtualH);
+        fgGrad.addColorStop(0, mixColor(st.s1.bankGrass, st.s2.bankGrass, st.blend));
+        fgGrad.addColorStop(1, mixColor(st.s1.bankDeep, st.s2.bankDeep, st.blend));
+        ctx.fillStyle = fgGrad;
+        ctx.fillRect(0, roadBot, virtualW, virtualH - roadBot);
+
+        // 近景路桩与手绘小草笔触
+        const postPeriod = 270;
+        const postSpan = Math.ceil((virtualW + 320) / postPeriod) * postPeriod;
+        for (let i = 0; i < postSpan / postPeriod; i++) {
+          const px = ((i * postPeriod + travelDist * 3.1) % postSpan) - 80;
+          const py = roadBot + 24;
+
+          ctx.fillStyle = '#ffffff';
+          ctx.strokeStyle = '#232830';
+          ctx.lineWidth = 1.8;
+          ctx.beginPath();
+          ctx.roundRect(px, py - 16, 8, 26, 2.5);
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.fillStyle = '#ef4444';
+          ctx.fillRect(px + 1.5, py - 11, 5, 4.5);
+
+          ctx.strokeStyle = 'rgba(35, 40, 48, 0.34)';
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(px - 36, py + 12);
+          ctx.lineTo(px - 40, py + 2);
+          ctx.moveTo(px - 32, py + 12);
+          ctx.lineTo(px - 29, py + 1);
+          ctx.stroke();
+        }
+      }
+
+      // =========================================================================
+      // 4. 核心主角：高精度复刻 2022 款 LCI 中期改款矿石白 BMW iX3
+      //    - 朝向：向左前方行驶（微俯视前侧 3/4 视角）
+      //    - 比例：标准中型豪华 SUV 体态（G08 比例，占竖屏宽度约 84%）
+      //    - 细节：一体式相连双肾格栅 + BMW i 电光蓝框 + 中央蓝白圆标、
+      //            双“L”白色光导天使眼 LED 大灯 + 蓝色激光点缀、
+      //            M 运动垂直 L 形“回旋镖”空气帘导风槽（内嵌电光蓝饰件）、
+      //            4 条机盖肌肉隆起筋线、前翼子板蓝色回旋镖出风口装饰件、
+      //            全长蓝色侧裙饰条、霍夫迈斯特拐角镀铬窗框、3D 钳形熏黑尾灯、
+      //            20 英寸 890M 双色低风阻轮毂 + 蓝色 M 刹车卡钳
+      // =========================================================================
+      function drawHeroBMWiX3(t, st) {
+        const beamPower = lerp(st.s1.beamPower, st.s2.beamPower, st.blend);
+
+        // 车辆居中置于竖屏黄金视觉中心（微偏右一点留出左前方车灯与双肾格栅呼吸空间）
+        const centerX = virtualW * 0.52;
+        const groundY = virtualH * 0.728;
+
+        // 基准车长 454 单位，放大至占竖屏宽度 ~84%（约 605px）
+        const carScale = Math.min((virtualW * 0.84) / 454, 1.48);
+
+        // 细腻豪华 SUV 空气悬挂呼吸起伏
+        const bounceY = Math.sin(t * 12.5) * 1.35 + Math.cos(t * 6.2) * 0.75;
+        const pitch = Math.sin(t * 6.2) * 0.003;
+        // 车轮逆时针高速滚动（向左行驶）
+        const wheelAngle = -(travelDist * 2.95) / 40;
+
+        ctx.save();
+        ctx.translate(centerX, groundY);
+        ctx.scale(carScale, carScale);
+
+        // ------------------------------------------------------------
+        // (1) 车底浓重手绘水彩投影（令矿石白车身在冬日雪景中也锐利立体）
+        // ------------------------------------------------------------
+        const shadowGrad = ctx.createRadialGradient(4, 5, 26, 4, 5, 242);
+        shadowGrad.addColorStop(0, 'rgba(10, 14, 22, 0.86)');
+        shadowGrad.addColorStop(0.68, 'rgba(10, 14, 22, 0.50)');
+        shadowGrad.addColorStop(1, 'rgba(10, 14, 22, 0)');
+        ctx.fillStyle = shadowGrad;
+        ctx.beginPath();
+        ctx.ellipse(4, 5, 242, 20, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 左前方 LED 大灯投射在柏油路面上的冷白光锥
+        if (beamPower > 0.08) {
+          const beamGrad = ctx.createLinearGradient(-205, -45, -430, 16);
+          beamGrad.addColorStop(0, `rgba(244, 250, 255, ${0.68 * beamPower})`);
+          beamGrad.addColorStop(0.55, `rgba(220, 242, 255, ${0.28 * beamPower})`);
+          beamGrad.addColorStop(1, 'rgba(220, 242, 255, 0)');
+          ctx.fillStyle = beamGrad;
+          ctx.beginPath();
+          ctx.moveTo(-198, -68);
+          ctx.lineTo(-430, -26);
+          ctx.lineTo(-430, 42);
+          ctx.lineTo(-198, -38);
+          ctx.closePath();
+          ctx.fill();
+        }
+
+        // 应用悬挂呼吸组        ctx.save();
+        ctx.translate(0, bounceY);
+        ctx.rotate(pitch);
+
+        // ------------------------------------------------------------
+        // (2) 远侧右前轮微露、车顶尾翼、鲨鱼鳍天线与银黑双色行李架
+        // ------------------------------------------------------------
+        // 远侧（右前轮）轮胎底部微露，强化 3/4 立体接地感
+        ctx.fillStyle = '#141820';
+        ctx.beginPath();
+        ctx.ellipse(-172, -3, 25, 10, 0, 0, Math.PI);
+        ctx.fill();
+
+        // 空气动力学后扰流尾翼
+        ctx.fillStyle = '#F9FAFC';
+        ctx.strokeStyle = '#232830';
+        ctx.lineWidth = 2.0;
+        ctx.beginPath();
+        ctx.moveTo(192, -142);
+        ctx.lineTo(222, -146);
+        ctx.lineTo(215, -133);
+        ctx.lineTo(186, -132);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // 车顶鲨鱼鳍天线
+        ctx.fillStyle = '#F9FAFC';
+        ctx.beginPath();
+        ctx.moveTo(148, -144);
+        ctx.quadraticCurveTo(136, -161, 121, -157);
+        ctx.lineTo(124, -144);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // BMW X3/iX3 专属银黑双色一体式贴顶行李架
+        ctx.fillStyle = '#1e2634';
+        ctx.beginPath();
+        ctx.moveTo(162, -143);
+        ctx.quadraticCurveTo(56, -154, -36, -143);
+        ctx.lineTo(-32, -138);
+        ctx.quadraticCurveTo(56, -148, 158, -138);
+        ctx.closePath();
+        ctx.fill();
+        // 行李架顶部哑光银高光条
+        ctx.strokeStyle = '#cbd5e1';
+        ctx.lineWidth = 1.6;
+        ctx.beginPath();
+        ctx.moveTo(156, -142);
+        ctx.quadraticCurveTo(56, -152, -34, -142);
+        ctx.stroke();
+
+        // ------------------------------------------------------------
+        // (3) 2022 款 LCI 矿石白 BMW iX3 中型豪华 SUV 车身主轮廓
+        //     高耸饱满车头、平直微倾机盖、方正轮拱、直立稳重 D 柱
+        // ------------------------------------------------------------
+        const bodyPaint = ctx.createLinearGradient(0, -152, 0, -18);
+        bodyPaint.addColorStop(0, '#FFFFFF');   // 矿石白顶部珍珠受光面
+        bodyPaint.addColorStop(0.36, '#F7F9FC'); // 柔和珍珠白
+        bodyPaint.addColorStop(0.72, '#EAEFF6'); // 中调冷白
+        bodyPaint.addColorStop(1, '#CBD6E6');    // 下沿环境反射冷灰蓝
+
+        function traceIX3Body() {
+          ctx.beginPath();
+          // 后保险杠下沿起步（右侧为车尾）
+          ctx.moveTo(212, -35);
+          // 饱满后包围折角与尾门台阶
+          ctx.lineTo(220, -56);
+          ctx.quadraticCurveTo(222, -85, 210, -106);
+          // 直立稳重的 SUV D柱倾斜角
+          ctx.lineTo(186, -142);
+          // 车顶平直优雅弧线
+          ctx.quadraticCurveTo(62, -153, -44, -141);
+          // A柱与前风挡（3/4 视角透视切角）
+          ctx.lineTo(-104, -99);
+          // 平直微倾的发动机盖（G08 标志性高耸车头）
+          ctx.quadraticCurveTo(-162, -93, -212, -80);
+          // 2022 LCI 垂直威严前脸双肾区域
+          ctx.lineTo(-227, -53);
+          // M 运动套装前包围下唇（3/4 前鼻锥立体折转）
+          ctx.quadraticCurveTo(-228, -30, -206, -21);
+          ctx.lineTo(-176, -20);
+          // 方正硬朗前轮拱圆弧开口
+          ctx.arc(-132, -30, 45, Math.PI - 0.14, 0.14, false);
+          // 侧裙下沿
+          ctx.lineTo(90, -20);
+          // 方正硬朗后轮拱圆弧开口
+          ctx.arc(136, -30, 45, Math.PI - 0.14, 0.14, false);
+          // 后包围底边闭合
+          ctx.lineTo(212, -35);
+          ctx.closePath();
+        }
+
+        ctx.fillStyle = bodyPaint;
+        traceIX3Body();
+        ctx.fill();
+
+        // 发动机盖顶部珍珠白受光高光面 + 4 条肌肉隆起折线（Power Domes）
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.94)';
+        ctx.beginPath();
+        ctx.moveTo(-104, -98);
+        ctx.quadraticCurveTo(-158, -94, -208, -81);
+        ctx.lineTo(-188, -74);
+        ctx.quadraticCurveTo(-138, -85, -94, -90);
+        ctx.closePath();
+        ctx.fill();
+
+        // 4 条雕塑感引擎盖力量筋线
+        ctx.strokeStyle = 'rgba(136, 152, 174, 0.65)';
+        ctx.lineWidth = 1.35;
+        ctx.beginPath();
+        // 中央两条主筋线汇聚向双肾格栅顶端
+        ctx.moveTo(-114, -96);
+        ctx.quadraticCurveTo(-160, -90, -204, -81);
+        ctx.moveTo(-102, -92);
+        ctx.quadraticCurveTo(-148, -85, -192, -77);
+        // 外侧两条翼子板肩线
+        ctx.moveTo(-94, -90);
+        ctx.quadraticCurveTo(-138, -83, -178, -76);
+        ctx.moveTo(-124, -97);
+        ctx.quadraticCurveTo(-172, -92, -212, -82);
+        ctx.stroke();
+
+        // 车身侧面冷灰蓝水彩立体折面阴影（体现 BMW 雕塑感门板曲面）
+        const sideShadow = ctx.createLinearGradient(0, -72, 0, -28);
+        sideShadow.addColorStop(0, 'rgba(180, 194, 214, 0.06)');
+        sideShadow.addColorStop(0.62, 'rgba(180, 194, 214, 0.46)');
+        sideShadow.addColorStop(1, 'rgba(116, 132, 154, 0.24)');
+        ctx.fillStyle = sideShadow;
+        ctx.beginPath();
+        ctx.moveTo(86, -68);
+        ctx.lineTo(-84, -65);
+        ctx.lineTo(-80, -32);
+        ctx.lineTo(86, -32);
+        ctx.closePath();
+        ctx.fill();
+
+        // 建筑钢笔主轮廓描边（#232830 深炭灰）
+        ctx.strokeStyle = '#232830';
+        ctx.lineWidth = 2.6;
+        ctx.lineJoin = 'round';
+        traceIX3Body();
+        ctx.stroke();
+
+        // 建筑钢笔手绘双线速写韵味（车顶与机盖边缘随手轻描）
+        ctx.strokeStyle = 'rgba(35, 40, 48, 0.26)';
+        ctx.lineWidth = 1.1;
+        ctx.beginPath();
+        ctx.moveTo(184, -144);
+        ctx.quadraticCurveTo(60, -155, -46, -143);
+        ctx.moveTo(-106, -101);
+        ctx.quadraticCurveTo(-164, -95, -214, -82);
+        ctx.stroke();
+
+        // ------------------------------------------------------------
+        // (4) 方正硬朗轮拱防擦轮眉、双腰线、车门缝隙与齐平门把手
+        // ------------------------------------------------------------
+        // 前后轮拱方正雕塑轮眉外沿
+        ctx.strokeStyle = '#232830';
+        ctx.lineWidth = 2.3;
+        ctx.beginPath();
+        ctx.arc(-132, -30, 47.5, Math.PI * 1.04, Math.PI * 1.96);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(136, -30, 47.5, Math.PI * 1.04, Math.PI * 1.96);
+        ctx.stroke();
+
+        // 上腰线：从前轮拱后方穿过前后门把手直达 3D 尾灯
+        ctx.strokeStyle = 'rgba(72, 86, 108, 0.72)';
+        ctx.lineWidth = 1.65;
+        ctx.beginPath();
+        ctx.moveTo(194, -93);
+        ctx.quadraticCurveTo(28, -90, -162, -82);
+        ctx.stroke();
+
+        // 下腰线折痕
+        ctx.strokeStyle = 'rgba(116, 132, 154, 0.52)';
+        ctx.lineWidth = 1.3;
+        ctx.beginPath();
+        ctx.moveTo(82, -45);
+        ctx.lineTo(-82, -43);
+        ctx.stroke();
+
+        // 前后车门钢笔切割缝隙
+        ctx.strokeStyle = 'rgba(35, 40, 48, 0.65)';
+        ctx.lineWidth = 1.35;
+        ctx.beginPath();
+        ctx.moveTo(-84, -94);
+        ctx.quadraticCurveTo(-90, -62, -82, -28);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(18, -141);
+        ctx.lineTo(18, -26);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(116, -93);
+        ctx.quadraticCurveTo(104, -68, 104, -54);
+        ctx.stroke();
+
+        // 矿石白齐平式门把手（带镀铬细边）
+        ctx.fillStyle = '#FFFFFF';
+        ctx.strokeStyle = '#232830';
+        ctx.lineWidth = 1.3;
+        ctx.beginPath();
+        ctx.roundRect(-32, -84, 22, 6.5, 3);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.roundRect(58, -85, 22, 6.5, 3);
+        ctx.fill();
+        ctx.stroke();
+
+        // ------------------------------------------------------------
+        // (5) 深色隐私车窗、经典霍夫迈斯特拐角 (Hofmeister Kink) 镀铬窗框
+        //     与高光黑外后视镜（带透明转向灯条）
+        // ------------------------------------------------------------
+        const glassGrad = ctx.createLinearGradient(164, -141, -92, -93);
+        glassGrad.addColorStop(0, '#1a2230');
+        glassGrad.addColorStop(0.45, '#2f3d52');
+        glassGrad.addColorStop(0.78, '#46566e');
+        glassGrad.addColorStop(1, '#1a2230');
+
+        ctx.fillStyle = glassGrad;
+        ctx.beginPath();
+        ctx.moveTo(175, -135);
+        ctx.quadraticCurveTo(60, -144, -38, -135);
+        ctx.lineTo(-93, -97);
+        ctx.lineTo(158, -96);
+        // 宝马标志性霍夫迈斯特拐角（C/D柱交汇处的经典折角）
+        ctx.quadraticCurveTo(173, -96, 178, -109);
+        ctx.closePath();
+        ctx.fill();
+
+        // 前挡风玻璃 3/4 透视切面
+        ctx.fillStyle = '#283548';
+        ctx.beginPath();
+        ctx.moveTo(-40, -135);
+        ctx.lineTo(-55, -133);
+        ctx.lineTo(-109, -96);
+        ctx.lineTo(-94, -97);
+        ctx.closePath();
+        ctx.fill();
+
+        // 车窗内隐约可见驾驶座头枕与三辐 M 方向盘轮廓
+        ctx.fillStyle = 'rgba(12, 18, 30, 0.6)';
+        ctx.beginPath();
+        ctx.roundRect(-22, -122, 14, 18, 5);
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(12, 18, 30, 0.68)';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(-46, -98);
+        ctx.lineTo(-54, -112);
+        ctx.stroke();
+
+        // 车窗手绘斜向水彩天空倒影笔触
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
+        ctx.beginPath();
+        ctx.moveTo(54, -137);
+        ctx.lineTo(26, -137);
+        ctx.lineTo(50, -97);
+        ctx.lineTo(78, -97);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(-12, -136);
+        ctx.lineTo(-28, -135);
+        ctx.lineTo(-4, -97);
+        ctx.lineTo(12, -97);
+        ctx.closePath();
+        ctx.fill();
+
+        // 亮黑 + 细镀铬镶边的霍夫迈斯特窗框线
+        ctx.strokeStyle = '#111827';
+        ctx.lineWidth = 3.6;
+        ctx.beginPath();
+        ctx.moveTo(175, -135);
+        ctx.quadraticCurveTo(60, -144, -38, -135);
+        ctx.lineTo(-93, -97);
+        ctx.lineTo(158, -96);
+        ctx.quadraticCurveTo(173, -96, 178, -109);
+        ctx.closePath();
+        ctx.stroke();
+
+        // 窗框下沿精细镀铬亮条（在霍夫迈斯特拐角处上扬收尾）
+        ctx.strokeStyle = '#e2e8f0';
+        ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        ctx.moveTo(-91, -96.5);
+        ctx.lineTo(158, -95.5);
+        ctx.quadraticCurveTo(172, -95.5, 177, -108);
+        ctx.stroke();
+
+        // 高光黑 B 柱与 C 柱饰板
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(12, -139, 11, 43);
+        ctx.beginPath();
+        ctx.moveTo(116, -137);
+        ctx.lineTo(108, -137);
+        ctx.lineTo(110, -96);
+        ctx.lineTo(118, -96);
+        ctx.closePath();
+        ctx.fill();
+
+        // 高光黑外后视镜壳（带透明 LED 转向灯条）
+        ctx.save();
+        ctx.translate(-75, -96);
+        ctx.fillStyle = '#0f172a';
+        ctx.strokeStyle = '#232830';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.roundRect(-18, -9, 22, 14, 5);
+        ctx.fill();
+        ctx.stroke();
+        // 镜壳上的透明转向灯导光条
+        ctx.fillStyle = '#f8fafc';
+        ctx.fillRect(-16, -3, 15, 2.2);
+        ctx.restore();
+
+        // ------------------------------------------------------------
+        // (6) 2022 款 LCI 中期改款专属前脸、侧面与车尾细节复刻
+        // ------------------------------------------------------------
+
+        // (A) 2022 LCI 一体式相连加宽全封闭双肾格栅 + BMW i 电光蓝边框 + 中央蓝白标
+        ctx.save();
+        // 中央一体化相连桥接结构（2022 LCI 标志性设计）
+        ctx.fillStyle = '#111620';
+        ctx.strokeStyle = '#0077E6';
+        ctx.lineWidth = 3.0;
+        ctx.beginPath();
+        // 左肾（近侧，尺寸更大）
+        ctx.moveTo(-199, -78);
+        ctx.lineTo(-215, -75);
+        // 顶部一体化相连桥接
+        ctx.lineTo(-219, -74);
+        // 右肾（远侧，透视收窄）
+        ctx.lineTo(-227, -71);
+        ctx.lineTo(-229, -51);
+        ctx.lineTo(-220, -50);
+        // 底部一体化相连桥接
+        ctx.lineTo(-217, -50);
+        ctx.lineTo(-200, -49);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // 双肾中脊纵向电光蓝分隔高光
+        ctx.strokeStyle = '#1CA0FF';
+        ctx.lineWidth = 2.0;
+        ctx.beginPath();
+        ctx.moveTo(-216.5, -74);
+        ctx.lineTo(-218.5, -50);
+        ctx.stroke();
+
+        // 封闭格栅内部高光黑菱形空气动力学网格纹理
+        ctx.fillStyle = 'rgba(186, 206, 228, 0.58)';
+        for (let gy = -71; gy <= -54; gy += 3.8) {
+          for (let gx = -213; gx <= -203; gx += 3.8) {
+            ctx.fillRect(gx, gy, 1.5, 1.5);
+          }
+        }
+
+        // 双肾格栅正上方中央 BMW 蓝白螺旋桨圆形车标
+        ctx.fillStyle = '#ffffff';
+        ctx.strokeStyle = '#1e293b';
+        ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        ctx.ellipse(-208, -81, 6.4, 3.0, -0.15, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle = '#0077E6';
+        ctx.beginPath();
+        ctx.arc(-209.6, -81, 1.5, 0, Math.PI * 2);
+        ctx.arc(-206.4, -80.6, 1.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+        // (B) 2022 LCI 修长锐利自适应 LED 大灯组（双“L”白色光导日行灯 + 蓝色激光点缀条）
+        ctx.save();
+        ctx.fillStyle = '#0d131f';
+        ctx.strokeStyle = '#232830';
+        ctx.lineWidth = 1.3;
+        ctx.beginPath();
+        ctx.moveTo(-156, -83);
+        ctx.lineTo(-199, -79);
+        ctx.lineTo(-197, -67);
+        ctx.lineTo(-162, -70);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // 内部双透镜结构与蓝色激光点缀条
+        ctx.fillStyle = 'rgba(148, 163, 184, 0.35)';
+        ctx.beginPath();
+        ctx.arc(-174, -74, 3.4, 0, Math.PI * 2);
+        ctx.arc(-189, -73, 3.4, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 标志性 BMW 蓝色激光大灯眉线点缀
+        ctx.strokeStyle = '#1CA0FF';
+        ctx.lineWidth = 1.6;
+        ctx.beginPath();
+        ctx.moveTo(-164, -79);
+        ctx.lineTo(-194, -77);
+        ctx.stroke();
+
+        // 发光双“L”形白色光导日行灯
+        ctx.strokeStyle = '#FFFFFF';
+        ctx.lineWidth = 2.5;
+        ctx.shadowColor = 'rgba(232, 247, 255, 0.98)';
+        ctx.shadowBlur = 7 + beamPower * 12;
+        ctx.beginPath();
+        // 外侧 L 型灯带
+        ctx.moveTo(-165, -78);
+        ctx.lineTo(-165, -71);
+        ctx.lineTo(-179, -70);
+        // 内侧 L 型灯带
+        ctx.moveTo(-182, -77);
+        ctx.lineTo(-182, -70);
+        ctx.lineTo(-195, -69);
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+        ctx.restore();
+
+        // (C) M 运动套装前包围：竖向 L 形“回旋镖”导风槽（内嵌电光蓝饰件）+ 梯形下格栅
+        // 竖向 L 形回旋镖导风槽
+        ctx.fillStyle = '#141b26';
+        ctx.beginPath();
+        ctx.moveTo(-182, -60);
+        ctx.lineTo(-197, -59);
+        ctx.lineTo(-194, -31);
+        ctx.lineTo(-178, -32);
+        ctx.closePath();
+        ctx.fill();
+
+        // 内嵌 BMW i 电光蓝 L 形回旋镖饰件
+        ctx.strokeStyle = '#1CA0FF';
+        ctx.lineWidth = 3.0;
+        ctx.beginPath();
+        ctx.moveTo(-182, -59);
+        ctx.lineTo(-179, -32);
+        ctx.lineTo(-194, -31);
+        ctx.stroke();
+
+        // 前包围底部中央梯形下进气格栅
+        ctx.fillStyle = '#111620';
+        ctx.strokeStyle = '#232830';
+        ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        ctx.moveTo(-201, -43);
+        ctx.lineTo(-223, -43);
+        ctx.lineTo(-219, -28);
+        ctx.lineTo(-199, -29);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // (D) 前翼子板后方标志性 BMW i 电光蓝回旋镖形出风口装饰件
+        ctx.save();
+        ctx.translate(-89, -78);
+        ctx.fillStyle = '#0077E6';
+        ctx.strokeStyle = '#232830';
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(-20, 1);
+        ctx.lineTo(-17, 9);
+        ctx.lineTo(2, 7);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+        // 内部银白镀铬高光条
+        ctx.fillStyle = '#F8FAFC';
+        ctx.fillRect(-15, 2.5, 11, 2.2);
+        ctx.restore();
+
+        // (E) 贯穿前后门底部的 BMW i 电光蓝侧裙长条饰板
+        const skirtBlue = ctx.createLinearGradient(-86, -29, 86, -29);
+        skirtBlue.addColorStop(0, '#0062CC');
+        skirtBlue.addColorStop(0.5, '#1CA0FF');
+        skirtBlue.addColorStop(1, '#0062CC');
+        ctx.fillStyle = skirtBlue;
+        ctx.strokeStyle = '#232830';
+        ctx.lineWidth = 1.15;
+        ctx.beginPath();
+        ctx.roundRect(-86, -30, 173, 7.2, 3.2);
+        ctx.fill();
+        ctx.stroke();
+
+        // (F) 2022 款 LCI 3D 立体钳形熏黑 LED 尾灯（探出车尾立体灯罩）+ 后包围蓝色扩散器饰板
+        ctx.save();
+        ctx.fillStyle = '#881337';
+        ctx.strokeStyle = '#232830';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(213, -103);
+        ctx.lineTo(180, -97);
+        ctx.lineTo(183, -82);
+        ctx.lineTo(216, -85);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // 3D 钳形红色 LED 示宽光带
+        ctx.strokeStyle = '#ff3b3b';
+        ctx.lineWidth = 2.6;
+        ctx.shadowColor = 'rgba(255, 59, 59, 0.94)';
+        ctx.shadowBlur = 5 + beamPower * 9;
+        ctx.beginPath();
+        ctx.moveTo(213, -97);
+        ctx.lineTo(185, -93);
+        ctx.lineTo(186, -86);
+        ctx.lineTo(214, -89);
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        // 后保险杠底部 BMW i 电光蓝扩散器饰板
+        ctx.fillStyle = '#0077E6';
+        ctx.strokeStyle = '#232830';
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.roundRect(184, -35, 28, 6.8, 2.5);
+        ctx.fill();
+        ctx.stroke();
+        ctx.restore();
+
+        ctx.restore(); // 结束车身悬挂呼吸组
+
+        // ------------------------------------------------------------
+        // (7) 20 英寸 Style 890M 双色低风阻空气动力学轮毂
+        //     - 前轮与后轮椭圆透视精准
+        //     - 黑银双色 5 组空气动力学扇叶高速旋转
+        //     - 中心 BMW 蓝白标，内侧可见蓝色 M 运动刹车卡钳与打孔刹车盘
+        // ------------------------------------------------------------
+        drawStyle890MWheel(-132, -30, 39, 0.94, wheelAngle);
+        drawStyle890MWheel(136, -30, 39, 0.96, wheelAngle);
+
+        ctx.restore();
+      }
+
+      // 绘制 20 英寸 Style 890M 双色空气动力学轮毂（带椭圆透视、打孔刹车盘与蓝色 M 卡钳）
+      function drawStyle890MWheel(cx, cy, radius, aspectX, angle) {
+        ctx.save();
+        ctx.translate(cx, cy);
+        ctx.scale(aspectX, 1);
+
+        // 轮胎厚实扁平橡胶外圈
+        ctx.fillStyle = '#161a20';
+        ctx.strokeStyle = '#0c0f14';
+        ctx.lineWidth = 2.1;
+        ctx.beginPath();
+        ctx.arc(0, 0, radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        // 胎壁受光高光圆弧
+        ctx.strokeStyle = 'rgba(148, 163, 184, 0.36)';
+        ctx.lineWidth = 1.6;
+        ctx.beginPath();
+        ctx.arc(0, 0, radius - 4, Math.PI * 1.15, Math.PI * 1.85);
+        ctx.stroke();
+
+        // 轮毂内腔
+        const rimR = radius * 0.74;
+        ctx.fillStyle = '#10151e';
+        ctx.beginPath();
+        ctx.arc(0, 0, rimR, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 打孔通风刹车盘
+        ctx.strokeStyle = 'rgba(148, 163, 184, 0.34)';
+        ctx.lineWidth = 2.0;
+        ctx.beginPath();
+        ctx.arc(0, 0, rimR * 0.68, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // 打孔刹车盘细密孔点
+        ctx.fillStyle = 'rgba(203, 213, 225, 0.45)';
+        for (let a = 0; a < Math.PI * 2; a += Math.PI / 6) {
+          ctx.beginPath();
+          ctx.arc(Math.cos(a) * rimR * 0.62, Math.sin(a) * rimR * 0.62, 1.0, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // 固定位置的蓝色 M 运动刹车卡钳（位于轮毂右上方/前上方）
+        ctx.fillStyle = '#0077E6';
+        ctx.strokeStyle = '#1e293b';
+        ctx.lineWidth = 1.1;
+        ctx.beginPath();
+        ctx.arc(0, 0, rimR * 0.78, -Math.PI * 0.42, Math.PI * 0.04);
+        ctx.lineTo(0, 0);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // 旋转的黑银双色 5 组空气动力学低风阻扇叶
+        ctx.save();
+        ctx.rotate(angle);
+
+        for (let i = 0; i < 5; i++) {
+          ctx.save();
+          ctx.rotate((i * Math.PI * 2) / 5);
+
+          // 精车亮银主辐条
+          ctx.fillStyle = '#F8FAFC';
+          ctx.beginPath();
+          ctx.moveTo(-3.2, -5);
+          ctx.lineTo(-7.0, -rimR + 2);
+          ctx.lineTo(1.6, -rimR + 2);
+          ctx.lineTo(2.6, -5);
+          ctx.closePath();
+          ctx.fill();
+
+          // 亮黑空气动力学封闭风阻扇叶嵌件
+          ctx.fillStyle = '#2d3748';
+          ctx.beginPath();
+          ctx.moveTo(2.2, -7);
+          ctx.lineTo(2.6, -rimR + 3);
+          ctx.lineTo(10.5, -rimR + 6);
+          ctx.lineTo(6.0, -7);
+          ctx.closePath();
+          ctx.fill();
+
+          ctx.restore();
+        }
+
+        // 高速旋转动态高光环
+        ctx.strokeStyle = 'rgba(248, 250, 252, 0.35)';
+        ctx.lineWidth = 2.6;
+        ctx.beginPath();
+        ctx.arc(0, 0, rimR * 0.62, 0, Math.PI * 1.25);
+        ctx.stroke();
+
+        // 轮毂外圈金属银环
+        ctx.strokeStyle = '#cbd5e1';
+        ctx.lineWidth = 2.2;
+        ctx.beginPath();
+        ctx.arc(0, 0, rimR - 1, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // 中央 BMW i 电光蓝外环轮毂盖
+        ctx.fillStyle = '#0077E6';
+        ctx.beginPath();
+        ctx.arc(0, 0, 8.4, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#0f172a';
+        ctx.beginPath();
+        ctx.arc(0, 0, 5.8, 0, Math.PI * 2);
+        ctx.fill();
+
+        // BMW 蓝白四象限标
+        ctx.fillStyle = '#38bdf8';
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.arc(0, 0, 4.1, -Math.PI / 2, 0);
+        ctx.moveTo(0, 0);
+        ctx.arc(0, 0, 4.1, Math.PI / 2, Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.arc(0, 0, 4.1, 0, Math.PI / 2);
+        ctx.moveTo(0, 0);
+        ctx.arc(0, 0, 4.1, Math.PI, Math.PI * 1.5);
+        ctx.fill();
+
+        ctx.restore();
+        ctx.restore();
+      }
+
+      // =========================================================================
+      // 5. 四季动态飞舞粒子与车轮卷起气流粒子（向左行驶，气流向右后方掠过）
+      // =========================================================================
+      function drawSeasonalParticles(dt, t, st) {
+        const [wSpring, wSummer, wAutumn, wWinter] = st.weights;
+
+        // (A) 漫天四季飞舞粒子
+        skyParticles.forEach(p => {
+          p.x += (p.vx + 1.2) * dt * 60;
+          p.y += (p.vy + Math.sin(t * 2.1 + p.phase) * 0.5) * dt * 60;
+          p.rot += p.vRot * dt * 60;
+
+          if (p.x > virtualW + 40) p.x = -40;
+          if (p.y > virtualH * 0.94) {
+            p.y = -24;
+            p.x = Math.random() * (virtualW + 120) - 60;
+          }
+
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rot);
+
+          // 春：山桃花瓣
+          if (wSpring > 0.03) {
+            ctx.fillStyle = p.kind > 0.42
+              ? `rgba(255, 172, 202, ${0.92 * wSpring})`
+              : `rgba(255, 224, 238, ${0.95 * wSpring})`;
+            ctx.beginPath();
+            ctx.moveTo(0, -p.size);
+            ctx.bezierCurveTo(p.size, -p.size, p.size, p.size, 0, p.size * 0.8);
+            ctx.bezierCurveTo(-p.size, p.size, -p.size, -p.size, 0, -p.size);
+            ctx.fill();
+          }
+
+          // 夏：峡谷暖阳金色微光 / 蒲公英绒毛
+          if (wSummer > 0.03) {
+            ctx.fillStyle = `rgba(255, 250, 194, ${0.65 * wSummer})`;
+            ctx.beginPath();
+            ctx.arc(0, 0, p.size * 0.65, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          // 秋：红枫与金黄银杏落叶
+          if (wAutumn > 0.03) {
+            ctx.fillStyle = p.kind > 0.45
+              ? `rgba(222, 58, 34, ${0.94 * wAutumn})`
+              : `rgba(246, 178, 38, ${0.94 * wAutumn})`;
+            ctx.beginPath();
+            if (p.kind > 0.45) {
+              ctx.moveTo(0, -p.size * 1.25);
+              ctx.lineTo(p.size * 0.95, -p.size * 0.3);
+              ctx.lineTo(p.size * 0.4, 0);
+              ctx.lineTo(p.size * 0.85, p.size * 0.75);
+              ctx.lineTo(0, p.size * 0.4);
+              ctx.lineTo(-p.size * 0.85, p.size * 0.75);
+              ctx.lineTo(-p.size * 0.4, 0);
+              ctx.lineTo(-p.size * 0.95, -p.size * 0.3);
+              ctx.closePath();
+            } else {
+              ctx.moveTo(0, p.size);
+              ctx.arc(0, 0, p.size * 1.15, Math.PI * 1.15, Math.PI * 1.85);
+              ctx.closePath();
+            }
+            ctx.fill();
+          }
+
+          // 冬：瑞雪冰晶
+          if (wWinter > 0.03) {
+            ctx.fillStyle = `rgba(255, 255, 255, ${0.95 * wWinter})`;
+            ctx.beginPath();
+            ctx.arc(0, 0, p.size * 0.65, 0, Math.PI * 2);
+            ctx.fill();
+
+            if (p.size > 5.4) {
+              ctx.strokeStyle = `rgba(255, 255, 255, ${0.85 * wWinter})`;
+              ctx.lineWidth = 1.1;
+              ctx.beginPath();
+              ctx.moveTo(-p.size, 0);
+              ctx.lineTo(p.size, 0);
+              ctx.moveTo(0, -p.size);
+              ctx.lineTo(0, p.size);
+              ctx.stroke();
+            }
+          }
+
+          ctx.restore();
+        });
+
+        // (B) 车轮向后卷起的四季尾流颗粒（向右后方飞散）
+        const centerX = virtualW * 0.52;
+        const groundY = virtualH * 0.728;
+        const carScale = Math.min((virtualW * 0.84) / 454, 1.48);
+
+        wheelWake.forEach(wp => {
+          wp.life += dt * 1.7 * wp.speed;
+          if (wp.life >= 1) wp.life -= 1;
+
+          // 0: 左前轮(-132), 1: 左后轮(+136)
+          const baseWheelX = wp.wheelIdx === 0
+            ? centerX - 108 * carScale
+            : centerX + 158 * carScale;
+          const wx = baseWheelX + wp.life * 140 * carScale;
+          const wy = groundY - 6 - Math.sin(wp.life * Math.PI) * (18 + wp.spreadY * 0.5);
+          const alpha = (1 - wp.life) * 0.9;
+
+          ctx.save();
+          ctx.translate(wx, wy);
+          ctx.rotate(wp.rot + wp.life * 4);
+
+          if (wSpring > 0.04) {
+            ctx.fillStyle = `rgba(255, 184, 212, ${alpha * wSpring})`;
+            ctx.beginPath();
+            ctx.ellipse(0, 0, wp.size * 1.2, wp.size * 0.75, 0, 0, Math.PI * 2);
+            ctx.fill();
+          }
+          if (wSummer > 0.04) {
+            ctx.fillStyle = `rgba(255, 246, 184, ${alpha * 0.75 * wSummer})`;
+            ctx.beginPath();
+            ctx.arc(0, 0, wp.size * 0.75, 0, Math.PI * 2);
+            ctx.fill();
+          }
+          if (wAutumn > 0.04) {
+            ctx.fillStyle = `rgba(232, 118, 36, ${alpha * wAutumn})`;
+            ctx.beginPath();
+            ctx.ellipse(0, 0, wp.size * 1.3, wp.size * 0.8, 0, 0, Math.PI * 2);
+            ctx.fill();
+          }
+          if (wWinter > 0.04) {
+            ctx.fillStyle = `rgba(255, 255, 255, ${alpha * wWinter})`;
+            ctx.beginPath();
+            ctx.arc(0, 0, wp.size * 0.95, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          ctx.restore();
+        });
+      }
+
+      // =========================================================================
+      // 6. 冷压水彩纸细腻肌理与四周柔和暗角
+      // =========================================================================
+      function drawPaperOverlay() {
+        if (paperCanvas) {
+          const pat = ctx.createPattern(paperCanvas, 'repeat');
+          if (pat) {
+            ctx.fillStyle = pat;
+            ctx.fillRect(0, 0, virtualW, virtualH);
+          }
+        }
+
+        const vignette = ctx.createRadialGradient(
+          virtualW * 0.5, virtualH * 0.56, Math.min(virtualW, virtualH) * 0.42,
+          virtualW * 0.5, virtualH * 0.56, Math.max(virtualW, virtualH) * 0.76
+        );
+        vignette.addColorStop(0, 'rgba(18, 22, 30, 0)');
+        vignette.addColorStop(1, 'rgba(18, 22, 30, 0.22)');
+        ctx.fillStyle = vignette;
+        ctx.fillRect(0, 0, virtualW, virtualH);
+      }
+
+      function renderFrame(dt) {
+        ctx.save();
+        ctx.scale(viewScale, viewScale);
+
+        const st = getSeasonState(currentTime);
+        updateHUD(st);
+
+        ctx.clearRect(0, 0, virtualW, virtualH);
+
+        drawSkyAndMountains(st);
+        drawRiverAndValley(st);
+        drawRiversideRoad(st);
+        drawHeroBMWiX3(currentTime, st);
+        drawSeasonalParticles(dt, currentTime, st);
+        drawPaperOverlay();
+
+        ctx.restore();
+      }
+
+      function loop(timestamp) {
+        if (lastTimestamp === null) lastTimestamp = timestamp;
+        const rawDt = (timestamp - lastTimestamp) / 1000;
+        lastTimestamp = timestamp;
+        const dt = Math.min(rawDt, 0.05);
+
+        currentTime = (currentTime + dt) % LOOP_DURATION;
+        travelDist += dt * 190;
+
+        renderFrame(dt);
+        requestAnimationFrame(loop);
+      }
+
+      function toggleCleanRecordingMode() {
+        uiHidden = !uiHidden;
+        if (uiHidden) {
+          topPill.classList.add('hidden-ui');
+          btnReplay.classList.add('hidden-ui');
+        } else {
+          topPill.classList.remove('hidden-ui');
+          btnReplay.classList.remove('hidden-ui');
+        }
+      }
+
+      btnHide.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleCleanRecordingMode();
+      });
+
+      btnReplay.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentTime = 0.0;
+        renderFrame(0);
+      });
+
+      canvas.addEventListener('click', () => {
+        toggleCleanRecordingMode();
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'h' || e.key === 'H') {
+          toggleCleanRecordingMode();
+        } else if (e.key === 'r' || e.key === 'R') {
+          currentTime = 0.0;
+          renderFrame(0);
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        resizeCanvas();
+        renderFrame(0);
+      });
+
+      initPaperTexture();
+      resizeCanvas();
+      renderFrame(0);
+      requestAnimationFrame(loop);
+    })();
+  </script>
+</body>
+</html>
