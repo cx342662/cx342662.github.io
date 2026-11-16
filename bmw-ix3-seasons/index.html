@@ -1488,8 +1488,7 @@
         // ------------------------------------------------------------
         // 车轮始终作为独立前景层渲染，避免被白色车身与轮拱吞没。
         // 轮胎外径调整至与 45 单位轮拱相匹配，保留黑色胎壁和双色旋转轮毂。
-        drawStyle890MWheel(-132, -30, 45, 0.98, wheelAngle);
-        drawStyle890MWheel(136, -30, 45, 1.00, wheelAngle);
+        // 车轮由 renderFrame 的独立最前景图层绘制，避免任何变换/裁切状态干扰。
 
         ctx.restore();
       }
@@ -1786,6 +1785,39 @@
         ctx.fillRect(0, 0, virtualW, virtualH);
       }
 
+      // 独立车轮图层：明确重设车轮的变换矩阵，固定在主车前后轮拱中心，
+      // 深色完整轮胎、金属轮毂和 BMW 蓝白标均在车身之上可见。
+      function drawVisibleWheels() {
+        const carScale = Math.min((virtualW * 0.84) / 454, 1.48);
+        const centerX = virtualW * 0.52;
+        const groundY = virtualH * 0.728;
+        const spin = -(travelDist * 2.95) / 40;
+        ctx.save();
+        ctx.translate(centerX, groundY);
+        ctx.scale(carScale, carScale);
+        // 轮胎底边略低于车门下缘，避免车轮被浅色车体吞掉。
+        for (const wheel of [{x:-132,y:-24,a:0.94},{x:136,y:-24,a:0.96}]) {
+          ctx.save();
+          ctx.translate(wheel.x,wheel.y);
+          ctx.scale(wheel.a,1);
+          ctx.fillStyle='#070a10';
+          ctx.strokeStyle='#030407';
+          ctx.lineWidth=4;
+          ctx.beginPath();
+          ctx.arc(0,0,51,0,Math.PI*2);
+          ctx.fill();
+          ctx.stroke();
+          ctx.strokeStyle='#505966';
+          ctx.lineWidth=3;
+          ctx.beginPath();
+          ctx.arc(0,0,45,0,Math.PI*2);
+          ctx.stroke();
+          ctx.restore();
+          drawStyle890MWheel(wheel.x,wheel.y,43,wheel.a,spin);
+        }
+        ctx.restore();
+      }
+
       function renderFrame(dt) {
         ctx.save();
         ctx.scale(viewScale, viewScale);
@@ -1799,6 +1831,7 @@
         drawRiverAndValley(st);
         drawRiversideRoad(st);
         drawHeroBMWiX3(currentTime, st);
+        drawVisibleWheels();
         drawSeasonalParticles(dt, currentTime, st);
         drawPaperOverlay();
 
