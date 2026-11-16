@@ -123,7 +123,7 @@
     #wheel-layer {position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}
     .ix3-wheel {position:absolute;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;
       background:radial-gradient(circle at 38% 28%,#434b55 0%,#11151c 43%,#06080d 77%,#010203 96%);
-      border:3px solid #07090d;box-shadow:inset 0 0 0 3px #3b4049,inset 0 0 0 8px #090b0f,0 3px 5px #090d15a8}
+      border:3px solid #07090d;clip-path:inset(17% 0 0 0 round 0);box-shadow:inset 0 0 0 3px #3b4049,inset 0 0 0 8px #090b0f,0 3px 5px #090d15a8}
     .ix3-wheel:after {content:"";position:absolute;inset:5%;border-radius:50%;border:2px solid #323a43;box-shadow:inset 0 0 5px #000}
     .ix3-rim {position:absolute;inset:16%;border-radius:50%;
       background:radial-gradient(circle at 32% 25%,#f6f7f8,#94a1ad 42%,#293542 76%,#b0bac4 94%);
@@ -335,17 +335,19 @@
       }
 
       function positionDOMWheels() {
+        // 与 drawHeroBMWiX3 使用完全一致的基准坐标及视口变换。
+        // 车轮中心固定于车身原始两个轮拱：(-132,-30)、(136,-30)。
         const factor = Math.min((virtualW * 0.84) / 454, 1.48);
-        const vwPx = window.innerWidth;
-        const vhPx = window.innerHeight;
-        const scalePx = vwPx / virtualW;
-        const centerX = virtualW * 0.52, groundY = virtualH * 0.728;
-        for (const [id, x] of [['ix3-wheel-front',-132],['ix3-wheel-rear',136]]) {
-          const el=document.getElementById(id);
+        const pxPerUnit = canvas.getBoundingClientRect().width / virtualW;
+        const centerX = virtualW * 0.52;
+        const groundY = virtualH * 0.728;
+        const wheelRadius = 43;
+        for (const [id, x] of [['ix3-wheel-front', -132], ['ix3-wheel-rear', 136]]) {
+          const el = document.getElementById(id);
           if (!el) continue;
-          el.style.left=((centerX+x*factor)*scalePx)+'px';
-          el.style.top=((groundY-24*factor)*scalePx)+'px';
-          el.style.width=(factor*102*scalePx)+'px';
+          el.style.left = ((centerX + x * factor) * pxPerUnit).toFixed(2) + 'px';
+          el.style.top = ((groundY - 30 * factor) * pxPerUnit).toFixed(2) + 'px';
+          el.style.width = (factor * wheelRadius * 2 * pxPerUnit).toFixed(2) + 'px';
         }
       }
 
