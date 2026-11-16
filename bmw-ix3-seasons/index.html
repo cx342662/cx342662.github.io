@@ -1486,8 +1486,10 @@
         //     - 黑银双色 5 组空气动力学扇叶高速旋转
         //     - 中心 BMW 蓝白标，内侧可见蓝色 M 运动刹车卡钳与打孔刹车盘
         // ------------------------------------------------------------
-        drawStyle890MWheel(-132, -30, 39, 0.94, wheelAngle);
-        drawStyle890MWheel(136, -30, 39, 0.96, wheelAngle);
+        // 车轮始终作为独立前景层渲染，避免被白色车身与轮拱吞没。
+        // 轮胎外径调整至与 45 单位轮拱相匹配，保留黑色胎壁和双色旋转轮毂。
+        drawStyle890MWheel(-132, -30, 45, 0.98, wheelAngle);
+        drawStyle890MWheel(136, -30, 45, 1.00, wheelAngle);
 
         ctx.restore();
       }
@@ -1499,9 +1501,9 @@
         ctx.scale(aspectX, 1);
 
         // 轮胎厚实扁平橡胶外圈
-        ctx.fillStyle = '#161a20';
-        ctx.strokeStyle = '#0c0f14';
-        ctx.lineWidth = 2.1;
+        ctx.fillStyle = '#0b0d12';
+        ctx.strokeStyle = '#030407';
+        ctx.lineWidth = 3.6;
         ctx.beginPath();
         ctx.arc(0, 0, radius, 0, Math.PI * 2);
         ctx.fill();
@@ -1515,7 +1517,7 @@
         ctx.stroke();
 
         // 轮毂内腔
-        const rimR = radius * 0.74;
+        const rimR = radius * 0.79;
         ctx.fillStyle = '#10151e';
         ctx.beginPath();
         ctx.arc(0, 0, rimR, 0, Math.PI * 2);
