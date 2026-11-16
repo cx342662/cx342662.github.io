@@ -118,10 +118,33 @@
       transform: translateY(16px);
       pointer-events: none;
     }
-  </style>
+  
+    /* 独立 DOM 轮组：不受主 Canvas 内部绘制状态影响 */
+    #wheel-layer {position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}
+    .ix3-wheel {position:absolute;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;
+      background:radial-gradient(circle at 38% 28%,#434b55 0%,#11151c 43%,#06080d 77%,#010203 96%);
+      border:3px solid #07090d;box-shadow:inset 0 0 0 3px #3b4049,inset 0 0 0 8px #090b0f,0 3px 5px #090d15a8}
+    .ix3-wheel:after {content:"";position:absolute;inset:5%;border-radius:50%;border:2px solid #323a43;box-shadow:inset 0 0 5px #000}
+    .ix3-rim {position:absolute;inset:16%;border-radius:50%;
+      background:radial-gradient(circle at 32% 25%,#f6f7f8,#94a1ad 42%,#293542 76%,#b0bac4 94%);
+      border:3px solid #b8c3cb;box-shadow:0 0 0 2px #171d24,inset 0 0 0 3px #38424d}
+    .ix3-spokes {position:absolute;inset:3%;border-radius:50%;
+      background:repeating-conic-gradient(from 8deg,#dce2e7 0deg 6deg,#202933 6deg 14deg,#909eaa 14deg 19deg,#0e141b 19deg 36deg);
+      box-shadow:inset 0 0 0 3px #697986;animation:ix3WheelSpin 1.5s linear infinite}
+    .ix3-spokes:after {content:"";position:absolute;inset:16%;border-radius:50%;background:radial-gradient(circle,#52616f,#111923);border:1px solid #8a9baa}
+    .ix3-center {position:absolute;left:50%;top:50%;width:23%;height:23%;transform:translate(-50%,-50%);
+      border-radius:50%;border:2px solid #d5e0e8;background:conic-gradient(#eef5ff 0 25%,#0b72bb 25% 50%,#eef5ff 50% 75%,#0b72bb 75%);
+      box-shadow:0 0 0 2px #111c2b}
+    @keyframes ix3WheelSpin {to{transform:rotate(-360deg)}}
+</style>
 </head>
 <body>
   <canvas id="mainCanvas"></canvas>
+  <div id="wheel-layer" aria-hidden="true">
+    <div class="ix3-wheel" id="ix3-wheel-front"><div class="ix3-rim"><div class="ix3-spokes"></div><div class="ix3-center"></div></div></div>
+    <div class="ix3-wheel" id="ix3-wheel-rear"><div class="ix3-rim"><div class="ix3-spokes"></div><div class="ix3-center"></div></div></div>
+  </div>
+
 
   <!-- 顶部极简浮动胶囊 -->
   <div id="top-pill">
@@ -311,6 +334,21 @@
         }
       }
 
+      function positionDOMWheels() {
+        const factor = Math.min((virtualW * 0.84) / 454, 1.48);
+        const vwPx = window.innerWidth;
+        const vhPx = window.innerHeight;
+        const scalePx = vwPx / virtualW;
+        const centerX = virtualW * 0.52, groundY = virtualH * 0.728;
+        for (const [id, x] of [['ix3-wheel-front',-132],['ix3-wheel-rear',136]]) {
+          const el=document.getElementById(id);
+          if (!el) continue;
+          el.style.left=((centerX+x*factor)*scalePx)+'px';
+          el.style.top=((groundY-24*factor)*scalePx)+'px';
+          el.style.width=(factor*102*scalePx)+'px';
+        }
+      }
+
       function resizeCanvas() {
         const w = window.innerWidth;
         const h = window.innerHeight;
@@ -326,6 +364,7 @@
         }
         virtualW = canvas.width / viewScale;
         virtualH = canvas.height / viewScale;
+        positionDOMWheels();
       }
 
       function lerp(a, b, t) {
@@ -1831,7 +1870,7 @@
         drawRiverAndValley(st);
         drawRiversideRoad(st);
         drawHeroBMWiX3(currentTime, st);
-        drawVisibleWheels();
+        // 前后轮由不受 Canvas 绘制遮挡影响的 DOM 图层渲染。
         drawSeasonalParticles(dt, currentTime, st);
         drawPaperOverlay();
 
